@@ -3,10 +3,6 @@
     import { palettes } from "./store"
 </script>
 
-<svelte:head>
-    <title>Paletti</title>
-</svelte:head>
-
 <div class="flex w-fit content-center items-baseline gap-4 px-7 pt-3 pb-9">
     <div class="flex">
         <div
