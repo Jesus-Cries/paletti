@@ -1,5 +1,7 @@
 # Paletti
 
+I always struggled with finding fitting colors for my web projects. This is why I created Paletti, an easy to use and fast way to create color palettes for web design.
+
 # Installation
 
 Run the following command to install all needed dependencies:
