@@ -5,7 +5,7 @@
 </script>
 
 <div
-    class="z-20 mb-3 flex flex-col items-start gap-10 overflow-y-auto overflow-x-hidden px-3 pb-8 pt-0.5 pr-4"
+    class="z-20 mb-3 flex flex-col items-start gap-10 overflow-y-auto overflow-x-hidden px-3 pb-8 pt-1 pr-4"
 >
     {#each $palettes as palette, index}
         <Palette {palette} {index} />

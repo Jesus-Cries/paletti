@@ -29,7 +29,12 @@
 
         if (name !== undefined) newNames[index] = name
 
-        const newUrl: string = createUrl(newNames, data.mainColors, data.hueRotations, index)
+        const newUrl: string = createUrl(
+            newNames,
+            data.mainColors,
+            data.hueRotations,
+            data.focusedPalette
+        )
         navigate(newUrl)
     }
 
@@ -251,7 +256,7 @@
 
     // Update color palettes when main color or hue rotation changes
     $: {
-        const newPalettes: string[][] = data.mainColors.map((color, index) =>
+        const newPalettes: string[][] = data.mainColors.map((color: string, index: number) =>
             paletteCreator.createPalette(color, data.hueRotations[index])
         )
 
