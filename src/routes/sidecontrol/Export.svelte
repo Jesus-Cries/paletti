@@ -145,7 +145,7 @@
 
 <div class="tooltip w-full" data-tip="Show export options [e]">
     <button
-        class="btn-primary btn w-full rounded-l-none"
+        class="btn-primary btn w-full"
         on:click={() => {
             modal.showModal()
         }}
