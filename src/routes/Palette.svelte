@@ -4,7 +4,7 @@
     import { page } from "$app/stores"
     import { colorSettings } from "./store"
     import Color from "./Color.svelte"
-    import { Eye, Pencil, Trash } from "lucide-svelte"
+    import { Maximize2, Pencil, Trash } from "lucide-svelte"
 
     const focusPalette: (index: number) => void = getContext("focusPalette")
     const deletePalette: (index: number) => void = getContext("deletePalette")
@@ -35,22 +35,19 @@
     class={`flex w-full flex-col items-start gap-2 ${isFocused && "mb-6"}`}
 >
     <div class="flex w-full items-baseline justify-between">
-        <div class="flex">
+        <div class="flex gap-2 pl-1.5">
+            <label for={`${index}-palette-name`} class="btn-sm btn-circle btn hover:cursor-pointer">
+                <Pencil size={14} />
+            </label>
             <input
                 id={`${index}-palette-name`}
                 type="text"
                 placeholder="Enter a name"
-                class="input-bordered input input-sm z-50 max-w-[200px] rounded-r-none border-2 border-r-0 border-gray-200 text-xl font-bold"
+                class="input input-sm z-50 max-w-[200px] text-xl font-bold"
                 maxlength={nameLimit}
                 value={$page.data.names[index]}
                 on:change={setNewName}
             />
-            <label
-                for={`${index}-palette-name`}
-                class="btn-sm btn rounded-r-full hover:cursor-pointer"
-            >
-                <Pencil size={14} />
-            </label>
         </div>
 
         <div>
@@ -61,7 +58,7 @@
                         focusPalette(index)
                     }}
                 >
-                    <Eye size={15} />
+                    <Maximize2 size={15} />
                 </button>
             {/if}
             {#if $page.data.mainColors.length >= 2}

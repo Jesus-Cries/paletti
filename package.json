@@ -19,6 +19,7 @@
         "@typescript-eslint/eslint-plugin": "^5.27.0",
         "@typescript-eslint/parser": "^5.27.0",
         "autoprefixer": "^10.4.13",
+        "daisyui": "^4.8.0",
         "eslint": "^8.16.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-svelte3": "^4.0.0",
@@ -38,7 +39,6 @@
     "type": "module",
     "dependencies": {
         "color-convert": "^2.0.1",
-        "daisyui": "^3.7.6",
         "lucide-svelte": "^0.266.0"
     }
 }

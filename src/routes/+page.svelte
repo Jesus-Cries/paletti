@@ -29,7 +29,12 @@
 
         if (name !== undefined) newNames[index] = name
 
-        const newUrl: string = createUrl(newNames, data.mainColors, data.hueRotations, index)
+        const newUrl: string = createUrl(
+            newNames,
+            data.mainColors,
+            data.hueRotations,
+            data.focusedPalette
+        )
         navigate(newUrl)
     }
 
@@ -192,12 +197,12 @@
     // FIXME: Lightnesses of 0 and 100 turn hue rotation red
 
     // Features
+    // TODO: Add github link
     // TODO: Make amount of colors per palette customizable
     // TODO: Add some sort of fullscreen option
     // TODO: Make HSL values editable
 
     // Polishing
-    // TODO: Write README
     // TODO: Improve palette name editor
     // TODO: Improve palette animations
     // TODO: Center palette when only one palette is present
@@ -207,7 +212,6 @@
 
     // Testing
     // TODO: Check if saturation logic is still working correctly
-    // TODO: Check if everything is still working with multiple palettes
     // TODO: Check for compatibility with other browsers
 
     // Other
@@ -252,7 +256,7 @@
 
     // Update color palettes when main color or hue rotation changes
     $: {
-        const newPalettes: string[][] = data.mainColors.map((color, index) =>
+        const newPalettes: string[][] = data.mainColors.map((color: string, index: number) =>
             paletteCreator.createPalette(color, data.hueRotations[index])
         )
 

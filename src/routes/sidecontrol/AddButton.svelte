@@ -21,11 +21,8 @@
     })
 </script>
 
-<div class="tooltip" data-tip="Add new palette [a]">
-    <button
-        class="btn rounded-r-none border-[3px] border-r-0 border-gray-200 bg-white hover:bg-gray-100"
-        on:click={addBasePalette}
-    >
+<div class="tooltip z-50" data-tip="Add new palette [a]">
+    <button class="btn-circle btn-lg btn" on:click={addBasePalette}>
         <Plus size={30} />
     </button>
 </div>

@@ -2,7 +2,6 @@
     import ColorPicker from "./ColorPicker.svelte"
     import HueSlider from "./HueSlider.svelte"
     import ShowGaps from "./ShowGaps.svelte"
-    import AddButton from "./AddButton.svelte"
     import Export from "./Export.svelte"
 </script>
 
@@ -21,8 +20,5 @@
         <ShowGaps />
     </div>
 
-    <div class="flex w-full">
-        <AddButton />
-        <Export />
-    </div>
+    <Export />
 </div>
