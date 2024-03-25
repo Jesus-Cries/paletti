@@ -7,7 +7,7 @@
 
     const min: number = -100
     const max: number = 100
-    const step: number = 10
+    const step: number = 1
 
     const updatePalette: (
         index: number,
