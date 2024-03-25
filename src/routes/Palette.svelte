@@ -4,7 +4,7 @@
     import { page } from "$app/stores"
     import { colorSettings } from "./store"
     import Color from "./Color.svelte"
-    import { Eye, Pencil, Trash } from "lucide-svelte"
+    import { Maximize2, Pencil, Trash } from "lucide-svelte"
 
     const focusPalette: (index: number) => void = getContext("focusPalette")
     const deletePalette: (index: number) => void = getContext("deletePalette")
@@ -58,7 +58,7 @@
                         focusPalette(index)
                     }}
                 >
-                    <Eye size={15} />
+                    <Maximize2 size={15} />
                 </button>
             {/if}
             {#if $page.data.mainColors.length >= 2}
