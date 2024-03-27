@@ -28,21 +28,19 @@ module.exports = {
             },
         },
     },
-    plugins: [require("@tailwindcss/typography"), require("daisyui")],
+    plugins: [require("daisyui")],
     daisyui: {
         themes: [
             {
                 paletti: {
-                    ...require("daisyui/src/theming/themes")["[data-theme=light]"],
+                    ...require("daisyui/src/theming/themes")["light"],
 
                     // Primary
                     primary: "#EF347C",
-                    "primary-focus": "#DA0D57",
                     "primary-content": "#FFEBEE",
 
                     // Gray
                     neutral: "#383D47",
-                    "neutral-focus": "#222933",
                     "neutral-content": "#F7F8FB",
                 },
             },

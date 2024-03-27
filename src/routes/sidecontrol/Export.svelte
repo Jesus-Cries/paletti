@@ -160,10 +160,10 @@
     </form>
     <div class="modal-box fixed top-[10%] w-full max-w-5xl overflow-hidden">
         <form method="dialog">
-            <button class="btn-ghost btn-sm btn-circle btn absolute right-2 top-2">✕</button>
+            <button class="btn-ghost btn btn-sm btn-circle absolute right-2 top-2">✕</button>
         </form>
         <h3 class="pb-4 text-lg font-bold">Export options</h3>
-        <div class="tabs tabs-boxed bg-white px-0 pb-1.5">
+        <div class="tabs tabs-boxed w-fit bg-white px-0 pb-1.5">
             {#each exportOptions as exportOption, index}
                 <button
                     class={`tab ${currentOption === index && "tab-active"}`}
@@ -175,7 +175,7 @@
         </div>
 
         <div class="mockup-code">
-            <label class="swap-rotate swap absolute right-3 top-4">
+            <label class="swap swap-rotate absolute right-3 top-4">
                 <input type="checkbox" bind:checked={copyIsClicked} on:change={copyExport} />
                 <div class="swap-off flex content-center items-center justify-center">
                     <Copy size={22} />
