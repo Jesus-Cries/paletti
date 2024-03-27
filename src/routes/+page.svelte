@@ -193,29 +193,26 @@
     setContext("focusPalette", focusPalette)
 
     // Bugs
-    // FIXME: Add button tooltip needs higher z-index
     // FIXME: Lightnesses of 0 and 100 turn hue rotation red
 
     // Features
     // TODO: Add github link
+    // TODO: Add navigation
+    // TODO: Add homepage
+    // TODO: Add FAQ page
     // TODO: Make amount of colors per palette customizable
     // TODO: Add some sort of fullscreen option
     // TODO: Make HSL values editable
 
     // Polishing
-    // TODO: Improve palette name editor
     // TODO: Improve palette animations
     // TODO: Center palette when only one palette is present
     // TODO: Improve performance by only updating hues when hue rotation changes
     // TODO: Make responsive
-    // TODO: Remove steps from hue rotation
 
     // Testing
     // TODO: Check if saturation logic is still working correctly
     // TODO: Check for compatibility with other browsers
-
-    // Other
-    // TODO: Move to own repository (Would make favicon setup more accessible)
 
     function handleKeyDown(e: KeyboardEvent) {
         // Prevents keyboard shortcuts from firing when user is typing into input
