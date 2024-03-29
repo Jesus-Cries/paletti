@@ -13,9 +13,9 @@
     ]
 </script>
 
-<div class="flex items-center justify-between px-7 pb-9 pt-3">
+<div class="flex items-center justify-between px-7 pb-9 pt-1">
     <Logo />
-    <div class="flex gap-14">
+    <div class="flex gap-14 pt-6">
         {#each pages as page}
             <a
                 class="btn btn-ghost no-animation uppercase hover:bg-transparent hover:text-primary"

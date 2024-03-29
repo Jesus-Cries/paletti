@@ -3,7 +3,7 @@
     import { palettes } from "./palettes/store"
 </script>
 
-<a class="flex w-fit content-center items-baseline gap-4" href="/">
+<a class="flex h-fit w-fit content-center items-baseline gap-4" href="/">
     <div class="flex">
         <div
             class="museomoderno -mr-8 text-6xl font-black"

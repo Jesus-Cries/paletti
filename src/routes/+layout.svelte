@@ -7,7 +7,7 @@
     <title>Paletti</title>
 </svelte:head>
 
-<div data-theme="paletti">
+<div class="flex flex-col" data-theme="paletti">
     <Navbar />
     <slot />
 </div>

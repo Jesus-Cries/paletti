@@ -263,8 +263,8 @@
 
 <svelte:window on:keydown={handleKeyDown} />
 
-<div class="flex">
-    <div class="relative flex w-5/6 flex-col justify-start">
+<div class="flex h-[calc(100vh-112px)] w-full">
+    <div class="relative w-5/6 flex-col">
         <Palettes />
         <BottomControl />
     </div>
