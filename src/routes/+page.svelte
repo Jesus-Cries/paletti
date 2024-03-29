@@ -1,4 +1,8 @@
-<div>
+<script lang="ts">
+    import { fade } from "svelte/transition"
+</script>
+
+<div transition:fade={{ duration: 100 }} class="absolute">
     <h3>I am a homepage</h3>
     <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum vel non accusamus ut natus

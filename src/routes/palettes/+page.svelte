@@ -1,9 +1,9 @@
 <script lang="ts">
+    import { setContext, onMount } from "svelte"
+    import { fade } from "svelte/transition"
     import Palettes from "./Palettes.svelte"
     import { goto } from "$app/navigation"
-    import { setContext, onMount } from "svelte"
     import { historyBack, historyForward, palettes } from "./store"
-    import Logo from "../Logo.svelte"
     import BottomControl from "./bottomcontrol/BottomControl.svelte"
     import SideControl from "./sidecontrol/SideControl.svelte"
     import { PaletteCreator } from "./PaletteCreator"
@@ -263,8 +263,8 @@
 
 <svelte:window on:keydown={handleKeyDown} />
 
-<div class="flex h-[calc(100vh-112px)] w-full">
-    <div class="relative w-5/6 flex-col">
+<div transition:fade={{ duration: 100 }} class="absolute flex h-[calc(100vh-112px)] w-full">
+    <div class="w-5/6 flex-col">
         <Palettes />
         <BottomControl />
     </div>

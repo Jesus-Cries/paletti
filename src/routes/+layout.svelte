@@ -9,5 +9,7 @@
 
 <div class="flex flex-col" data-theme="paletti">
     <Navbar />
-    <slot />
+    <div class="relative">
+        <slot />
+    </div>
 </div>

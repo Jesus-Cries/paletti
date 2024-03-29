@@ -1,7 +1,6 @@
 <script lang="ts">
     import convert from "color-convert"
     import { Copy } from "lucide-svelte"
-    import { slide, scale, fade } from "svelte/transition"
     import { ntc } from "$lib/ntc"
 
     export let isFocused: boolean
