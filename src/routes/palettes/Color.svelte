@@ -76,7 +76,7 @@
             }`}
             style:color={textColor}
         >
-            {#if color !== undefined}
+            {#if color !== undefined && typeof color === "string"}
                 {ntc.name(color)[1]}
             {/if}
         </p>

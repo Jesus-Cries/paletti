@@ -51,7 +51,7 @@
         </div>
 
         <div>
-            {#if $page.data.mainColors.length >= 2 && index !== $page.data.focusedPalette}
+            {#if $page.data.mainColors?.length >= 2 && index !== $page.data.focusedPalette}
                 <button
                     class="btn btn-circle btn-sm"
                     on:click={() => {
@@ -61,7 +61,7 @@
                     <Maximize2 size={15} />
                 </button>
             {/if}
-            {#if $page.data.mainColors.length >= 2}
+            {#if $page.data.mainColors?.length >= 2}
                 <button
                     disabled={$page.data.mainColors.length <= 1}
                     class="btn btn-circle btn-sm"
@@ -86,7 +86,9 @@
         {#each palette as color, colorIndex}
             <Color
                 {isFocused}
-                color={colorIndex === 4 ? $page.data.mainColors[index] : color}
+                color={colorIndex === 4
+                    ? $page.data.mainColors !== undefined && $page.data.mainColors[index]
+                    : color}
                 index={colorIndex}
             />
         {/each}

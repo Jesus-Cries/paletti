@@ -26,7 +26,10 @@
     }
 
     let mainHue: number
-    $: mainHue = convert.hex.hsl($page.data.mainColors[$page.data.focusedPalette])[0]
+    $: {
+        if ($page.data.mainColors !== undefined)
+            mainHue = convert.hex.hsl($page.data.mainColors[$page.data.focusedPalette])[0]
+    }
 
     // Update hue rotation when receiving corresponding event
     onMount(() => {
@@ -57,14 +60,16 @@
     })
 </script>
 
-<SettingWrapper label="Hue Rotation">
-    <Slider
-        style="background: linear-gradient(90deg, hsl({mainHue - 30}, 100%, 65%) 0%, hsl({mainHue +
-            30}, 100%, 65%) 100%);"
-        {min}
-        {max}
-        {step}
-        value={$page.data.hueRotations[$page.data.focusedPalette]}
-        onInput={setHueRotationAmount}
-    />
-</SettingWrapper>
+{#if $page.data.hueRotations !== undefined}
+    <SettingWrapper label="Hue Rotation">
+        <Slider
+            style="background: linear-gradient(90deg, hsl({mainHue -
+                30}, 100%, 65%) 0%, hsl({mainHue + 30}, 100%, 65%) 100%);"
+            {min}
+            {max}
+            {step}
+            value={$page.data.hueRotations[$page.data.focusedPalette]}
+            onInput={setHueRotationAmount}
+        />
+    </SettingWrapper>
+{/if}
