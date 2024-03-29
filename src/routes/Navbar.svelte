@@ -14,7 +14,7 @@
 </script>
 
 <div class="flex items-center justify-between px-7 pb-9 pt-3">
-    <Logo colors={["6F0021", "EF347C", "FFB9CE"]} />
+    <Logo />
     <div class="flex gap-14">
         {#each pages as page}
             <a

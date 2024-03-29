@@ -263,15 +263,8 @@
 
 <svelte:window on:keydown={handleKeyDown} />
 
-<div class="flex h-screen w-screen">
+<div class="flex">
     <div class="relative flex w-5/6 flex-col justify-start">
-        <Logo
-            colors={[
-                $palettes[data.focusedPalette][1],
-                $palettes[data.focusedPalette][4],
-                $palettes[data.focusedPalette][7],
-            ]}
-        />
         <Palettes />
         <BottomControl />
     </div>
