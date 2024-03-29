@@ -1,31 +1,15 @@
 <script lang="ts">
-    import { page } from "$app/stores"
-    import { palettes } from "./store"
+    export let colors: string[]
 </script>
 
-<div class="flex w-fit content-center items-baseline gap-4 px-7 pt-3 pb-9">
+<a class="flex w-fit content-center items-baseline gap-4" href="/">
     <div class="flex">
-        <div
-            class="museomoderno -mr-8 text-6xl font-black"
-            style="color: #{$palettes[$page.data.focusedPalette][1]}"
-        >
-            p
-        </div>
-        <div
-            class="museomoderno text-6xl font-black"
-            style="color: #{$palettes[$page.data.focusedPalette][4]}"
-        >
-            p
-        </div>
-        <div
-            class="museomoderno -ml-8 text-6xl font-black"
-            style="color: #{$palettes[$page.data.focusedPalette][7]}"
-        >
-            p
-        </div>
+        <div class="museomoderno -mr-8 text-6xl font-black" style="color: #{colors[0]}">p</div>
+        <div class="museomoderno text-6xl font-black" style="color: #{colors[1]}">p</div>
+        <div class="museomoderno -ml-8 text-6xl font-black" style="color: #{colors[2]}">p</div>
     </div>
     <p class="comfortaa none text-3xl font-bold">paletti</p>
-</div>
+</a>
 
 <style>
     .comfortaa {

@@ -36,7 +36,7 @@
 >
     <div class="flex w-full items-baseline justify-between">
         <div class="flex gap-2 pl-1.5">
-            <label for={`${index}-palette-name`} class="btn btn-sm btn-circle hover:cursor-pointer">
+            <label for={`${index}-palette-name`} class="btn btn-circle btn-sm hover:cursor-pointer">
                 <Pencil size={14} />
             </label>
             <input
@@ -53,7 +53,7 @@
         <div>
             {#if $page.data.mainColors.length >= 2 && index !== $page.data.focusedPalette}
                 <button
-                    class="btn btn-sm btn-circle"
+                    class="btn btn-circle btn-sm"
                     on:click={() => {
                         focusPalette(index)
                     }}
@@ -64,7 +64,7 @@
             {#if $page.data.mainColors.length >= 2}
                 <button
                     disabled={$page.data.mainColors.length <= 1}
-                    class="btn btn-sm btn-circle"
+                    class="btn btn-circle btn-sm"
                     on:click={() => {
                         deletePalette(index)
                     }}
