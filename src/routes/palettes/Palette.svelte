@@ -39,15 +39,17 @@
             <label for={`${index}-palette-name`} class="btn btn-circle btn-sm hover:cursor-pointer">
                 <Pencil size={14} />
             </label>
-            <input
-                id={`${index}-palette-name`}
-                type="text"
-                placeholder="Enter a name"
-                class="input input-sm z-50 max-w-[200px] text-xl font-bold"
-                maxlength={nameLimit}
-                value={$page.data.names[index]}
-                on:change={setNewName}
-            />
+            {#if $page.data.names !== undefined}
+                <input
+                    id={`${index}-palette-name`}
+                    type="text"
+                    placeholder="Enter a name"
+                    class="input input-sm z-50 max-w-[200px] text-xl font-bold"
+                    maxlength={nameLimit}
+                    value={$page.data.names[index]}
+                    on:change={setNewName}
+                />
+            {/if}
         </div>
 
         <div>

@@ -193,11 +193,11 @@
     setContext("focusPalette", focusPalette)
 
     // Bugs
+    // FIXME: Navigating to home and then back to palettes adds a new palette to history
     // FIXME: Lightnesses of 0 and 100 turn hue rotation red
 
     // Features
     // TODO: Add github link
-    // TODO: Add navigation
     // TODO: Add homepage
     // TODO: Add FAQ page
     // TODO: Make amount of colors per palette customizable

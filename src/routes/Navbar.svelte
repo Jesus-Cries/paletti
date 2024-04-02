@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Logo from "./Logo.svelte"
+    import Domain from "./Domain.svelte"
 
     interface Page {
         name: string
@@ -14,7 +14,7 @@
 </script>
 
 <div class="flex items-center justify-between px-7 pb-9 pt-1">
-    <Logo />
+    <Domain />
     <div class="flex gap-14 pt-6">
         {#each pages as page}
             <a
