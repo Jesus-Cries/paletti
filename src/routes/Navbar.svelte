@@ -10,11 +10,9 @@
         { name: "Home", link: "/" },
         { name: "Generator", link: "/palettes" },
     ]
-
-    // TODO: Make hero responsive
 </script>
 
-<div class="flex items-center justify-between pb-9 pl-4 pr-4 pt-1 md:pl-7 md:pr-10">
+<div class="flex items-center justify-between pb-9 pl-4 pr-4 pt-0 md:pl-7 md:pr-10 md:pt-1">
     <Domain />
     <div class="flex pt-6 md:gap-14">
         {#each pages as page}
