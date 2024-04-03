@@ -1,14 +1,20 @@
 <script lang="ts">
     import { fade } from "svelte/transition"
+    import Logo from "./Logo.svelte"
 </script>
 
-<div transition:fade={{ duration: 100 }} class="absolute">
-    <h3>I am a homepage</h3>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum vel non accusamus ut natus
-        inventore odio magnam fugiat autem veniam beatae praesentium voluptatum rem ea vero
-        veritatis, iure deleniti libero exercitationem mollitia labore deserunt neque. Tenetur
-        facere corporis omnis. Modi, minima tempore quaerat odit reprehenderit repellendus tenetur
-        commodi quidem nisi.
-    </p>
+<div transition:fade={{ duration: 100 }} class="absolute w-full">
+    <div class="flex w-screen flex-col items-center">
+        <div class="flex w-fit flex-col items-center gap-12 pt-6 md:gap-20">
+            <Logo classOverride="scale-[1.5] md:scale-[2]" />
+            <div class="flex flex-col items-center gap-4">
+                <p class="text-3xl font-medium tracking-wider text-gray-600 md:text-5xl">
+                    Unlock your
+                </p>
+                <p class="text-3xl font-medium tracking-wider text-gray-600 md:text-5xl">
+                    inner designer
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
