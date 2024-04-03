@@ -14,7 +14,7 @@
 
 <div class="flex items-center justify-between pb-9 pl-4 pr-4 pt-0 md:pl-7 md:pr-10 md:pt-1">
     <Domain />
-    <div class="flex pt-6 md:gap-14">
+    <div class="flex -translate-y-1 pt-6 md:gap-14">
         {#each pages as page}
             <a
                 class="btn btn-ghost no-animation btn-xs uppercase md:btn-md hover:bg-transparent hover:text-primary"
