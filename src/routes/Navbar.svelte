@@ -8,17 +8,18 @@
 
     const pages: Page[] = [
         { name: "Home", link: "/" },
-        { name: "Palettes", link: "/palettes" },
-        { name: "FAQ", link: "/faq" },
+        { name: "Generator", link: "/palettes" },
     ]
+
+    // TODO: Make hero responsive
 </script>
 
-<div class="flex items-center justify-between px-7 pb-9 pt-1">
+<div class="flex items-center justify-between pb-9 pl-4 pr-4 pt-1 md:pl-7 md:pr-10">
     <Domain />
-    <div class="flex gap-14 pt-6">
+    <div class="flex pt-6 md:gap-14">
         {#each pages as page}
             <a
-                class="btn btn-ghost no-animation uppercase hover:bg-transparent hover:text-primary"
+                class="btn btn-ghost no-animation btn-xs uppercase md:btn-md hover:bg-transparent hover:text-primary"
                 href={page.link}>{page.name}</a
             >
         {/each}
