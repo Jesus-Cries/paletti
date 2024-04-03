@@ -199,7 +199,6 @@
     // Features
     // TODO: Add github link
     // TODO: Add homepage
-    // TODO: Add FAQ page
     // TODO: Make amount of colors per palette customizable
     // TODO: Add some sort of fullscreen option
     // TODO: Make HSL values editable
