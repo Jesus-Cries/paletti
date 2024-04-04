@@ -9,7 +9,7 @@
 
 <div class="flex flex-col" data-theme="paletti">
     <Navbar />
-    <div class="relative">
+    <div class="relative mt-[68px] md:mt-[84px]">
         <slot />
     </div>
 </div>
