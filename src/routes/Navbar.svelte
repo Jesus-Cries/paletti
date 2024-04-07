@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { page } from "$app/stores"
     import Domain from "./Domain.svelte"
 
     interface Page {
@@ -10,6 +11,9 @@
         { name: "Home", link: "/" },
         { name: "Generator", link: "/palettes" },
     ]
+
+    let path: string = ""
+    $: path = $page.url.pathname
 </script>
 
 <div
@@ -19,9 +23,17 @@
     <div class="flex -translate-y-1 gap-2 pt-6 md:gap-14">
         {#each pages as page}
             <a
-                class="btn btn-ghost no-animation btn-xs uppercase md:btn-md hover:bg-transparent hover:text-primary"
-                href={page.link}>{page.name}</a
+                class="btn btn-ghost no-animation btn-xs relative uppercase md:btn-md hover:bg-transparent hover:text-primary
+                {path.replace('/', '') === page.link.replace('/', '') && 'text-primary'}"
+                href={page.link}
             >
+                {page.name}
+
+                <span
+                    class="absolute -bottom-3.5 h-0.5 rounded-full bg-primary transition-[width] duration-500 md:-bottom-2
+                    {path.replace('/', '') === page.link.replace('/', '') ? 'w-full' : 'w-0'}"
+                />
+            </a>
         {/each}
     </div>
 </div>

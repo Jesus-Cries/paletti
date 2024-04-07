@@ -26,7 +26,7 @@
         <a
             in:scale={{ delay: 1100 }}
             class="btn btn-primary no-animation md:btn-lg active:!scale-95"
-            href="/palettes">Try it out <Sparkles size={20} /></a
+            href="/palettes">Try it out <span class="rotate-90"><Sparkles size={20} /></span></a
         >
     </OnLoadTransition>
 </div>
