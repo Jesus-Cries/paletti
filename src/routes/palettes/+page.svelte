@@ -262,7 +262,7 @@
 <svelte:window on:keydown={handleKeyDown} />
 
 <div transition:fade={{ duration: 100 }} class="absolute flex h-[calc(100vh-84px)] w-full">
-    <div class="w-5/6 flex-col">
+    <div class="relative w-5/6 flex-col">
         <Palettes />
         <BottomControl />
     </div>
