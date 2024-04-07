@@ -37,7 +37,7 @@
 </script>
 
 <TopCurve />
-<div class="flex justify-center bg-primary-500 py-36">
+<div class="flex justify-center bg-primary-500 py-16 md:py-36">
     <div class="grid grid-cols-1 gap-20 text-white md:grid-cols-2 xl:grid-cols-3">
         {#each features as feature}
             <div class="flex max-w-72 flex-col items-center gap-4 text-center md:max-w-80">
