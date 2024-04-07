@@ -13,7 +13,7 @@
 </script>
 
 <div
-    class="fixed top-0 z-50 -mt-1.5 flex w-full items-center justify-between bg-white pb-2 pl-4 pr-4 pt-0 shadow md:-mt-3 md:pb-2 md:pl-7 md:pr-10 md:pt-1"
+    class="fixed top-0 z-50 -mt-1.5 flex w-full -translate-y-1 items-center justify-between bg-white pb-0.5 pl-1 pr-4 pt-0 shadow md:-mt-3 md:pl-2.5 md:pr-2.5 md:pt-1"
 >
     <Domain />
     <div class="flex -translate-y-1 gap-2 pt-6 md:gap-14">
