@@ -198,7 +198,6 @@
 
     // Features
     // TODO: Add github link
-    // TODO: Add homepage
     // TODO: Make amount of colors per palette customizable
     // TODO: Add some sort of fullscreen option
     // TODO: Make HSL values editable
@@ -262,7 +261,7 @@
 
 <svelte:window on:keydown={handleKeyDown} />
 
-<div transition:fade={{ duration: 100 }} class="absolute flex h-[calc(100vh-112px)] w-full">
+<div transition:fade={{ duration: 100 }} class="absolute flex h-[calc(100vh-84px)] w-full">
     <div class="w-5/6 flex-col">
         <Palettes />
         <BottomControl />

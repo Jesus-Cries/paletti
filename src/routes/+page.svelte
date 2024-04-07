@@ -6,7 +6,6 @@
 
     // TODO: Make hero fancier (highlight some of the text)
     // TODO: Add CTA to hero
-    // TODO: Add fancy animations to homepage
     // TODO: Fix horizontal alignment of bottom control
     // TODO: Add tutorial to guide section
     // FIXME: Fix overflow issues
