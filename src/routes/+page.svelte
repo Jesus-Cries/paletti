@@ -5,9 +5,8 @@
     import Guide from "./homepage/Guide.svelte"
 
     // TODO: Make hero fancier (highlight some of the text)
-    // TODO: Add CTA to hero
-    // TODO: Fix horizontal alignment of bottom control
     // TODO: Add tutorial to guide section
+    // FIXME: Fix horizontal alignment of bottom control
     // FIXME: Fix overflow issues
 </script>
 

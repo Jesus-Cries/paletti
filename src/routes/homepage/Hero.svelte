@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { fly } from "svelte/transition"
+    import { fly, scale } from "svelte/transition"
+    import { Sparkles } from "lucide-svelte"
 
     import Logo from "../Logo.svelte"
     import OnLoadTransition from "$lib/OnLoadTransition.svelte"
@@ -19,5 +20,13 @@
             <p in:fly={{ x: -250, delay: 350, duration: 900 }}>Your new favorite</p>
             <p in:fly={{ x: 250, delay: 450, duration: 900 }}>color palette generator</p>
         </div>
+    </OnLoadTransition>
+
+    <OnLoadTransition>
+        <a
+            in:scale={{ delay: 1100 }}
+            class="btn btn-primary no-animation md:btn-lg active:!scale-95"
+            href="/palettes">Try it out <Sparkles size={20} /></a
+        >
     </OnLoadTransition>
 </div>
