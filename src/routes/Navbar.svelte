@@ -13,7 +13,7 @@
     ]
 
     let path: string = ""
-    $: path = $page.url.pathname
+    $: path = $page.url.pathname.replaceAll("/", "")
 </script>
 
 <div
@@ -24,14 +24,14 @@
         {#each pages as page}
             <a
                 class="btn btn-ghost no-animation btn-xs relative uppercase md:btn-md hover:bg-transparent hover:text-primary
-                {path.replace('/', '') === page.link.replace('/', '') && 'text-primary'}"
+                {path === page.link.replaceAll('/', '') && 'text-primary'}"
                 href={page.link}
             >
                 {page.name}
 
                 <span
                     class="absolute -bottom-3.5 h-0.5 rounded-full bg-primary transition-[width] duration-500 md:-bottom-2
-                    {path.replace('/', '') === page.link.replace('/', '') ? 'w-full' : 'w-0'}"
+                    {path === page.link.replaceAll('/', '') ? 'w-full' : 'w-0'}"
                 />
             </a>
         {/each}
