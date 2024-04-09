@@ -17,8 +17,8 @@
         <div
             class="flex flex-col items-center gap-4 text-2xl font-medium tracking-wide text-gray-700 md:text-5xl md:tracking-wider"
         >
-            <p in:fly={{ x: -250, delay: 350, duration: 900 }}>Your new favorite</p>
-            <p in:fly={{ x: 250, delay: 450, duration: 900 }}>color palette generator</p>
+            <p in:fly={{ x: -250, delay: 400, duration: 900 }}>Your new favorite</p>
+            <p in:fly={{ x: 250, delay: 550, duration: 900 }}>color palette generator</p>
         </div>
     </OnLoadTransition>
 

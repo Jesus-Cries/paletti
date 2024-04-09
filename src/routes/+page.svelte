@@ -6,10 +6,9 @@
 
     // TODO: Make hero fancier (highlight some of the text)
     // TODO: Add tutorial to guide section
-    // FIXME: Fix overflow issues
 </script>
 
-<div transition:fade={{ duration: 100 }} class="absolute w-screen overflow-x-hidden">
+<div transition:fade={{ duration: 100 }} class="absolute w-full overflow-x-hidden">
     <Hero />
     <Features />
     <Guide />

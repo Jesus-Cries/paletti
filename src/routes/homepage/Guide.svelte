@@ -1,5 +1,5 @@
-<div class="flex w-full justify-center pt-10">
-    <article class="prose max-w-3xl px-10 pb-10">
+<div class="flex justify-center pt-10">
+    <article class="prose max-w-3xl px-10 pb-16">
         <h1>Creating color palettes is hard</h1>
 
         <p>
