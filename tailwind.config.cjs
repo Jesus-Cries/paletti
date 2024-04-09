@@ -15,20 +15,20 @@ module.exports = {
                 "gray-200": "#E7EAEF",
                 "gray-100": "#F7F8FB",
 
-                // Paletti
-                "paletti-900": "#330008",
-                "paletti-800": "#6D021F",
-                "paletti-700": "#A4063A",
-                "paletti-600": "#DA0D57",
-                "paletti-500": "#EF347C",
-                "paletti-400": "#F55F95",
-                "paletti-300": "#FB8CB0",
-                "paletti-200": "#FEBACC",
-                "paletti-100": "#FFEBEE",
+                // Primary
+                "primary-900": "#330008",
+                "primary-800": "#6D021F",
+                "primary-700": "#A4063A",
+                "primary-600": "#DA0D57",
+                "primary-500": "#EF347C",
+                "primary-400": "#F55F95",
+                "primary-300": "#FB8CB0",
+                "primary-200": "#FEBACC",
+                "primary-100": "#FFEBEE",
             },
         },
     },
-    plugins: [require("daisyui")],
+    plugins: [require("@tailwindcss/typography"), require("daisyui")],
     daisyui: {
         themes: [
             {

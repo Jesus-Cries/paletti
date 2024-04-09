@@ -1,37 +1,15 @@
 <script lang="ts">
-    import { page } from "$app/stores"
-    import { palettes } from "./store"
+    export let colors: string[] = ["6F0021", "EF347C", "FFB9CE"]
+    export let classOverride: string = ""
 </script>
 
-<div class="flex w-fit content-center items-baseline gap-4 px-7 pt-3 pb-9">
-    <div class="flex">
-        <div
-            class="museomoderno -mr-8 text-6xl font-black"
-            style="color: #{$palettes[$page.data.focusedPalette][1]}"
-        >
-            p
-        </div>
-        <div
-            class="museomoderno text-6xl font-black"
-            style="color: #{$palettes[$page.data.focusedPalette][4]}"
-        >
-            p
-        </div>
-        <div
-            class="museomoderno -ml-8 text-6xl font-black"
-            style="color: #{$palettes[$page.data.focusedPalette][7]}"
-        >
-            p
-        </div>
-    </div>
-    <p class="comfortaa none text-3xl font-bold">paletti</p>
+<div class="flex {classOverride}">
+    <div class="museomoderno -mr-8 text-6xl font-black" style="color: #{colors[0]}">p</div>
+    <div class="museomoderno text-6xl font-black" style="color: #{colors[1]}">p</div>
+    <div class="museomoderno -ml-8 text-6xl font-black" style="color: #{colors[2]}">p</div>
 </div>
 
 <style>
-    .comfortaa {
-        font-family: "Comfortaa", sans-serif;
-    }
-
     .museomoderno {
         font-family: "MuseoModerno", sans-serif;
     }

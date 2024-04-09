@@ -36,24 +36,26 @@
 >
     <div class="flex w-full items-baseline justify-between">
         <div class="flex gap-2 pl-1.5">
-            <label for={`${index}-palette-name`} class="btn btn-sm btn-circle hover:cursor-pointer">
+            <label for={`${index}-palette-name`} class="btn btn-circle btn-sm hover:cursor-pointer">
                 <Pencil size={14} />
             </label>
-            <input
-                id={`${index}-palette-name`}
-                type="text"
-                placeholder="Enter a name"
-                class="input input-sm z-50 max-w-[200px] text-xl font-bold"
-                maxlength={nameLimit}
-                value={$page.data.names[index]}
-                on:change={setNewName}
-            />
+            {#if $page.data.names !== undefined}
+                <input
+                    id={`${index}-palette-name`}
+                    type="text"
+                    placeholder="Enter a name"
+                    class="input input-sm z-50 max-w-[200px] text-xl font-bold"
+                    maxlength={nameLimit}
+                    value={$page.data.names[index]}
+                    on:change={setNewName}
+                />
+            {/if}
         </div>
 
         <div>
-            {#if $page.data.mainColors.length >= 2 && index !== $page.data.focusedPalette}
+            {#if $page.data.mainColors?.length >= 2 && index !== $page.data.focusedPalette}
                 <button
-                    class="btn btn-sm btn-circle"
+                    class="btn btn-circle btn-sm"
                     on:click={() => {
                         focusPalette(index)
                     }}
@@ -61,10 +63,10 @@
                     <Maximize2 size={15} />
                 </button>
             {/if}
-            {#if $page.data.mainColors.length >= 2}
+            {#if $page.data.mainColors?.length >= 2}
                 <button
                     disabled={$page.data.mainColors.length <= 1}
-                    class="btn btn-sm btn-circle"
+                    class="btn btn-circle btn-sm"
                     on:click={() => {
                         deletePalette(index)
                     }}
@@ -86,7 +88,9 @@
         {#each palette as color, colorIndex}
             <Color
                 {isFocused}
-                color={colorIndex === 4 ? $page.data.mainColors[index] : color}
+                color={colorIndex === 4
+                    ? $page.data.mainColors !== undefined && $page.data.mainColors[index]
+                    : color}
                 index={colorIndex}
             />
         {/each}

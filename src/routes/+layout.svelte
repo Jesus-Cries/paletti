@@ -1,9 +1,15 @@
 <script lang="ts">
     import "../app.css"
+    import Navbar from "./Navbar.svelte"
 </script>
 
 <svelte:head>
     <title>Paletti</title>
 </svelte:head>
 
-<div><slot /></div>
+<div class="flex flex-col" data-theme="paletti">
+    <Navbar />
+    <div class="relative mt-[62px] md:mt-[78px]">
+        <slot />
+    </div>
+</div>

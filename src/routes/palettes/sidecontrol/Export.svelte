@@ -35,7 +35,7 @@
         let cssVariables: string[] = [":root {"]
 
         // Add CSS variables for each color
-        $page.data.names.forEach((name: string, index: number) => {
+        $page.data.names?.forEach((name: string, index: number) => {
             let count: number = 9
             $palettes[index].forEach((color: string) => {
                 cssVariables = [
@@ -59,7 +59,7 @@
     $: {
         let tailwindTheme: string[] = ["theme: {", "    extend: {", "        colors: {"]
 
-        $page.data.names.forEach((name: string, index: number) => {
+        $page.data.names?.forEach((name: string, index: number) => {
             let count: number = 9
             // Add palette name
             tailwindTheme = [...tailwindTheme, `            ${nameToCamelCase(name)}: {`]
@@ -79,7 +79,7 @@
 
     let exportArray: string[] = []
     $: {
-        exportArray = $page.data.names.map(
+        exportArray = $page.data.names?.map(
             (name: string, index: number) =>
                 `const ${nameToCamelCase(name)}: string[] = [${$palettes[index]
                     .map((color: string) => `"#${color}"`)
@@ -145,7 +145,7 @@
 
 <div class="tooltip w-full" data-tip="Show export options [e]">
     <button
-        class="btn-primary btn w-full"
+        class="btn btn-primary w-full"
         on:click={() => {
             modal.showModal()
         }}
@@ -160,10 +160,10 @@
     </form>
     <div class="modal-box fixed top-[10%] w-full max-w-5xl overflow-hidden">
         <form method="dialog">
-            <button class="btn-ghost btn btn-sm btn-circle absolute right-2 top-2">✕</button>
+            <button class="btn btn-circle btn-ghost btn-sm absolute right-2 top-2">✕</button>
         </form>
         <h3 class="pb-4 text-lg font-bold">Export options</h3>
-        <div class="tabs tabs-boxed w-fit bg-white px-0 pb-1.5">
+        <div class="tabs-boxed tabs w-fit bg-white px-0 pb-1.5">
             {#each exportOptions as exportOption, index}
                 <button
                     class={`tab ${currentOption === index && "tab-active"}`}

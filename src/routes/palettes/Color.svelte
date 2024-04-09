@@ -1,7 +1,6 @@
 <script lang="ts">
     import convert from "color-convert"
     import { Copy } from "lucide-svelte"
-    import { slide, scale, fade } from "svelte/transition"
     import { ntc } from "$lib/ntc"
 
     export let isFocused: boolean
@@ -76,7 +75,7 @@
             }`}
             style:color={textColor}
         >
-            {#if color !== undefined}
+            {#if color !== undefined && typeof color === "string"}
                 {ntc.name(color)[1]}
             {/if}
         </p>

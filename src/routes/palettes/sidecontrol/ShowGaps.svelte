@@ -44,9 +44,9 @@
     <div class="flex w-full gap-2">
         {#each buttons as button}
             <button
-                class={`btn flex h-fit flex-1 flex-col gap-2 border-2 border-gray-200 bg-white py-2.5 hover:bg-gray-100 active:border-paletti-300 ${
+                class={`active:border-primary-300 btn flex h-fit flex-1 flex-col gap-2 border-2 border-gray-200 bg-white py-2.5 hover:bg-gray-100 ${
                     $colorSettings.showGap === button.value
-                        ? "border-paletti-500 text-gray-900 shadow-inner hover:border-paletti-500"
+                        ? "border-primary-500 hover:border-primary-500 text-gray-900 shadow-inner"
                         : "text-gray-400 shadow hover:text-gray-900 active:shadow-inner"
                 }`}
                 on:click={() => {
