@@ -26,6 +26,9 @@ module.exports = {
                 "primary-200": "#FEBACC",
                 "primary-100": "#FFEBEE",
             },
+            screens: {
+                xs: "500px",
+            },
         },
     },
     plugins: [require("@tailwindcss/typography"), require("daisyui")],
