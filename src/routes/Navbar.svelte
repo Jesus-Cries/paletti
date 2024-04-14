@@ -14,10 +14,19 @@
         { name: "Generator", link: "/palettes" },
     ]
 
-    let path: string = ""
-    $: path = $page.url.pathname.replaceAll("/", "")
+    let pathname: string = ""
+    let hash: string = ""
 
-    // FIXME: Highlighting of active page is not working on getting started
+    $: pathname = $page.url.pathname
+    $: hash = $page.url.hash
+
+    function isVisited(pathname: string, hash: string, link: string) {
+        if (hash === "" && pathname.replaceAll("/", "") === link.replaceAll("/", "")) return true
+
+        if (hash !== "" && hash.replaceAll("/", "") === link.replaceAll("/", "")) return true
+
+        return false
+    }
 </script>
 
 <div
@@ -28,14 +37,14 @@
         {#each pages as page}
             <a
                 class="btn btn-ghost no-animation btn-xs relative uppercase md:btn-md hover:bg-transparent hover:text-primary
-                {path === page.link.replaceAll('/', '') && 'text-primary'}"
+                {isVisited(pathname, hash, page.link) && 'text-primary'}"
                 href={page.link}
             >
                 {page.name}
 
                 <span
                     class="absolute -bottom-[17px] h-0.5 rounded-full bg-primary transition-[width] duration-500 md:-bottom-[9px]
-                    {path === page.link.replaceAll('/', '') ? 'w-full' : 'w-0'}"
+                    {isVisited(pathname, hash, page.link) ? 'w-full' : 'w-0'}"
                 />
             </a>
         {/each}
