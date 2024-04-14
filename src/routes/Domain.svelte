@@ -4,7 +4,10 @@
     import Logo from "./Logo.svelte"
 </script>
 
-<a class="flex h-fit w-fit content-center items-baseline md:-translate-y-0.5 md:gap-1" href="/">
+<a
+    class="flex h-fit w-fit -translate-y-1.5 content-center items-baseline md:-translate-y-2 md:gap-1"
+    href="/"
+>
     <Logo
         colors={[
             $page.url.pathname === "/palettes" && $palettes[$page.data.focusedPalette] !== undefined

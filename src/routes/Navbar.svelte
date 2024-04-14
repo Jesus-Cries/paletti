@@ -18,14 +18,13 @@
     $: path = $page.url.pathname.replaceAll("/", "")
 
     // FIXME: Highlighting of active page is not working on getting started
-    // TODO: Rework alignment of navbar without using translate
 </script>
 
 <div
-    class="fixed top-0 z-50 -mt-1.5 flex w-full -translate-y-1 items-center justify-between bg-white pb-0.5 pl-1 pt-0 shadow md:-mt-3 md:pl-2.5 md:pt-1"
+    class="fixed top-0 z-50 flex h-14 w-full items-center justify-between bg-white pl-1 shadow md:h-16 md:pl-2.5"
 >
     <Domain />
-    <div class="xs:flex hidden -translate-y-1 gap-3 pr-4 pt-6 md:gap-6">
+    <div class="hidden gap-3 pr-4 xs:flex md:gap-6">
         {#each pages as page}
             <a
                 class="btn btn-ghost no-animation btn-xs relative uppercase md:btn-md hover:bg-transparent hover:text-primary
@@ -35,14 +34,14 @@
                 {page.name}
 
                 <span
-                    class="absolute -bottom-3.5 h-0.5 rounded-full bg-primary transition-[width] duration-500 md:-bottom-2
+                    class="absolute -bottom-[17px] h-0.5 rounded-full bg-primary transition-[width] duration-500 md:-bottom-[9px]
                     {path === page.link.replaceAll('/', '') ? 'w-full' : 'w-0'}"
                 />
             </a>
         {/each}
     </div>
 
-    <div class="xs:hidden dropdown dropdown-end dropdown-bottom flex translate-y-1.5">
+    <div class="dropdown dropdown-end dropdown-bottom flex xs:hidden">
         <div tabindex="0" role="button" class="btn btn-ghost hover:bg-transparent"><Menu /></div>
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
         <ul
