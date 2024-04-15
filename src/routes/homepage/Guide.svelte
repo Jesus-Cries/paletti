@@ -1,6 +1,6 @@
 <div class="flex justify-center pt-10">
     <article
-        class="prose max-w-3xl px-10 pb-16 text-gray-600 [&_a]:text-gray-800 [&_blockquote]:text-gray-800 [&_h1]:text-gray-800 [&_h2]:text-gray-800 [&_h3]:text-gray-800 [&_h4]:text-gray-800 [&_hr]:bg-gray-100"
+        class="prose max-w-3xl px-10 pb-12 text-gray-600 [&_a]:text-gray-800 [&_blockquote]:text-gray-800 [&_h1]:text-gray-800 [&_h2]:text-gray-800 [&_h3]:text-gray-800 [&_h4]:text-gray-800 [&_hr]:bg-gray-100"
     >
         <h1>Creating color palettes is hard</h1>
 
