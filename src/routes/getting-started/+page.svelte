@@ -124,11 +124,13 @@
         <h3>HSL</h3>
 
         <p>
-            But first you need to know a little bit about the color model <a
+            But first you need to know a little bit about the color model
+            <a
                 href="https://www.w3schools.com/colors/colors_hsl.asp"
                 target="_blank"
-                rel="noopener noreferrer">HSL</a
-            >. The letters stand for <i>Hue</i>, <i>Saturation</i> and
+                rel="noopener noreferrer"
+                >HSL
+            </a>. The letters stand for <i>Hue</i>, <i>Saturation</i> and
             <i>lightness</i>. Each of these values describes an aspect of color:
         </p>
 
@@ -216,8 +218,10 @@
                 <b>Tailwind CSS</b>
                 <p>
                     Use this export option if you use
-                    <a href="https://tailwindcss.com/">Tailwind CSS</a> and want to add your
-                    palettes to your <code>tailwind.config.js</code>.
+                    <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">
+                        Tailwind CSS
+                    </a>
+                    and want to add your palettes to your <code>tailwind.config.js</code>.
                 </p>
             </li>
             <li>
@@ -232,7 +236,13 @@
                 <p>
                     Use this export option if you want to use your palettes in your code. The code
                     in this export is written in
-                    <a href="https://www.typescriptlang.org/"> Typescript</a>
+                    <a
+                        href="https://www.typescriptlang.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Typescript
+                    </a>
                     .
                 </p>
             </li>
