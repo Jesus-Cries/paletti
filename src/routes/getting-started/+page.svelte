@@ -1,9 +1,12 @@
 <script>
     import { fade } from "svelte/transition"
     import PaletteSample from "./PaletteSample.svelte"
+    import QuickNav from "./QuickNav.svelte"
+    import QuickNavLink from "./QuickNavLink.svelte"
 </script>
 
 <div transition:fade={{ duration: 100 }} class="absolute flex w-full justify-center pt-10">
+    <QuickNav />
     <article
         class="prose max-w-3xl px-10 pb-12 text-gray-600 [&_a]:text-gray-800 [&_blockquote]:text-gray-800 [&_h1]:text-gray-800 [&_h2]:text-gray-800 [&_h3]:text-gray-800 [&_h4]:text-gray-800 [&_hr]:bg-gray-100"
     >
@@ -15,7 +18,10 @@
             probably need.
         </p>
 
+        <QuickNavLink id="what-you-definitely-need" />
         <h2>What you definitely need</h2>
+
+        <QuickNavLink id="multiple-shades-of-gray" />
         <h3>Multiple shades of gray</h3>
 
         <p>
@@ -52,6 +58,7 @@
             this website like text and background.
         </p>
 
+        <QuickNavLink id="primary-color" />
         <h3>Primary color</h3>
 
         <p>
@@ -80,8 +87,10 @@
             also be used as a background color as you can see <a href="/#features">here</a>.
         </p>
 
+        <QuickNavLink id="what-you-might-need-as-well" />
         <h2>What you might need as well</h2>
 
+        <QuickNavLink id="secondary-color" />
         <h3>Secondary color</h3>
 
         <p>
@@ -95,6 +104,7 @@
             This website currently doesn't have a secondary color, so there is nothing to show here.
         </p>
 
+        <QuickNavLink id="further-palettes" />
         <h3>Further palettes</h3>
 
         <p>
@@ -102,6 +112,7 @@
             errors. The limit is your imagination.
         </p>
 
+        <QuickNavLink id="how-to-use-paletti" />
         <h2>How to use Paletti</h2>
 
         <p>
@@ -109,6 +120,7 @@
             create them.
         </p>
 
+        <QuickNavLink id="hsl" />
         <h3>HSL</h3>
 
         <p>
@@ -136,6 +148,7 @@
             </li>
         </ol>
 
+        <QuickNavLink id="choosing-a-base-color" />
         <h3>Choosing a base color</h3>
 
         <p>
@@ -171,6 +184,7 @@
 
         <p>These guidelines are based on my experience. Of course, you're free to experiment!</p>
 
+        <QuickNavLink id="individualizing" />
         <h3>Individualizing</h3>
 
         <p>
@@ -185,6 +199,7 @@
             them. This name is also used in some of the export options.
         </p>
 
+        <QuickNavLink id="exporting" />
         <h3>Exporting</h3>
 
         <p>Once you're happy with your color palettes you have multiple export options:</p>
