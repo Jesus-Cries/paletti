@@ -15,15 +15,11 @@
     ]
 
     let pathname: string = ""
-    let hash: string = ""
 
     $: pathname = $page.url.pathname
-    $: hash = $page.url.hash
 
-    function isVisited(pathname: string, hash: string, link: string) {
-        if (hash === "" && pathname.replaceAll("/", "") === link.replaceAll("/", "")) return true
-
-        if (hash !== "" && hash.replaceAll("/", "") === link.replaceAll("/", "")) return true
+    function isVisited(pathname: string, link: string) {
+        if (pathname.replaceAll("/", "") === link.replaceAll("/", "")) return true
 
         return false
     }
@@ -37,14 +33,14 @@
         {#each pages as page}
             <a
                 class="btn btn-ghost no-animation btn-xs relative uppercase md:btn-md hover:bg-transparent hover:text-primary
-                {isVisited(pathname, hash, page.link) && 'text-primary'}"
+                {isVisited(pathname, page.link) && 'text-primary'}"
                 href={page.link}
             >
                 {page.name}
 
                 <span
                     class="absolute -bottom-[17px] h-0.5 rounded-full bg-primary transition-[width] duration-500 md:-bottom-[9px]
-                    {isVisited(pathname, hash, page.link) ? 'w-full' : 'w-0'}"
+                    {isVisited(pathname, page.link) ? 'w-full' : 'w-0'}"
                 />
             </a>
         {/each}
