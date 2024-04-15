@@ -1,7 +1,7 @@
 <ul class="menu sticky top-24 hidden h-fit w-fit rounded-box bg-gray-100 pr-6 lg:block">
-    <li class="menu-title">Section</li>
+    <li class="menu-title">Sections</li>
     <li>
-        <a href="#what-you-definitely-need">What you definitely need</a>
+        <a href="#what-you-definitely-need" class="font-semibold">What you definitely need</a>
         <ul>
             <li>
                 <a href="#multiple-shades-of-gray">Multiple shades of gray</a>
@@ -12,7 +12,7 @@
         </ul>
     </li>
     <li>
-        <a href="#what-you-might-need-as-well">What you might need as well</a>
+        <a href="#what-you-might-need-as-well" class="font-semibold">What you might need as well</a>
         <ul>
             <li>
                 <a href="#secondary-color">Secondary color</a>
@@ -23,7 +23,7 @@
         </ul>
     </li>
     <li>
-        <a href="#how-to-use-paletti">How to use Paletti</a>
+        <a href="#how-to-use-paletti" class="font-semibold">How to use Paletti</a>
         <ul>
             <li>
                 <a href="#hsl">HSL</a>
