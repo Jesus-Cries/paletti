@@ -5,14 +5,14 @@
         <h1>Creating color palettes is hard</h1>
 
         <p>
-            Whenever I designed a website I always got hung up on colors. Of course I tried
+            Whenever I designed a website, I always got hung up on colors. Of course, I tried
             searching for help online but all I ever found were color websites that were like
         </p>
 
         <blockquote><p>These 5 magic colors are all you need for your design!</p></blockquote>
 
         <p>
-            I've used so many of those color palette generators and they have never worked for me
+            I've used so many of those color palette generators, and they have never worked for me
             and I never knew why.
         </p>
 
@@ -33,7 +33,7 @@
         <p>
             I've tried to utilize the knowledge from that chapter and created some color palettes
             that were actually usable and resulted in better-looking designs. But the process was
-            still very time consuming. Creating a color palette manually from scratch took between 5
+            still very time-consuming. Creating a color palette manually from scratch took between 5
             and 10 minutes.
         </p>
 
@@ -41,7 +41,7 @@
 
         <blockquote>
             <p>
-                And that's how you turn a five hour task into a one and a half month task. Because
+                And that's how you turn a five-hour task into a one and a half month task. Because
                 I'm a programmer. And that's what we do. ~<a
                     href="https://www.youtube.com/clip/Ugkxni6Ep6DCRKnrb4pMpkFiV9mF3Ed1Op3a"
                 >
@@ -51,13 +51,12 @@
         </blockquote>
 
         <p>
-            And with that legendary quote
-            <i><b>Paletti</b></i> was born.
+            And with that legendary quote <i><b>Paletti</b></i> was born.
         </p>
 
         <p>
             Now all that's left is that you <i>give it a try</i>. I hope you find it as useful as I
-            do. If you want a quickstart have a look at the
+            do. If you want a quick start, take a look at the
             <a href="/getting-started">Getting Started</a> page.
         </p>
     </article>

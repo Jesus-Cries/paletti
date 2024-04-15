@@ -14,7 +14,7 @@
 
         <p>
             Remember those color websites that always give you 5 magic colors for your design? In
-            reality you need way more than that. Let's go through the different types of colors you
+            reality, you need way more than that. Let's go through the different types of colors you
             probably need.
         </p>
 
@@ -30,10 +30,10 @@
         </p>
 
         <p>
-            Take for example the "color" gray which makes up the majority of an interface. According
-            to the <i>60-30-10 Rule</i> it should occupy about 60% of your design. When designing a website
-            you will realize that a single shade of gray is not enough. You need multiple shades of gray
-            to create a visually appealing design.
+            Take for example the "color" gray, which makes up the majority of an interface.
+            According to the <i>60-30-10 Rule</i> it should occupy about 60% of your design. When designing
+            a website, you will realize that a single shade of gray is not enough. You need multiple
+            shades of gray to create a visually appealing design.
         </p>
 
         <p>Take the gray color palette for this website as an example:</p>
@@ -53,8 +53,8 @@
         />
 
         <p>
-            As you can see I like my palettes with 9 colors. That way you have a good amount of
-            choice. If I didn't mess it up you should see these colors on most of the elements on
+            As you can see, I like my palettes with 9 colors. That way you have a good amount of
+            choice. If I didn't mess it up, you should see these colors on most of the elements on
             this website like text and background.
         </p>
 
@@ -84,7 +84,7 @@
 
         <p>
             This palette is mostly used for highlighting interactive elements like buttons. It can
-            also be used as a background color as you can see <a href="/#features">here</a>.
+            also be used as a background color, as you can see <a href="/#features">here</a>.
         </p>
 
         <QuickNavLink id="what-you-might-need-as-well" />
@@ -95,7 +95,7 @@
 
         <p>
             If you're wondering what the <i>10</i> from the <i>60-30-10 Rule</i> is, you've come to the
-            right place. Depending on the complexity of your design you might want to introduce a secondary
+            right place. Depending on the complexity of your design, you might want to introduce a secondary
             color. This color can be used to highlight new features or other important parts of your
             website.
         </p>
@@ -116,7 +116,7 @@
         <h2>How to use Paletti</h2>
 
         <p>
-            Now you've heard what palettes you (might) need. Let's have a look at how to actually
+            Now you've heard what palettes you (might) need. Let's take a look at how to actually
             create them.
         </p>
 
@@ -141,7 +141,7 @@
             </li>
             <li>
                 <b>Saturation</b> describes the intensity of a color. It ranges from 0 to 100. The lower
-                the value the grayer a color looks.
+                the value, the grayer a color looks.
             </li>
             <li>
                 <b>Lightness</b> is the amount of light a color has. It also ranges from 0 to 100. A
@@ -158,7 +158,7 @@
             "center" of your palette and the other colors will be calculated based on it.
         </p>
 
-        <p>For the best results stick to the following guidelines:</p>
+        <p>For the best results, stick to the following guidelines:</p>
 
         <ul>
             <li>
@@ -190,9 +190,10 @@
         <h3>Individualizing</h3>
 
         <p>
-            If you want to give your palettes a personal touch you can adjust the <b>Hue Rotation</b
+            If you want to give your palettes a personal touch, you can adjust the <b
+                >Hue Rotation</b
             >. This will change the hue of all colors in your palette by a certain amount. The
-            further away from the base color the more the colors will change. This can be useful if
+            further away from the base color, the more the colors will change. This can be useful if
             you want to give your palettes a different tint.
         </p>
 
@@ -204,14 +205,14 @@
         <QuickNavLink id="exporting" />
         <h3>Exporting</h3>
 
-        <p>Once you're happy with your color palettes you have multiple export options:</p>
+        <p>Once you're happy with your color palettes, you have multiple export options:</p>
 
         <ul>
             <li>
                 <b>CSS Variables</b>
                 <p>
                     Use this export option if you want to use your color palettes as CSS variables
-                    inside of your CSS file.
+                    inside your CSS file.
                 </p>
             </li>
             <li>
