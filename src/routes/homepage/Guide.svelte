@@ -42,16 +42,23 @@
         <blockquote>
             <p>
                 And that's how you turn a five hour task into a one and a half month task. Because
-                I'm a programmer. And that's what we do.
+                I'm a programmer. And that's what we do. ~<a
+                    href="https://www.youtube.com/clip/Ugkxni6Ep6DCRKnrb4pMpkFiV9mF3Ed1Op3a"
+                >
+                    Michael Reeves
+                </a>
             </p>
         </blockquote>
 
         <p>
-            And with that
-            <a href="https://www.youtube.com/clip/Ugkxni6Ep6DCRKnrb4pMpkFiV9mF3Ed1Op3a">
-                legendary quote
-            </a>
+            And with that legendary quote
             <i><b>Paletti</b></i> was born.
+        </p>
+
+        <p>
+            Now all that's left is that you <i>give it a try</i>. I hope you find it as useful as I
+            do. If you want a quickstart have a look at the
+            <a href="/getting-started">Getting Started</a> page.
         </p>
     </article>
 </div>

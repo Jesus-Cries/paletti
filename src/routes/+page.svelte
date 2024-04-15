@@ -5,7 +5,8 @@
     import Guide from "./homepage/Guide.svelte"
 
     // TODO: Make hero fancier (highlight some of the text)
-    // TODO: Add tutorial to guide section
+    // TODO: Move getting started to own page (+ add link to end of homepage)
+    // TODO: Create sidemenu for getting started
 </script>
 
 <div transition:fade={{ duration: 100 }} class="absolute w-full overflow-x-hidden">
