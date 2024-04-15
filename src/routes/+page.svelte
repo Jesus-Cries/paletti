@@ -5,7 +5,8 @@
     import Guide from "./homepage/Guide.svelte"
 
     // TODO: Make hero fancier (highlight some of the text)
-    // TODO: Add tutorial to guide section
+    // TODO: Add github link
+    // TODO: Make palette generator responsive
 </script>
 
 <div transition:fade={{ duration: 100 }} class="absolute w-full overflow-x-hidden">

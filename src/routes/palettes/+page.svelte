@@ -197,7 +197,6 @@
     // FIXME: Lightnesses of 0 and 100 turn hue rotation red
 
     // Features
-    // TODO: Add github link
     // TODO: Make amount of colors per palette customizable
     // TODO: Add some sort of fullscreen option
     // TODO: Make HSL values editable
@@ -206,7 +205,6 @@
     // TODO: Improve palette animations
     // TODO: Center palette when only one palette is present
     // TODO: Improve performance by only updating hues when hue rotation changes
-    // TODO: Make responsive
 
     // Testing
     // TODO: Check if saturation logic is still working correctly
