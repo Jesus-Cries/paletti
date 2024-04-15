@@ -10,7 +10,7 @@
 
     const pages: Page[] = [
         { name: "Home", link: "/" },
-        { name: "Getting started", link: "/#getting-started" },
+        { name: "Getting started", link: "/getting-started" },
         { name: "Generator", link: "/palettes" },
     ]
 
