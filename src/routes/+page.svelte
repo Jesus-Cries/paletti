@@ -5,6 +5,10 @@
     import Guide from "./homepage/Guide.svelte"
 
     // TODO: Make hero fancier (highlight some of the text)
+    // TODO: Add github link
+    // TODO: Add SideControl to mobile view
+    // FIXME: Deleting a palette shows "undefined" as name for a split second
+    // FIXME: Tooltips might be annoying on mobile (Needs to be tested)
 </script>
 
 <div transition:fade={{ duration: 100 }} class="absolute w-full overflow-x-hidden">

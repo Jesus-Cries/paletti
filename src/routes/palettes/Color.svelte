@@ -64,13 +64,13 @@
     }`}
 >
     <div
-        class={`flex h-full w-full flex-col items-center justify-center ${
+        class={`flex h-16 w-full flex-col items-center justify-center md:h-full ${
             index === 0 && "rounded-l-xl"
         } ${index === 8 && "rounded-r-xl"}`}
         style="background-color: #{color};"
     >
         <p
-            class={`relative top-6 z-50 w-4/5 overflow-hidden overflow-ellipsis whitespace-nowrap text-center text-sm font-medium transition-opacity ${
+            class={`relative top-6 z-50 hidden w-4/5 overflow-hidden overflow-ellipsis whitespace-nowrap text-center text-sm font-medium transition-opacity md:block ${
                 isFocused ? "opacity-100" : "opacity-0"
             }`}
             style:color={textColor}
@@ -80,8 +80,8 @@
             {/if}
         </p>
         <label
-            class={`swap swap-rotate h-full w-full opacity-0 transition-opacity duration-150 hover:opacity-100 ${
-                isClicked && "opacity-100"
+            class={`swap swap-rotate hidden h-full w-full transition-opacity duration-150 hover:opacity-100 md:inline-grid ${
+                isClicked ? "opacity-100" : "opacity-0"
             }`}
             style:color={textColor}
         >
@@ -108,9 +108,10 @@
     </div>
 
     <p
-        class={`absolute -bottom-8 transition-opacity ${isFocused ? "opacity-100" : "opacity-0"} ${
-            index !== 4 ? "text-gray-500" : "font-bold"
-        }`}
+        class={`absolute -bottom-10 hidden transition-opacity md:flex 
+        ${isFocused ? "opacity-100" : "opacity-0"} 
+        ${index !== 4 ? "text-gray-500" : "font-bold"}
+        `}
     >
         {color}
     </p>

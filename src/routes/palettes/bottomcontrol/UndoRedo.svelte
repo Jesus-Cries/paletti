@@ -15,7 +15,7 @@
         : "Go to next palette [Ctrl + y]"}
 >
     <button
-        class="btn-ghost btn-circle btn"
+        class="btn btn-circle btn-ghost"
         disabled={(direction === "back" && $historyBack.length < 2) ||
             (direction === "forward" && $historyForward.length === 0)}
         on:click={() => {

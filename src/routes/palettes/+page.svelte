@@ -93,6 +93,8 @@
 
     /** Deletes a palette based on index */
     function deletePalette(index: number) {
+        if (data.mainColors.length <= 1) return
+
         let newNames: string[] = [...data.names]
         let newMainColors: string[] = [...data.mainColors]
         let newHueRotations: number[] = [...data.hueRotations]
@@ -115,6 +117,9 @@
 
     /** Focuses a palette based on index */
     function focusPalette(index: number) {
+        if (index < 0) return
+        if (index >= data.mainColors.length) return
+
         const newUrl: string = createUrl(data.names, data.mainColors, data.hueRotations, index)
 
         navigate(newUrl)
@@ -195,9 +200,9 @@
     // Bugs
     // FIXME: Navigating to home and then back to palettes adds a new palette to history
     // FIXME: Lightnesses of 0 and 100 turn hue rotation red
+    // FIXME: Palettes can't be clicked behind parent div of BottomControl
 
     // Features
-    // TODO: Add github link
     // TODO: Make amount of colors per palette customizable
     // TODO: Add some sort of fullscreen option
     // TODO: Make HSL values editable
@@ -206,7 +211,6 @@
     // TODO: Improve palette animations
     // TODO: Center palette when only one palette is present
     // TODO: Improve performance by only updating hues when hue rotation changes
-    // TODO: Make responsive
 
     // Testing
     // TODO: Check if saturation logic is still working correctly
@@ -217,8 +221,9 @@
         const activeElement: Element | null = document.activeElement
         if (activeElement && activeElement.tagName === "INPUT") return
 
-        if (!isNaN(Number(e.key)))
-            document.dispatchEvent(new CustomEvent("changeExportOption", { detail: Number(e.key) }))
+        if (!isNaN(Number(e.key))) {
+            focusPalette(Number(e.key) - 1)
+        }
 
         if (e.key === " ") {
             document.dispatchEvent(new Event("createRandomPaletteConfig"))
@@ -226,6 +231,7 @@
             e.preventDefault()
         }
         if (e.key === "a" && !e.ctrlKey) document.dispatchEvent(new Event("addPalette"))
+        if (e.key === "d" && !e.ctrlKey) deletePalette(data.focusedPalette)
         if (e.key === "c" && !e.ctrlKey) document.dispatchEvent(new Event("copyExport"))
         if (e.key === "e") document.dispatchEvent(new Event("toggleExport"))
         if (e.key === "g") document.dispatchEvent(new Event("toggleShowGap"))
@@ -262,7 +268,7 @@
 <svelte:window on:keydown={handleKeyDown} />
 
 <div transition:fade={{ duration: 100 }} class="absolute flex h-[calc(100vh-84px)] w-full">
-    <div class="relative w-5/6 flex-col">
+    <div class="relative h-full w-full md:h-auto md:w-5/6">
         <Palettes />
         <BottomControl />
     </div>

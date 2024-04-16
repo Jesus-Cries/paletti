@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { onMount } from "svelte"
     import { Copy } from "lucide-svelte"
     import { page } from "$app/stores"
     import { palettes } from "../store"
@@ -111,36 +110,6 @@
             copyIsClicked = false
         }, 1000)
     }
-
-    // Change export option and toggle dialog when receiving corresponding events
-    onMount(() => {
-        function changeExportOption(e: Event) {
-            const customEvent = e as CustomEvent<any>
-
-            const keyAsNumber: number = customEvent.detail
-
-            if (keyAsNumber <= 0) return
-            if (keyAsNumber > exportOptions.length) return
-            if (!modal.open) return
-
-            currentOption = keyAsNumber - 1
-        }
-
-        function toggleExport() {
-            if (!modal.open) modal.showModal()
-            else modal.close()
-        }
-
-        document.addEventListener("copyExport", copyExport)
-        document.addEventListener("changeExportOption", changeExportOption)
-        document.addEventListener("toggleExport", toggleExport)
-
-        return () => {
-            document.removeEventListener("copyExport", copyExport)
-            document.removeEventListener("changeExportOption", changeExportOption)
-            document.removeEventListener("toggleExport", toggleExport)
-        }
-    })
 </script>
 
 <div class="tooltip w-full" data-tip="Show export options [e]">

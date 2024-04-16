@@ -1,5 +1,5 @@
 <svg
-    class="w-[110%]"
+    class="w-[110%] translate-y-px"
     viewBox="0 0 1920 200"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
