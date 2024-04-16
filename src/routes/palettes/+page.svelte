@@ -7,6 +7,7 @@
     import BottomControl from "./bottomcontrol/BottomControl.svelte"
     import SideControl from "./sidecontrol/SideControl.svelte"
     import { PaletteCreator } from "./PaletteCreator"
+    import Disclaimer from "./Disclaimer.svelte"
 
     /** Data from +page.ts (URL parameters) */
     export let data
@@ -268,6 +269,7 @@
 <svelte:window on:keydown={handleKeyDown} />
 
 <div transition:fade={{ duration: 100 }} class="absolute flex h-[calc(100vh-84px)] w-full">
+    <Disclaimer />
     <div class="relative h-full w-full md:h-auto md:w-5/6">
         <Palettes />
         <BottomControl />

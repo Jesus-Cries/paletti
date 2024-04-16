@@ -7,7 +7,6 @@
     // TODO: Make hero fancier (highlight some of the text)
     // TODO: Add github link
     // TODO:? Add SideControl to mobile view
-    // TODO:? Add disclaimer that not all features are available on mobile
     // TODO: Improve look of full website on Surface size
 </script>
 
