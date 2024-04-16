@@ -200,6 +200,7 @@
     // Bugs
     // FIXME: Navigating to home and then back to palettes adds a new palette to history
     // FIXME: Lightnesses of 0 and 100 turn hue rotation red
+    // FIXME: Palettes can't be clicked behind parent div of BottomControl
 
     // Features
     // TODO: Make amount of colors per palette customizable

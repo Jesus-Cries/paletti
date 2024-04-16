@@ -108,7 +108,7 @@
     </div>
 
     <p
-        class={`absolute -bottom-8 hidden transition-opacity md:flex 
+        class={`absolute -bottom-10 hidden transition-opacity md:flex 
         ${isFocused ? "opacity-100" : "opacity-0"} 
         ${index !== 4 ? "text-gray-500" : "font-bold"}
         `}
