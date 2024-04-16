@@ -9,7 +9,7 @@
 </script>
 
 <div
-    class="tooltip"
+    class="inline sm:tooltip"
     data-tip={direction === "back"
         ? "Go to previous palette [Ctrl + z]"
         : "Go to next palette [Ctrl + y]"}

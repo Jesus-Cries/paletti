@@ -112,7 +112,7 @@
     }
 </script>
 
-<div class="tooltip w-full" data-tip="Show export options [e]">
+<div class="inline w-full sm:tooltip" data-tip="Show export options [e]">
     <button
         class="btn btn-primary w-full"
         on:click={() => {

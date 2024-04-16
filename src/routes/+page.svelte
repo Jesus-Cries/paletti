@@ -8,7 +8,8 @@
     // TODO: Add github link
     // TODO: Add SideControl to mobile view
     // FIXME: Deleting a palette shows "undefined" as name for a split second
-    // FIXME: Tooltips might be annoying on mobile (Needs to be tested)
+    // FIXME: BottomControl is not visible on mobile view
+    // FIXME: Palette names slide above logo on mobile view
 </script>
 
 <div transition:fade={{ duration: 100 }} class="absolute w-full overflow-x-hidden">

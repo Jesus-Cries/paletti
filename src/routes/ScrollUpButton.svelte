@@ -29,7 +29,7 @@
 </script>
 
 <div
-    class="tooltip fixed bottom-6 right-6 z-[100] transition-all duration-300 {!showButton &&
+    class="!fixed bottom-6 right-6 z-[100] transition-all duration-300 sm:tooltip {!showButton &&
         'opacity-0'}"
     data-tip="To top"
 >
@@ -38,7 +38,7 @@
             window.scrollTo(0, 0)
         }}
         disabled={!showButton}
-        class="btn btn-circle btn-primary border-none bg-primary-600 shadow-md hover:bg-primary-500"
+        class="btn btn-circle btn-primary border-none bg-primary-600 shadow-md sm:hover:bg-primary-500"
     >
         <ChevronUp color="#fff" size="26" />
     </button>
