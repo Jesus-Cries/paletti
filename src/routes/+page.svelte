@@ -6,8 +6,9 @@
 
     // TODO: Make hero fancier (highlight some of the text)
     // TODO: Add github link
-    // TODO: Add SideControl to mobile view
-    // FIXME: Deleting a palette shows "undefined" as name for a split second
+    // TODO:? Add SideControl to mobile view
+    // TODO:? Add disclaimer that not all features are available on mobile
+    // TODO: Improve look of full website on Surface size
 </script>
 
 <div transition:fade={{ duration: 100 }} class="absolute w-full overflow-x-hidden">

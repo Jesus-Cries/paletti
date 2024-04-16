@@ -43,7 +43,7 @@
                     placeholder="Enter a name"
                     class="input input-sm max-w-[200px] text-xl font-bold"
                     maxlength={nameLimit}
-                    value={$page.data.names[index]}
+                    value={$page.data.names[index] || " "}
                     on:change={setNewName}
                 />
             {/if}
