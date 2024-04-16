@@ -80,7 +80,10 @@
             {/if}
         </div>
     </div>
-    <div
+    <button
+        on:click={() => {
+            focusPalette(index)
+        }}
         class={`flex w-full items-start gap-0 rounded-xl ring-gray-300 ring-offset-2 transition-all md:ring-offset-[3px] ${
             isFocused ? " ring-[3px] md:h-72" : "md:h-32"
         } ${$colorSettings.showGap && "!gap-1.5"}`}
@@ -98,5 +101,5 @@
                 index={colorIndex}
             />
         {/each}
-    </div>
+    </button>
 </div>
