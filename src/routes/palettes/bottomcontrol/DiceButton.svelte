@@ -59,9 +59,9 @@
     })
 </script>
 
-<div class="tooltip" data-tip="Create random palette [Spacebar]">
+<div class="inline sm:tooltip" data-tip="Create random palette [Spacebar]">
     <button
-        class="btn-primary btn-circle btn-lg btn {isAnimating && 'rotating'}"
+        class="btn btn-circle btn-primary btn-lg {isAnimating && 'rotating'}"
         on:click={createRandomPaletteConfig}
         on:mousedown={() => {
             if (timeout) clearTimeout(timeout)

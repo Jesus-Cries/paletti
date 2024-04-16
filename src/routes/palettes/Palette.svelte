@@ -41,7 +41,7 @@
                     id={`${index}-palette-name`}
                     type="text"
                     placeholder="Enter a name"
-                    class="input input-sm z-50 max-w-[200px] text-xl font-bold"
+                    class="input input-sm max-w-[200px] text-xl font-bold"
                     maxlength={nameLimit}
                     value={$page.data.names[index]}
                     on:change={setNewName}
@@ -51,7 +51,10 @@
 
         <div>
             {#if $page.data.mainColors?.length >= 2}
-                <div class="tooltip tooltip-left" data-tip="Edit palette [{index + 1}]">
+                <div
+                    class="inline sm:tooltip sm:tooltip-left"
+                    data-tip="Edit palette [{index + 1}]"
+                >
                     <button
                         class="btn btn-circle btn-sm"
                         on:click={() => {
@@ -63,7 +66,7 @@
                 </div>
             {/if}
             {#if $page.data.mainColors?.length >= 2}
-                <div class="tooltip tooltip-left" data-tip="Delete palette [d]">
+                <div class="inline sm:tooltip sm:tooltip-left" data-tip="Delete palette [d]">
                     <button
                         disabled={$page.data.mainColors.length <= 1}
                         class="btn btn-circle btn-sm"

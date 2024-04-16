@@ -3,7 +3,9 @@
     import DiceButton from "./DiceButton.svelte"
 </script>
 
-<div class="absolute bottom-1 ml-auto mr-auto flex w-full justify-center md:pb-6">
+<div
+    class="fixed bottom-8 z-[100] ml-auto mr-auto flex w-full justify-center md:absolute md:bottom-1 md:pb-6"
+>
     <div
         class="z-50 flex items-center gap-10 rounded-full border-2 border-gray-200 bg-gray-100 px-10 py-4 shadow-md"
     >
