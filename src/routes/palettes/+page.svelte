@@ -93,6 +93,8 @@
 
     /** Deletes a palette based on index */
     function deletePalette(index: number) {
+        if (data.mainColors.length <= 1) return
+
         let newNames: string[] = [...data.names]
         let newMainColors: string[] = [...data.mainColors]
         let newHueRotations: number[] = [...data.hueRotations]
@@ -115,6 +117,9 @@
 
     /** Focuses a palette based on index */
     function focusPalette(index: number) {
+        if (index < 0) return
+        if (index >= data.mainColors.length) return
+
         const newUrl: string = createUrl(data.names, data.mainColors, data.hueRotations, index)
 
         navigate(newUrl)
@@ -215,8 +220,9 @@
         const activeElement: Element | null = document.activeElement
         if (activeElement && activeElement.tagName === "INPUT") return
 
-        if (!isNaN(Number(e.key)))
-            document.dispatchEvent(new CustomEvent("changeExportOption", { detail: Number(e.key) }))
+        if (!isNaN(Number(e.key))) {
+            focusPalette(Number(e.key) - 1)
+        }
 
         if (e.key === " ") {
             document.dispatchEvent(new Event("createRandomPaletteConfig"))
@@ -224,6 +230,7 @@
             e.preventDefault()
         }
         if (e.key === "a" && !e.ctrlKey) document.dispatchEvent(new Event("addPalette"))
+        if (e.key === "d" && !e.ctrlKey) deletePalette(data.focusedPalette)
         if (e.key === "c" && !e.ctrlKey) document.dispatchEvent(new Event("copyExport"))
         if (e.key === "e") document.dispatchEvent(new Event("toggleExport"))
         if (e.key === "g") document.dispatchEvent(new Event("toggleShowGap"))
