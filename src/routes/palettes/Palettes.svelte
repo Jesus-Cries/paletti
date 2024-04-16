@@ -5,12 +5,12 @@
 </script>
 
 <div
-    class="z-20 mb-3 flex h-full flex-col items-start gap-10 overflow-y-auto overflow-x-hidden px-3 pb-8 pr-4 pt-1"
+    class="z-20 mb-3 flex h-full flex-col items-start gap-10 overflow-y-auto overflow-x-hidden px-3 pb-8 pt-4 md:pr-4 md:pt-1"
 >
     {#each $palettes as palette, index}
         <Palette {palette} {index} />
     {/each}
-    <div class="flex w-full justify-center pb-32">
+    <div class="-mt-2 flex w-full justify-center pb-32 md:mt-0">
         <AddButton />
     </div>
 </div>

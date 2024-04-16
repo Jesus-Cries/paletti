@@ -32,12 +32,12 @@
 <div
     in:slide={{ delay: 550 }}
     out:fade
-    class={`flex w-full flex-col items-start gap-2 ${isFocused && "mb-6"}`}
+    class={`flex w-full flex-col items-start gap-2 ${isFocused && "md:mb-6"}`}
 >
     <div class="flex w-full items-baseline justify-between">
         <div class="flex gap-2 pl-1.5">
             <label for={`${index}-palette-name`} class="btn btn-circle btn-sm hover:cursor-pointer">
-                <Pencil size={14} />
+                <Pencil size={13} />
             </label>
             {#if $page.data.names !== undefined}
                 <input
@@ -55,12 +55,12 @@
         <div>
             {#if $page.data.mainColors?.length >= 2 && index !== $page.data.focusedPalette}
                 <button
-                    class="btn btn-circle btn-sm"
+                    class="btn btn-circle btn-sm hidden md:inline-flex"
                     on:click={() => {
                         focusPalette(index)
                     }}
                 >
-                    <Maximize2 size={15} />
+                    <Maximize2 size={14} />
                 </button>
             {/if}
             {#if $page.data.mainColors?.length >= 2}
@@ -71,14 +71,14 @@
                         deletePalette(index)
                     }}
                 >
-                    <Trash size={15} />
+                    <Trash size={14} />
                 </button>
             {/if}
         </div>
     </div>
     <div
         class={`flex w-full items-start gap-0 transition-[height,gap] ${
-            isFocused ? "h-72" : "h-32"
+            isFocused ? "md:h-72" : "md:h-32"
         } ${$colorSettings.showGap && "!gap-1.5"}`}
     >
         {#if palette.length === 0}

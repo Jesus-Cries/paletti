@@ -22,7 +22,10 @@
 </script>
 
 <div class="tooltip z-50" data-tip="Add new palette [a]">
-    <button class="btn-circle btn-lg btn" on:click={addBasePalette}>
+    <button class="btn btn-circle md:hidden" on:click={addBasePalette}>
+        <Plus size={26} />
+    </button>
+    <button class="btn btn-circle btn-lg hidden md:flex" on:click={addBasePalette}>
         <Plus size={30} />
     </button>
 </div>
