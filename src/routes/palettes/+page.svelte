@@ -207,6 +207,7 @@
     // TODO: Make amount of colors per palette customizable
     // TODO: Add some sort of fullscreen option
     // TODO: Make HSL values editable
+    // TODO:? Add SideControl to mobile view
 
     // Polishing
     // TODO: Improve palette animations
