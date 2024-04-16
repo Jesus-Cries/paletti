@@ -5,11 +5,11 @@
     let modal: any
 
     onMount(() => {
-        modal.showModal()
+        modal.show()
     })
 </script>
 
-<dialog bind:this={modal} class="modal md:hidden">
+<dialog bind:this={modal} class="modal bg-gray-900/50 md:hidden">
     <div class="modal-box max-w-xl">
         <h3 class="text-lg font-bold">Disclaimer</h3>
         <div class="flex flex-col gap-3 pb-2 pt-4">
@@ -20,7 +20,7 @@
             <button class="btn btn-primary mt-4 w-full">I understand</button>
         </form>
     </div>
-    <form method="dialog" class="modal-backdrop md:hidden">
+    <form method="dialog" class="modal-backdrop">
         <button>close</button>
     </form>
 </dialog>
