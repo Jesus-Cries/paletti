@@ -8,7 +8,6 @@
     // TODO: Add github link
     // TODO: Add SideControl to mobile view
     // FIXME: Deleting a palette shows "undefined" as name for a split second
-    // FIXME: BottomControl is not visible on mobile view
     // FIXME: Palette names slide above logo on mobile view
 </script>
 
