@@ -2,6 +2,7 @@
     import { Copy } from "lucide-svelte"
     import { page } from "$app/stores"
     import { palettes } from "../store"
+    import { onMount } from "svelte"
 
     /** Ref to modal element */
     let modal: any
@@ -110,6 +111,21 @@
             copyIsClicked = false
         }, 1000)
     }
+
+    // Toggle dialog and copy export when receiving corresponding events
+    onMount(() => {
+        function toggleExport() {
+            if (!modal.open) modal.showModal()
+            else modal.close()
+        }
+
+        document.addEventListener("copyExport", copyExport)
+        document.addEventListener("toggleExport", toggleExport)
+        return () => {
+            document.removeEventListener("copyExport", copyExport)
+            document.removeEventListener("toggleExport", toggleExport)
+        }
+    })
 </script>
 
 <div class="inline w-full sm:tooltip" data-tip="Show export options [e]">

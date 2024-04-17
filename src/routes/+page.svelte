@@ -5,8 +5,7 @@
     import Guide from "./homepage/Guide.svelte"
 
     // TODO: Make hero fancier (highlight some of the text)
-    // TODO: Add github link
-    // TODO: Improve look of full website on Surface size
+    // TODO:? Add github link
 </script>
 
 <div transition:fade={{ duration: 100 }} class="absolute w-full overflow-x-hidden">
