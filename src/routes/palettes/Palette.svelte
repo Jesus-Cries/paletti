@@ -76,8 +76,11 @@
             {/if}
         </div>
     </div>
-    <button
+    <div
         on:click={() => {
+            focusPalette(index)
+        }}
+        on:keydown={() => {
             focusPalette(index)
         }}
         class={`flex w-full items-start gap-0 rounded-xl ring-gray-300 ring-offset-2 transition-all md:h-32 md:ring-offset-[3px] ${
@@ -97,5 +100,5 @@
                 index={colorIndex}
             />
         {/each}
-    </button>
+    </div>
 </div>

@@ -107,7 +107,13 @@
         </label>
     </div>
 
+    <!-- The on:click function is only used to prevent immediate deselection of text -->
+    <!-- Therefore, a key event is not needed -->
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <p
+        on:click={(e) => {
+            e.stopPropagation()
+        }}
         class={`absolute -bottom-10 hidden transition-opacity md:flex 
         ${isFocused ? "opacity-100" : "opacity-0"} 
         ${index !== 4 ? "text-gray-500" : "font-bold"}
