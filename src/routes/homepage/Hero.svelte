@@ -25,7 +25,7 @@
     <OnLoadTransition>
         <a
             in:scale={{ delay: 1100 }}
-            class="btn btn-primary no-animation md:btn-lg active:!scale-95 md:-mt-4"
+            class="btn btn-primary no-animation md:btn-lg hover:scale-125 focus:-rotate-6 active:!scale-95 md:-mt-4"
             href="/palettes">Try it out <span class="rotate-90"><Sparkles size={20} /></span></a
         >
     </OnLoadTransition>
