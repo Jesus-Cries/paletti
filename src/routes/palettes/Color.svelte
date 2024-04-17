@@ -70,7 +70,7 @@
         style="background-color: #{color};"
     >
         <p
-            class={`relative top-6 z-50 hidden w-4/5 overflow-hidden overflow-ellipsis whitespace-nowrap text-center text-sm font-medium transition-opacity md:block ${
+            class={`relative top-6 z-50 hidden w-4/5 overflow-hidden overflow-ellipsis whitespace-nowrap text-center text-xs font-medium transition-opacity md:block ${
                 isFocused ? "opacity-100" : "opacity-0"
             }`}
             style:color={textColor}
@@ -80,7 +80,7 @@
             {/if}
         </p>
         <label
-            class={`swap swap-rotate hidden h-full w-full transition-opacity duration-150 hover:opacity-100 md:inline-grid ${
+            class={`swap swap-rotate hidden h-full w-full translate-y-2 transition-opacity duration-150 hover:opacity-100 md:inline-grid ${
                 isClicked ? "opacity-100" : "opacity-0"
             }`}
             style:color={textColor}
@@ -101,9 +101,9 @@
                 }}
             />
             <div class="swap-off flex content-center items-center justify-center">
-                <Copy size={32} />
+                <Copy size={26} />
             </div>
-            <div class="swap-on text-lg">Copied!</div>
+            <div class="swap-on">Copied!</div>
         </label>
     </div>
 

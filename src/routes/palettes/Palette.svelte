@@ -29,11 +29,7 @@
     }
 </script>
 
-<div
-    in:slide={{ delay: 550 }}
-    out:fade
-    class={`flex w-full flex-col items-start gap-3 ${isFocused && "md:mb-6"}`}
->
+<div in:slide={{ delay: 550 }} out:fade class="flex w-full flex-col items-start gap-3 md:mb-6">
     <div class="flex w-full items-baseline justify-between">
         <div class="flex gap-2 pl-1.5">
             {#if $page.data.names !== undefined}
@@ -84,8 +80,8 @@
         on:click={() => {
             focusPalette(index)
         }}
-        class={`flex w-full items-start gap-0 rounded-xl ring-gray-300 ring-offset-2 transition-all md:ring-offset-[3px] ${
-            isFocused ? " ring-[3px] md:h-72" : "md:h-32"
+        class={`flex w-full items-start gap-0 rounded-xl ring-gray-300 ring-offset-2 transition-all md:h-32 md:ring-offset-[3px] ${
+            isFocused && " ring-[3px]"
         } ${$colorSettings.showGap && "!gap-1.5"}`}
     >
         {#if palette.length === 0}
