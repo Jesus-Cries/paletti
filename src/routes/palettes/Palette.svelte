@@ -1,10 +1,10 @@
 <script lang="ts">
     import { getContext } from "svelte"
-    import { slide, fade } from "svelte/transition"
+    import { fly } from "svelte/transition"
     import { page } from "$app/stores"
     import { colorSettings } from "./store"
     import Color from "./Color.svelte"
-    import { Maximize2, Pencil, Trash } from "lucide-svelte"
+    import { Pencil, Trash } from "lucide-svelte"
 
     const focusPalette: (index: number) => void = getContext("focusPalette")
     const deletePalette: (index: number) => void = getContext("deletePalette")
@@ -29,7 +29,11 @@
     }
 </script>
 
-<div in:slide={{ delay: 550 }} out:fade class="flex w-full flex-col items-start gap-3 md:mb-6">
+<div
+    in:fly={{ x: -250 }}
+    out:fly={{ x: 250 }}
+    class="flex w-full flex-col items-start gap-3 md:mb-6"
+>
     <div class="flex w-full items-baseline justify-between">
         <div class="flex gap-2 pl-1.5">
             {#if $page.data.names !== undefined}
