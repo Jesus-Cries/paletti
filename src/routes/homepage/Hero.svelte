@@ -9,7 +9,7 @@
 <div class="flex flex-col items-center gap-12 pb-12 pt-16 md:gap-20 md:pb-0 md:pt-20">
     <OnLoadTransition>
         <div in:fly={{ y: 200, duration: 700 }}>
-            <Logo classOverride="scale-[1.5] md:scale-[1.8]" />
+            <Logo useMouseAnimation classOverride="scale-[1.5] md:scale-[1.8]" />
         </div>
     </OnLoadTransition>
 

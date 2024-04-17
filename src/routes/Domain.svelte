@@ -5,7 +5,7 @@
 </script>
 
 <a
-    class="flex h-fit w-fit -translate-y-1.5 content-center items-baseline md:-translate-y-2 md:gap-1"
+    class="flex h-fit w-fit -translate-y-1.5 content-center items-baseline gap-3 md:-translate-y-2 md:gap-4"
     href="/"
 >
     <Logo
