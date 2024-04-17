@@ -1,5 +1,7 @@
 <svg
     class="w-[110%] -translate-y-px"
+    style="filter: drop-shadow(0 4px 2px rgb(0 0 0 / 0.07))
+    drop-shadow(0 4px 1px rgb(0 0 0 / 0.03));"
     viewBox="0 0 1920 200"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
