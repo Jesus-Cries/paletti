@@ -36,7 +36,7 @@
         // Add CSS variables for each color
         $page.data.names?.forEach((name: string, index: number) => {
             let count: number = 9
-            $palettes[index].forEach((color: string) => {
+            $palettes[index].colors.forEach((color: string) => {
                 cssVariables = [
                     ...cssVariables,
                     `    --${nameToCamelCase(name)}-${count}00: #${color};`,
@@ -64,7 +64,7 @@
             tailwindTheme = [...tailwindTheme, `            ${nameToCamelCase(name)}: {`]
 
             // Add color
-            $palettes[index].forEach((color: string) => {
+            $palettes[index].colors.forEach((color: string) => {
                 tailwindTheme = [...tailwindTheme, `                ${count}00: "#${color}",`]
                 count--
             })
@@ -80,7 +80,7 @@
     $: {
         exportArray = $page.data.names?.map(
             (name: string, index: number) =>
-                `const ${nameToCamelCase(name)}: string[] = [${$palettes[index]
+                `const ${nameToCamelCase(name)}: string[] = [${$palettes[index].colors
                     .map((color: string) => `"#${color}"`)
                     .join(", ")}];`
         )
