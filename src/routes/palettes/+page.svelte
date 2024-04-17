@@ -7,6 +7,8 @@
     import BottomControl from "./bottomcontrol/BottomControl.svelte"
     import SideControl from "./sidecontrol/SideControl.svelte"
     import { PaletteCreator } from "./PaletteCreator"
+    import Disclaimer from "./Disclaimer.svelte"
+    import type { IPalette } from "$lib/interfaces"
 
     /** Data from +page.ts (URL parameters) */
     export let data
@@ -69,12 +71,18 @@
         /** Pre chosen names */
         const nameTemplate: string[] = ["Primary", "Secondary", "Accent", "Gray"]
 
-        let newName: string = "New Palette"
+        let newName: string = "New Palette 1"
 
         // Find first unused name
         nameTemplate.some((name: string) => {
             if (!data.names.includes(name)) return (newName = name)
         })
+
+        // If name already exists, increment number
+        while (data.names.includes(newName)) {
+            const number: number = parseInt(newName.split(" ")[2])
+            newName = `New Palette ${number + 1}`
+        }
 
         const newNames: string[] = [...data.names, newName]
         const newMainColors: string[] = [...data.mainColors, mainColor]
@@ -206,6 +214,7 @@
     // TODO: Make amount of colors per palette customizable
     // TODO: Add some sort of fullscreen option
     // TODO: Make HSL values editable
+    // TODO:? Add SideControl to mobile view
 
     // Polishing
     // TODO: Improve palette animations
@@ -257,9 +266,12 @@
 
     // Update color palettes when main color or hue rotation changes
     $: {
-        const newPalettes: string[][] = data.mainColors.map((color: string, index: number) =>
-            paletteCreator.createPalette(color, data.hueRotations[index])
-        )
+        const newPalettes: IPalette[] = data.mainColors.map((color: string, index: number) => ({
+            name: data.names[index],
+            mainColor: data.mainColors[index],
+            hueRotation: data.hueRotations[index],
+            colors: paletteCreator.createPalette(color, data.hueRotations[index]),
+        }))
 
         palettes.set(newPalettes)
     }
@@ -268,6 +280,7 @@
 <svelte:window on:keydown={handleKeyDown} />
 
 <div transition:fade={{ duration: 100 }} class="absolute flex h-[calc(100vh-84px)] w-full">
+    <Disclaimer />
     <div class="relative h-full w-full md:h-auto md:w-5/6">
         <Palettes />
         <BottomControl />

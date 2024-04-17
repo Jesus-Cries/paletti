@@ -2,6 +2,7 @@
     import { Copy } from "lucide-svelte"
     import { page } from "$app/stores"
     import { palettes } from "../store"
+    import { onMount } from "svelte"
 
     /** Ref to modal element */
     let modal: any
@@ -36,7 +37,7 @@
         // Add CSS variables for each color
         $page.data.names?.forEach((name: string, index: number) => {
             let count: number = 9
-            $palettes[index].forEach((color: string) => {
+            $palettes[index].colors.forEach((color: string) => {
                 cssVariables = [
                     ...cssVariables,
                     `    --${nameToCamelCase(name)}-${count}00: #${color};`,
@@ -64,7 +65,7 @@
             tailwindTheme = [...tailwindTheme, `            ${nameToCamelCase(name)}: {`]
 
             // Add color
-            $palettes[index].forEach((color: string) => {
+            $palettes[index].colors.forEach((color: string) => {
                 tailwindTheme = [...tailwindTheme, `                ${count}00: "#${color}",`]
                 count--
             })
@@ -80,7 +81,7 @@
     $: {
         exportArray = $page.data.names?.map(
             (name: string, index: number) =>
-                `const ${nameToCamelCase(name)}: string[] = [${$palettes[index]
+                `const ${nameToCamelCase(name)}: string[] = [${$palettes[index].colors
                     .map((color: string) => `"#${color}"`)
                     .join(", ")}];`
         )
@@ -110,6 +111,21 @@
             copyIsClicked = false
         }, 1000)
     }
+
+    // Toggle dialog and copy export when receiving corresponding events
+    onMount(() => {
+        function toggleExport() {
+            if (!modal.open) modal.showModal()
+            else modal.close()
+        }
+
+        document.addEventListener("copyExport", copyExport)
+        document.addEventListener("toggleExport", toggleExport)
+        return () => {
+            document.removeEventListener("copyExport", copyExport)
+            document.removeEventListener("toggleExport", toggleExport)
+        }
+    })
 </script>
 
 <div class="inline w-full sm:tooltip" data-tip="Show export options [e]">

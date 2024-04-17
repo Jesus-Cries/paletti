@@ -1,10 +1,10 @@
 <script lang="ts">
     import { getContext } from "svelte"
-    import { slide, fade } from "svelte/transition"
+    import { fly } from "svelte/transition"
     import { page } from "$app/stores"
     import { colorSettings } from "./store"
     import Color from "./Color.svelte"
-    import { Maximize2, Pencil, Trash } from "lucide-svelte"
+    import { Pencil, Trash } from "lucide-svelte"
 
     const focusPalette: (index: number) => void = getContext("focusPalette")
     const deletePalette: (index: number) => void = getContext("deletePalette")
@@ -30,9 +30,9 @@
 </script>
 
 <div
-    in:slide={{ delay: 550 }}
-    out:fade
-    class={`flex w-full flex-col items-start gap-3 ${isFocused && "md:mb-6"}`}
+    in:fly={{ x: -250 }}
+    out:fly={{ x: 250 }}
+    class="flex w-full flex-col items-start gap-3 md:mb-6"
 >
     <div class="flex w-full items-baseline justify-between">
         <div class="flex gap-2 pl-1.5">
@@ -43,7 +43,7 @@
                     placeholder="Enter a name"
                     class="input input-sm max-w-[200px] text-xl font-bold"
                     maxlength={nameLimit}
-                    value={$page.data.names[index]}
+                    value={$page.data.names[index] || " "}
                     on:change={setNewName}
                 />
             {/if}
@@ -80,12 +80,15 @@
             {/if}
         </div>
     </div>
-    <button
+    <div
         on:click={() => {
             focusPalette(index)
         }}
-        class={`flex w-full items-start gap-0 rounded-xl ring-gray-300 ring-offset-2 transition-all md:ring-offset-[3px] ${
-            isFocused ? " ring-[3px] md:h-72" : "md:h-32"
+        on:keydown={() => {
+            focusPalette(index)
+        }}
+        class={`flex w-full items-start gap-0 rounded-xl ring-gray-300 ring-offset-2 transition-all md:h-32 md:ring-offset-[3px] ${
+            isFocused && " ring-[3px]"
         } ${$colorSettings.showGap && "!gap-1.5"}`}
     >
         {#if palette.length === 0}
@@ -101,5 +104,5 @@
                 index={colorIndex}
             />
         {/each}
-    </button>
+    </div>
 </div>
