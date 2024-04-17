@@ -11,13 +11,13 @@
     <Logo
         colors={[
             $page.url.pathname === "/palettes" && $palettes[$page.data.focusedPalette] !== undefined
-                ? $palettes[$page.data.focusedPalette][1]
+                ? $palettes[$page.data.focusedPalette].colors[1]
                 : "6F0021",
             $page.url.pathname === "/palettes" && $palettes[$page.data.focusedPalette] !== undefined
-                ? $palettes[$page.data.focusedPalette][4]
+                ? $palettes[$page.data.focusedPalette].colors[4]
                 : "EF347C",
             $page.url.pathname === "/palettes" && $palettes[$page.data.focusedPalette] !== undefined
-                ? $palettes[$page.data.focusedPalette][7]
+                ? $palettes[$page.data.focusedPalette].colors[7]
                 : "FFB9CE",
         ]}
         classOverride="scale-[0.6] md:scale-75"
