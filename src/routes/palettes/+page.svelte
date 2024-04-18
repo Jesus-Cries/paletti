@@ -252,9 +252,11 @@
         else if (e.key === "y") moveHistory("forward")
     }
 
-    // Makes sure the url is updated when the page is loaded without url parameters
     onMount(() => {
-        if (data.mainColors.length === 1) {
+        // If there is history, navigate to the last palette
+        if ($historyBack.length > 0) navigate($historyBack[$historyBack.length - 1], false)
+        // Makes sure the url is updated when the page is loaded without url parameters
+        else if (data.mainColors.length === 1) {
             const newUrl: string = createUrl(data.names, data.mainColors, data.hueRotations, 0)
             navigate(newUrl)
         }
