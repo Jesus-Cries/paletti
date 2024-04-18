@@ -4,7 +4,6 @@
     import Features from "./homepage/Features.svelte"
     import Guide from "./homepage/Guide.svelte"
 
-    // TODO: Make hero fancier (highlight some of the text)
     // TODO:? Add github link
 </script>
 

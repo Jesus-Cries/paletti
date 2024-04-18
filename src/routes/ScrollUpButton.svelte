@@ -1,6 +1,7 @@
 <script lang="ts">
-    import { ChevronUp } from "lucide-svelte"
     import { onMount } from "svelte"
+    import { page } from "$app/stores"
+    import { ChevronUp } from "lucide-svelte"
 
     let showButton: boolean = false
     let throttled: boolean = false
@@ -29,8 +30,8 @@
 </script>
 
 <div
-    class="!fixed bottom-6 right-6 z-[100] transition-all duration-300 sm:tooltip {!showButton &&
-        'opacity-0'}"
+    class="!fixed bottom-6 right-6 z-[100] transition-all duration-300 sm:tooltip
+    {(!showButton || ['/palettes', '/palettes/'].includes($page.url.pathname)) && 'opacity-0'}"
     data-tip="To top"
 >
     <button
