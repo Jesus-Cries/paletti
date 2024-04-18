@@ -1,15 +1,15 @@
 <script lang="ts">
-    import { fly, scale } from "svelte/transition"
-    import { Sparkles } from "lucide-svelte"
+    import { fly } from "svelte/transition"
 
     import Logo from "../Logo.svelte"
     import OnLoadTransition from "$lib/OnLoadTransition.svelte"
+    import CTA from "./CTA.svelte"
 </script>
 
 <div class="flex flex-col items-center gap-12 pb-12 pt-16 md:gap-20 md:pb-0 md:pt-20">
     <OnLoadTransition>
         <div in:fly={{ y: 200, duration: 700 }}>
-            <Logo classOverride="scale-[1.5] md:scale-[1.8]" />
+            <Logo useMouseAnimation classOverride="scale-[1.5] md:scale-[1.8]" />
         </div>
     </OnLoadTransition>
 
@@ -22,11 +22,5 @@
         </div>
     </OnLoadTransition>
 
-    <OnLoadTransition>
-        <a
-            in:scale={{ delay: 1100 }}
-            class="btn btn-primary no-animation md:btn-lg active:!scale-95 md:-mt-4"
-            href="/palettes">Try it out <span class="rotate-90"><Sparkles size={20} /></span></a
-        >
-    </OnLoadTransition>
+    <CTA />
 </div>

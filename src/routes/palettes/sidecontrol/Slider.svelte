@@ -48,6 +48,8 @@
     }
 
     .slider::-moz-range-thumb {
+        -moz-appearance: none; /* Override default look for Firefox */
+        appearance: none;
         width: 25px; /* Set a specific slider handle width */
         height: 25px; /* Slider handle height */
         background: #fff; /* Green background */

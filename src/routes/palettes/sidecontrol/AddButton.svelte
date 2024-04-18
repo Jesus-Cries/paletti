@@ -21,7 +21,7 @@
     })
 </script>
 
-<div class="z-50 inline sm:tooltip" data-tip="Add new palette [a]">
+<div class="z-30 inline sm:tooltip" data-tip="Add new palette [a]">
     <button class="btn btn-circle md:hidden" on:click={addBasePalette}>
         <Plus size={26} />
     </button>

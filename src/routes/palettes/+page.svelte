@@ -209,21 +209,19 @@
     // FIXME: Navigating to home and then back to palettes adds a new palette to history
     // FIXME: Lightnesses of 0 and 100 turn hue rotation red
     // FIXME: Palettes can't be clicked behind parent div of BottomControl
+    // FIXME: Range sliders do not work in Firefox (afaik it's not due to CSS)
 
     // Features
-    // TODO: Make amount of colors per palette customizable
-    // TODO: Add some sort of fullscreen option
     // TODO: Make HSL values editable
+    // TODO:? Make amount of colors per palette customizable
+    // TODO:? Add some sort of fullscreen option
     // TODO:? Add SideControl to mobile view
 
     // Polishing
-    // TODO: Improve palette animations
-    // TODO: Center palette when only one palette is present
     // TODO: Improve performance by only updating hues when hue rotation changes
 
     // Testing
     // TODO: Check if saturation logic is still working correctly
-    // TODO: Check for compatibility with other browsers
 
     function handleKeyDown(e: KeyboardEvent) {
         // Prevents keyboard shortcuts from firing when user is typing into input
@@ -279,7 +277,10 @@
 
 <svelte:window on:keydown={handleKeyDown} />
 
-<div transition:fade={{ duration: 100 }} class="absolute flex h-[calc(100vh-84px)] w-full">
+<div
+    transition:fade={{ duration: 100 }}
+    class="absolute flex h-[calc(100vh-56px)] w-full md:h-[calc(100vh-64px)]"
+>
     <Disclaimer />
     <div class="relative h-full w-full md:h-auto md:w-5/6">
         <Palettes />
