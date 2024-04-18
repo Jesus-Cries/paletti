@@ -11,7 +11,7 @@
 <div class="relative flex flex-col" data-theme="paletti">
     <Navbar />
     <ScrollUpButton />
-    <div class="relative mt-[62px] md:mt-[78px]">
+    <div class="relative mt-[56px] md:mt-[64px]">
         <slot />
     </div>
 </div>
