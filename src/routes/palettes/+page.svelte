@@ -7,7 +7,7 @@
     import BottomControl from "./bottomcontrol/BottomControl.svelte"
     import SideControl from "./sidecontrol/SideControl.svelte"
     import { PaletteCreator } from "./PaletteCreator"
-    import Disclaimer from "./Disclaimer.svelte"
+    import DemoDisclaimer from "./DemoDisclaimer.svelte"
     import type { IPalette } from "$lib/interfaces"
 
     /** Data from +page.ts (URL parameters) */
@@ -283,7 +283,7 @@
     transition:fade={{ duration: 100 }}
     class="absolute flex h-[calc(100vh-56px)] w-full md:h-[calc(100vh-64px)]"
 >
-    <Disclaimer />
+    <DemoDisclaimer />
     <div class="relative h-full w-full md:h-auto md:w-5/6">
         <Palettes />
         <BottomControl />

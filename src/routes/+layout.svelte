@@ -1,6 +1,7 @@
 <script lang="ts">
     import "../app.css"
     import Navbar from "./Navbar.svelte"
+    import UnsavedPalettesDisclaimer from "./UnsavedPalettesDisclaimer.svelte"
     import ScrollUpButton from "./ScrollUpButton.svelte"
 </script>
 
@@ -10,6 +11,7 @@
 
 <div class="relative flex flex-col" data-theme="paletti">
     <Navbar />
+    <UnsavedPalettesDisclaimer />
     <ScrollUpButton />
     <div class="relative mt-[56px] md:mt-[64px]">
         <slot />
