@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte"
-    import { page } from "$app/stores"
     import { ChevronUp } from "lucide-svelte"
+    import { afterNavigate } from "$app/navigation"
 
     let showButton: boolean = false
     let throttled: boolean = false
@@ -20,6 +20,13 @@
         }, 100)
     }
 
+    // Hides button after navigation
+    afterNavigate(() => {
+        setTimeout(() => {
+            showButton = false
+        }, 100)
+    })
+
     onMount(() => {
         document.addEventListener("scroll", handleScroll, { passive: true })
 
@@ -31,7 +38,7 @@
 
 <div
     class="!fixed bottom-6 right-6 z-[100] transition-all duration-300 sm:tooltip
-    {(!showButton || ['/palettes', '/palettes/'].includes($page.url.pathname)) && 'opacity-0'}"
+    {!showButton && 'opacity-0'}"
     data-tip="To top"
 >
     <button
