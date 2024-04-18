@@ -70,7 +70,7 @@
         style="background-color: #{color};"
     >
         <p
-            class={`relative top-6 z-50 hidden w-4/5 overflow-hidden overflow-ellipsis whitespace-nowrap text-center text-xs font-medium transition-opacity md:block ${
+            class={`relative top-6 z-50 hidden h-5 w-4/5 overflow-hidden overflow-ellipsis whitespace-nowrap text-center text-xs font-medium transition-opacity md:block ${
                 isFocused ? "opacity-100" : "opacity-0"
             }`}
             style:color={textColor}
