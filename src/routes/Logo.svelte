@@ -78,7 +78,7 @@
 <div
     bind:this={logo}
     class="flex cursor-default {classOverride} relative [&>div]:transition-transform [&>div]:duration-75 [&>div]:ease-linear {isMouseGone &&
-        '[&>div]:duration-500 [&>div]:ease-out'}"
+        '[&>div]:!duration-500 [&>div]:!ease-out'}"
 >
     <div class="museomoderno text-6xl font-black" style="color: #{colors[0]}">p</div>
     <div
