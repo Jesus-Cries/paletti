@@ -209,6 +209,7 @@
     // FIXME: Navigating to home and then back to palettes adds a new palette to history
     // FIXME: Lightnesses of 0 and 100 turn hue rotation red
     // FIXME: Palettes can't be clicked behind parent div of BottomControl
+    // FIXME: Range sliders do not work in Firefox (afaik it's not due to CSS)
 
     // Features
     // TODO: Make HSL values editable
@@ -221,7 +222,6 @@
 
     // Testing
     // TODO: Check if saturation logic is still working correctly
-    // TODO: Check for compatibility with other browsers
 
     function handleKeyDown(e: KeyboardEvent) {
         // Prevents keyboard shortcuts from firing when user is typing into input
