@@ -7,14 +7,10 @@
 
 <OnLoadTransition>
     <a
-        class="btn btn-primary no-animation relative z-20 md:btn-lg hover:scale-125 active:!scale-95 md:-mt-4"
+        class="btn btn-primary no-animation relative z-20 md:btn-lg active:!scale-95 md:-mt-4 md:hover:scale-125"
         href="/palettes"
     >
         <div class="absolute left-0 top-0 h-full w-full">
-            <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
-            <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
-            <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
-            <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
             <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
             <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
             <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
@@ -26,50 +22,30 @@
 </OnLoadTransition>
 
 <style>
-    .fader:nth-child(odd) {
-        animation: fade-left 6s linear infinite;
+    .fader {
+        animation: fade-out 4s linear infinite;
     }
 
-    .fader:nth-child(even) {
-        animation: fade-right 6s linear infinite;
+    .fader:is(:nth-child(2)) {
+        animation-delay: 1000ms;
     }
 
-    .fader:is(:nth-child(3), :nth-child(4)) {
-        animation-delay: 1500ms;
+    .fader:is(:nth-child(3)) {
+        animation-delay: 2000ms;
     }
 
-    .fader:is(:nth-child(5), :nth-child(6)) {
+    .fader:is(:nth-child(4)) {
         animation-delay: 3000ms;
     }
 
-    .fader:is(:nth-child(7), :nth-child(8)) {
-        animation-delay: 4500ms;
-    }
-
-    @keyframes fade-left {
+    @keyframes fade-out {
         from {
             scale: 1;
-            translate: 0%;
             opacity: 1;
         }
 
         to {
-            scale: 0.8;
-            translate: -30%;
-            opacity: 0;
-        }
-    }
-
-    @keyframes fade-right {
-        from {
-            scale: 1;
-            translate: 0%;
-            opacity: 1;
-        }
-
-        to {
-            scale: 0.8;
-            translate: 30%;
+            scale: 1.3;
             opacity: 0;
         }
     }
