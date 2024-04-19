@@ -27,6 +27,9 @@
     const translateXDefault: number = 6.5
     const translateYDefault: number = 0
 
+    const maxTranslateX: number = 9
+    const maxTranslateY: number = 7
+
     let translateX: number = translateXDefault
     let translateY: number = translateYDefault
 
@@ -50,6 +53,9 @@
 
         translateX = (mouseX - logoX) / translateDamper
         translateY = (mouseY - logoY) / translateDamper
+
+        translateX = Math.min(translateX, maxTranslateX)
+        translateY = Math.min(translateY, maxTranslateY)
     }
 
     /** Reset translate values if mouse leaves screen. */
