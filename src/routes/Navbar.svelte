@@ -70,7 +70,7 @@
             <!-- Theme toggle -->
             <label class="swap swap-rotate transition-colors hover:text-primary">
                 <!-- This hidden checkbox controls the state -->
-                <input type="checkbox" class="theme-controller" value="synthwave" />
+                <input type="checkbox" class="theme-controller" value="dark" />
 
                 <span class="btn btn-ghost swap-off hover:bg-transparent">
                     <span class="hidden md:block"><Sun strokeWidth={1.8} /></span>
@@ -86,7 +86,7 @@
     </div>
 
     <!-- Mobile view -->
-    <div class="dropdown dropdown-end dropdown-bottom dropdown-open flex sm:hidden">
+    <div class="dropdown dropdown-end dropdown-bottom flex sm:hidden">
         <div tabindex="0" role="button" class="btn btn-ghost hover:bg-transparent"><Menu /></div>
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
         <ul
@@ -120,16 +120,20 @@
 
             <!-- Theme toggle -->
             <li>
-                <div class="flex justify-between">
-                    <p>Light mode</p>
-                    <Sun strokeWidth={1.8} size={18} />
-                </div>
-            </li>
-            <li>
-                <div class="flex justify-between">
-                    <p>Dark mode</p>
-                    <MoonStar strokeWidth={1.5} size={18} />
-                </div>
+                <label class="swap justify-start">
+                    <!-- This hidden checkbox controls the state -->
+                    <input type="checkbox" class="theme-controller" value="dark" />
+
+                    <div class="swap-off flex gap-3">
+                        <p>Light mode</p>
+                        <Sun strokeWidth={1.8} size={18} />
+                    </div>
+
+                    <div class="swap-on flex gap-3.5">
+                        <p>Dark mode</p>
+                        <MoonStar strokeWidth={1.5} size={18} />
+                    </div>
+                </label>
             </li>
         </ul>
     </div>
