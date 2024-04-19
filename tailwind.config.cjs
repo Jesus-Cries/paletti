@@ -35,7 +35,7 @@ module.exports = {
     daisyui: {
         themes: [
             {
-                paletti: {
+                light: {
                     ...require("daisyui/src/theming/themes")["light"],
 
                     // Primary
@@ -45,6 +45,13 @@ module.exports = {
                     // Gray
                     neutral: "#383D47",
                     "neutral-content": "#F7F8FB",
+                },
+                dark: {
+                    ...require("daisyui/src/theming/themes")["black"],
+
+                    // Primary
+                    primary: "#EF347C",
+                    "primary-content": "#FFEBEE",
                 },
             },
         ],
