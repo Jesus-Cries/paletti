@@ -18,6 +18,7 @@
 
     $: pathname = $page.url.pathname
 
+    /** Checks if page is currently visited / selected */
     function isVisited(pathname: string, link: string) {
         if (pathname.replaceAll("/", "") === link.replaceAll("/", "")) return true
 
@@ -34,7 +35,10 @@
             <a
                 class="btn btn-ghost no-animation btn-xs relative uppercase md:btn-md hover:bg-transparent hover:text-primary
                 {isVisited(pathname, page.link) && 'text-primary'}"
-                href={page.link}
+                href={/** Remove link if palettes page is already visited.
+                 * This is needed to avoid breaking history when clicking on the link to palettes while on palettes.
+                 */
+                isVisited(pathname, page.link) && page.link === "/palettes" ? "#" : page.link}
             >
                 {page.name}
 
@@ -54,7 +58,13 @@
             class="menu dropdown-content z-[1] w-52 rounded-box border border-gray-200 bg-base-100 p-2 shadow"
         >
             {#each pages as page}
-                <li><a href={page.link}>{page.name}</a></li>
+                <li>
+                    <a
+                        href={isVisited(pathname, page.link) && page.link === "/palettes"
+                            ? "#"
+                            : page.link}>{page.name}</a
+                    >
+                </li>
             {/each}
         </ul>
     </div>

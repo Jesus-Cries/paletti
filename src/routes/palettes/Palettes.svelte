@@ -10,7 +10,7 @@
     {#each $palettes as palette, index (palette.name)}
         <Palette palette={palette.colors} {index} />
     {/each}
-    <div class="-mt-2 flex w-full justify-center pb-32 md:mt-0">
+    <div class="mt-1 flex w-full justify-center pb-32 md:mt-0">
         <AddButton />
     </div>
 </div>
