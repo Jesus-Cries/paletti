@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { themeChange } from "theme-change"
+    import { onMount } from "svelte"
     import { page } from "$app/stores"
     import { Github, Menu, MoonStar, Sun } from "lucide-svelte"
     import Domain from "./Domain.svelte"
@@ -24,6 +26,13 @@
 
         return false
     }
+
+    let theme: string = "light"
+
+    onMount(() => {
+        themeChange(false)
+        theme = window.localStorage.getItem("theme") || "light"
+    })
 </script>
 
 <div
@@ -70,7 +79,7 @@
             <!-- Theme toggle -->
             <label class="swap swap-rotate transition-colors hover:text-primary">
                 <!-- This hidden checkbox controls the state -->
-                <input type="checkbox" class="theme-controller" value="dark" />
+                <input type="checkbox" data-toggle-theme="light,dark" checked={theme === "dark"} />
 
                 <span class="btn btn-ghost swap-off hover:bg-transparent">
                     <span class="hidden md:block"><Sun strokeWidth={1.8} /></span>
@@ -122,7 +131,11 @@
             <li>
                 <label class="swap justify-start">
                     <!-- This hidden checkbox controls the state -->
-                    <input type="checkbox" class="theme-controller" value="dark" />
+                    <input
+                        type="checkbox"
+                        data-toggle-theme="light,dark"
+                        checked={theme === "dark"}
+                    />
 
                     <div class="swap-off flex gap-3">
                         <p>Light mode</p>
