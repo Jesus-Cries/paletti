@@ -2,11 +2,11 @@
     import { scale } from "svelte/transition"
     import OnLoadTransition from "$lib/OnLoadTransition.svelte"
     import { Sparkles } from "lucide-svelte"
-    // in:scale={{ delay: 1100 }}
 </script>
 
 <OnLoadTransition>
     <a
+        in:scale={{ delay: 1100 }}
         class="btn btn-primary no-animation relative z-20 md:btn-lg active:!scale-95 md:-mt-4 md:hover:scale-125"
         href="/palettes"
     >
