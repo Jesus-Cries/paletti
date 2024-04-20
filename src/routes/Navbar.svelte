@@ -1,9 +1,9 @@
 <script lang="ts">
-    import { themeChange } from "theme-change"
-    import { onMount } from "svelte"
     import { page } from "$app/stores"
     import { Github, Menu, MoonStar, Sun } from "lucide-svelte"
     import Domain from "./Domain.svelte"
+
+    export let theme: string
 
     interface Page {
         name: string
@@ -26,13 +26,6 @@
 
         return false
     }
-
-    let theme: string = "light"
-
-    onMount(() => {
-        themeChange(false)
-        theme = window.localStorage.getItem("theme") || "light"
-    })
 </script>
 
 <div
