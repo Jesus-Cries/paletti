@@ -168,7 +168,7 @@
                 <div class="swap-on text-sm">Copied!</div>
             </label>
 
-            <div class="-mb-5 max-h-[50vh] overflow-x-auto overflow-y-auto pb-5 text-sm">
+            <div class="scrollbar -mb-5 max-h-[50vh] overflow-x-auto overflow-y-auto pb-5 text-sm">
                 {#if exportOptions[currentOption].fileName !== undefined}
                     <pre><code class="text-xs text-gray-300"
                             >{exportOptions[currentOption].fileName}</code
@@ -181,22 +181,3 @@
         </div>
     </div>
 </dialog>
-
-<style>
-    /* Width */
-    ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-    }
-
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        background: #90949e;
-        border-radius: 10px;
-    }
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        background: #747883;
-    }
-</style>
