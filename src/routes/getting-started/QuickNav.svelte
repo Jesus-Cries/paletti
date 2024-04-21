@@ -1,4 +1,4 @@
-<ul class="menu sticky top-24 hidden h-fit w-fit rounded-box bg-gray-100 pr-6 lg:block">
+<ul class="menu sticky top-24 hidden h-fit w-fit rounded-box bg-base-200 pr-6 lg:block">
     <li class="menu-title">Sections</li>
     <li>
         <a href="#what-you-definitely-need" class="font-semibold">What you definitely need</a>

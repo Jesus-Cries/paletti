@@ -29,7 +29,7 @@
 </script>
 
 <div
-    class="fixed top-0 z-50 flex h-14 w-full items-center justify-between bg-white pl-1 shadow md:h-16 md:pl-2.5"
+    class="fixed top-0 z-50 flex h-14 w-full items-center justify-between bg-base-100 pl-1 shadow md:h-16 md:pl-2.5 dark:border-b dark:border-base-300"
 >
     <Domain />
 
@@ -55,7 +55,7 @@
             {/each}
         </div>
 
-        <div class="divider divider-horizontal py-2 before:bg-gray-200 after:bg-gray-200 md:py-1" />
+        <div class="divider divider-horizontal py-2 before:bg-base-300 after:bg-base-300 md:py-1" />
 
         <div class="flex">
             <!-- Github -->
@@ -93,7 +93,7 @@
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
         <ul
             tabindex="0"
-            class="menu dropdown-content z-[1] mr-2 w-52 rounded-box border border-gray-200 bg-base-100 p-2 shadow"
+            class="menu dropdown-content z-[1] mr-2 w-52 rounded-box border border-base-300 bg-base-100 p-2 shadow"
         >
             {#each pages as page}
                 <li>
@@ -106,7 +106,7 @@
             {/each}
 
             <li>
-                <div class="divider my-0 pl-1.5 pr-3.5 before:bg-gray-200 after:bg-gray-200" />
+                <div class="divider my-0 pl-1.5 pr-3.5 before:bg-base-300 after:bg-base-300" />
             </li>
 
             <!-- Github -->

@@ -4,7 +4,7 @@
     import Features from "./homepage/Features.svelte"
     import Guide from "./homepage/Guide.svelte"
 
-    // TODO: Add dark mode
+    // TODO:? Switch to primary-600 for dark mode
 </script>
 
 <div transition:fade={{ duration: 100 }} class="absolute w-full overflow-x-hidden">
