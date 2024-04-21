@@ -32,20 +32,21 @@
 <div
     in:fly={{ x: -250 }}
     out:fly={{ x: 250 }}
-    class="flex w-full flex-col items-start gap-3 md:mb-6"
+    class="flex w-full flex-col items-start gap-4 md:mb-6"
 >
     <div class="flex w-full items-baseline justify-between">
-        <div class="flex gap-2 pl-1.5">
+        <div class="relative flex gap-2 pl-1.5">
             {#if $page.data.names !== undefined}
                 <input
                     id={`${index}-palette-name`}
                     type="text"
                     placeholder="Enter a name"
-                    class="input input-sm max-w-[200px] text-xl font-bold"
+                    class="input input-sm max-w-[200px] text-xl font-bold focus:border-none focus:pl-[12.8px] focus:outline-0"
                     maxlength={nameLimit}
                     value={$page.data.names[index] || " "}
                     on:change={setNewName}
                 />
+                <div class="absolute bottom-[-0.5px] h-0.5 w-full rounded-xl bg-base-300" />
             {/if}
         </div>
 
