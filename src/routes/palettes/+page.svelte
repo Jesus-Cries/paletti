@@ -7,7 +7,7 @@
     import BottomControl from "./bottomcontrol/BottomControl.svelte"
     import SideControl from "./sidecontrol/SideControl.svelte"
     import { PaletteCreator } from "./PaletteCreator"
-    import Disclaimer from "./Disclaimer.svelte"
+    import DemoDisclaimer from "./DemoDisclaimer.svelte"
     import type { IPalette } from "$lib/interfaces"
 
     /** Data from +page.ts (URL parameters) */
@@ -252,9 +252,11 @@
         else if (e.key === "y") moveHistory("forward")
     }
 
-    // Makes sure the url is updated when the page is loaded without url parameters
     onMount(() => {
-        if (data.mainColors.length === 1) {
+        // If there is history, navigate to the last palette
+        if ($historyBack.length > 0) navigate($historyBack[$historyBack.length - 1], false)
+        // Makes sure the url is updated when the page is loaded without url parameters
+        else if (data.mainColors.length === 1) {
             const newUrl: string = createUrl(data.names, data.mainColors, data.hueRotations, 0)
             navigate(newUrl)
         }
@@ -281,7 +283,7 @@
     transition:fade={{ duration: 100 }}
     class="absolute flex h-[calc(100vh-56px)] w-full md:h-[calc(100vh-64px)]"
 >
-    <Disclaimer />
+    <DemoDisclaimer />
     <div class="relative h-full w-full md:h-auto md:w-5/6">
         <Palettes />
         <BottomControl />

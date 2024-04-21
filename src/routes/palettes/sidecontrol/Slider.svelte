@@ -9,7 +9,7 @@
 
 <input
     type="range"
-    class="slider h-3 w-full rounded-full border border-gray-200 shadow-inner"
+    class="slider h-3 w-full rounded-full border border-base-300 text-gray-400 shadow-inner dark:text-gray-300"
     {style}
     {min}
     {max}
@@ -39,7 +39,7 @@
         background: #fff; /* Green background */
         cursor: pointer; /* Cursor on hover */
         border-radius: 100%;
-        border: 2px solid #90949e;
+        border: 2px solid currentColor;
         transition: transform 0.2s ease-in-out;
     }
 
@@ -55,7 +55,7 @@
         background: #fff; /* Green background */
         cursor: pointer; /* Cursor on hover */
         border-radius: 100%;
-        border: 2px solid #90949e;
+        border: 2px solid #9094a2;
         transition: transform 0.2s ease-in-out;
     }
 

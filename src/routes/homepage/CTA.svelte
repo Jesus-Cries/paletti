@@ -2,19 +2,27 @@
     import { scale } from "svelte/transition"
     import OnLoadTransition from "$lib/OnLoadTransition.svelte"
     import { Sparkles } from "lucide-svelte"
-    // in:scale={{ delay: 1100 }}
 </script>
 
 <OnLoadTransition>
     <a
+        in:scale={{ delay: 1100 }}
         class="btn btn-primary no-animation relative z-20 md:btn-lg active:!scale-95 md:-mt-4 md:hover:scale-125"
         href="/palettes"
     >
         <div class="absolute left-0 top-0 h-full w-full">
-            <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
-            <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
-            <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
-            <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
+            <span
+                class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500 dark:bg-primary-600"
+            />
+            <span
+                class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500 dark:bg-primary-600"
+            />
+            <span
+                class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500 dark:bg-primary-600"
+            />
+            <span
+                class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500 dark:bg-primary-600"
+            />
         </div>
         <span class="z-20">Try it out</span>
         <span class="z-20 rotate-90"><Sparkles size={20} /></span>

@@ -4,7 +4,7 @@
     import Features from "./homepage/Features.svelte"
     import Guide from "./homepage/Guide.svelte"
 
-    // TODO:? Add github link
+    // FIXME: It is possible to manually name two palettes the same
 </script>
 
 <div transition:fade={{ duration: 100 }} class="absolute w-full overflow-x-hidden">

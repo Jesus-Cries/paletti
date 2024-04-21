@@ -3,7 +3,7 @@
 
     import { onMount } from "svelte"
 
-    export let colors: string[] = ["6F0021", "EF347C", "FFB9CE"]
+    export let colors: string[] = ["60001D", "EF347C", "FFB9CE"]
     export let useMouseAnimation: boolean = false
     export let classOverride: string = ""
 
@@ -26,6 +26,9 @@
 
     const translateXDefault: number = 6.5
     const translateYDefault: number = 0
+
+    const maxTranslateX: number = 9
+    const maxTranslateY: number = 7
 
     let translateX: number = translateXDefault
     let translateY: number = translateYDefault
@@ -50,6 +53,9 @@
 
         translateX = (mouseX - logoX) / translateDamper
         translateY = (mouseY - logoY) / translateDamper
+
+        translateX = Math.min(translateX, maxTranslateX)
+        translateY = Math.min(translateY, maxTranslateY)
     }
 
     /** Reset translate values if mouse leaves screen. */
@@ -78,7 +84,7 @@
 <div
     bind:this={logo}
     class="flex cursor-default {classOverride} relative [&>div]:transition-transform [&>div]:duration-75 [&>div]:ease-linear {isMouseGone &&
-        '[&>div]:duration-500 [&>div]:ease-out'}"
+        '[&>div]:!duration-500 [&>div]:!ease-out'}"
 >
     <div class="museomoderno text-6xl font-black" style="color: #{colors[0]}">p</div>
     <div

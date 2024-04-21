@@ -65,8 +65,10 @@
             tailwindTheme = [...tailwindTheme, `            ${nameToCamelCase(name)}: {`]
 
             // Add color
-            $palettes[index].colors.forEach((color: string) => {
+            $palettes[index].colors.forEach((color: string, index: number) => {
                 tailwindTheme = [...tailwindTheme, `                ${count}00: "#${color}",`]
+                if (index === 4)
+                    tailwindTheme = [...tailwindTheme, `                DEFAULT: "#${color}",`]
                 count--
             })
             tailwindTheme = [...tailwindTheme, "            },"]
@@ -143,12 +145,14 @@
     <form method="dialog" class="modal-backdrop">
         <button></button>
     </form>
-    <div class="modal-box fixed top-[10%] w-full max-w-5xl overflow-hidden">
+    <div
+        class="modal-box fixed top-[10%] w-full max-w-5xl overflow-hidden border-2 border-base-200"
+    >
         <form method="dialog">
             <button class="btn btn-circle btn-ghost btn-sm absolute right-2 top-2">✕</button>
         </form>
         <h3 class="pb-4 text-lg font-bold">Export options</h3>
-        <div class="tabs-boxed tabs w-fit bg-white px-0 pb-1.5">
+        <div class="tabs-boxed tabs w-fit bg-base-100 px-0 pb-1.5">
             {#each exportOptions as exportOption, index}
                 <button
                     class={`tab ${currentOption === index && "tab-active"}`}
@@ -159,7 +163,7 @@
             {/each}
         </div>
 
-        <div class="mockup-code">
+        <div class="mockup-code dark:bg-base-200">
             <label class="swap swap-rotate absolute right-3 top-4">
                 <input type="checkbox" bind:checked={copyIsClicked} on:change={copyExport} />
                 <div class="swap-off flex content-center items-center justify-center">
@@ -168,9 +172,9 @@
                 <div class="swap-on text-sm">Copied!</div>
             </label>
 
-            <div class="-mb-5 max-h-[50vh] overflow-x-auto overflow-y-auto pb-5 text-sm">
+            <div class="scrollbar -mb-5 max-h-[50vh] overflow-x-auto overflow-y-auto pb-5 text-sm">
                 {#if exportOptions[currentOption].fileName !== undefined}
-                    <pre><code class="text-xs text-gray-300"
+                    <pre><code class="text-xs text-gray-400"
                             >{exportOptions[currentOption].fileName}</code
                         ></pre>
                 {/if}
@@ -181,22 +185,3 @@
         </div>
     </div>
 </dialog>
-
-<style>
-    /* Width */
-    ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-    }
-
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        background: #90949e;
-        border-radius: 10px;
-    }
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        background: #747883;
-    }
-</style>

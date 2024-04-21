@@ -43,7 +43,7 @@ export class PaletteCreator {
      * Divides remaining lightnesses evenly between main lightness and min / max lightness
      */
     modifyLightnesses(mainLightness: number): number[] {
-        const minLightness = 10
+        const minLightness = 6
         const maxLightness = 96
 
         // Distances to min and max lightness
