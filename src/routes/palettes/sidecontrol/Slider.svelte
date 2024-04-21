@@ -55,7 +55,7 @@
         background: #fff; /* Green background */
         cursor: pointer; /* Cursor on hover */
         border-radius: 100%;
-        border: 2px solid #90949e;
+        border: 2px solid #9094a2;
         transition: transform 0.2s ease-in-out;
     }
 

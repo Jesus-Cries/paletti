@@ -3,7 +3,7 @@
 
     import { onMount } from "svelte"
 
-    export let colors: string[] = ["6F0021", "EF347C", "FFB9CE"]
+    export let colors: string[] = ["60001D", "EF347C", "FFB9CE"]
     export let useMouseAnimation: boolean = false
     export let classOverride: string = ""
 
