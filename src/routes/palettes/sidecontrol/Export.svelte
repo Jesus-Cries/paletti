@@ -65,8 +65,10 @@
             tailwindTheme = [...tailwindTheme, `            ${nameToCamelCase(name)}: {`]
 
             // Add color
-            $palettes[index].colors.forEach((color: string) => {
+            $palettes[index].colors.forEach((color: string, index: number) => {
                 tailwindTheme = [...tailwindTheme, `                ${count}00: "#${color}",`]
+                if (index === 4)
+                    tailwindTheme = [...tailwindTheme, `                DEFAULT: "#${color}",`]
                 count--
             })
             tailwindTheme = [...tailwindTheme, "            },"]
