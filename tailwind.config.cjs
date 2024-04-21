@@ -44,19 +44,41 @@ module.exports = {
                     ...require("daisyui/src/theming/themes")["light"],
 
                     // Primary
-                    primary: "#EF347C",
-                    "primary-content": "#FFEBEE",
+                    primary: "#EF347C", // primary-500
+                    "primary-content": "#FFEBEE", // primary-100
 
-                    // Gray
-                    neutral: "#383D47",
-                    "neutral-content": "#F7F8FB",
+                    // Tooltip background
+                    neutral: "#383D47", // gray-700
+                    // Tooltip text
+                    "neutral-content": "#F7F8FB", // gray-100
+
+                    // Blank backgrounds
+                    "base-100": "#FFFFFF", // White
+                    "base-200": "#F7F8FB", // gray-100
+                    "base-300": "#E7EAEF", // gray-200
+
+                    // Button text
+                    "base-content": "#222933", // gray-800
                 },
                 dark: {
-                    ...require("daisyui/src/theming/themes")["black"],
+                    ...require("daisyui/src/theming/themes")["light"],
 
                     // Primary
-                    primary: "#EF347C",
-                    "primary-content": "#FFEBEE",
+                    primary: "#EF347C", // primary-500
+                    "primary-content": "#FFEBEE", // primary-100
+
+                    // Tooltip background
+                    neutral: "#383D47", // gray-700
+                    // Tooltip text
+                    "neutral-content": "#F7F8FB", // gray-100
+
+                    // Used for blank backgrounds
+                    "base-100": "#000000", // Black
+                    "base-200": "#0F1720", //gray-900
+                    "base-300": "#222933", //gray-800
+
+                    // Button text
+                    "base-content": "#E7EAEF", // gray-200
                 },
             },
         ],
