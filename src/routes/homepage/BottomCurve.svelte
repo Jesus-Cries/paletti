@@ -1,5 +1,5 @@
 <svg
-    class="w-[110%] -translate-y-px text-primary"
+    class="w-[110%] -translate-y-px text-primary dark:text-primary-600"
     style="filter: drop-shadow(0 4px 2px rgb(0 0 0 / 0.07))
     drop-shadow(0 4px 1px rgb(0 0 0 / 0.03));"
     viewBox="0 0 1920 200"

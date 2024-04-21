@@ -1,5 +1,5 @@
 <svg
-    class="w-[110%] translate-y-px text-primary"
+    class="w-[110%] translate-y-px text-primary dark:text-primary-600"
     viewBox="0 0 1920 200"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"

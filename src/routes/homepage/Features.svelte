@@ -41,7 +41,7 @@
 <TopCurve />
 <div
     id="features"
-    class="flex w-full justify-center bg-primary-500 py-16 md:py-36 dark:bg-primary-500"
+    class="flex w-full justify-center bg-primary-500 py-16 md:py-36 dark:bg-primary-600"
 >
     <div class="grid grid-cols-1 gap-20 text-white md:grid-cols-2 xl:grid-cols-3">
         {#each features as feature}

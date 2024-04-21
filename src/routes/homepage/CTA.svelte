@@ -11,10 +11,18 @@
         href="/palettes"
     >
         <div class="absolute left-0 top-0 h-full w-full">
-            <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
-            <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
-            <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
-            <span class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500" />
+            <span
+                class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500 dark:bg-primary-600"
+            />
+            <span
+                class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500 dark:bg-primary-600"
+            />
+            <span
+                class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500 dark:bg-primary-600"
+            />
+            <span
+                class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500 dark:bg-primary-600"
+            />
         </div>
         <span class="z-20">Try it out</span>
         <span class="z-20 rotate-90"><Sparkles size={20} /></span>

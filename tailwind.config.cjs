@@ -64,7 +64,7 @@ module.exports = {
                     ...require("daisyui/src/theming/themes")["light"],
 
                     // Primary
-                    primary: "#EF347C", // primary-500
+                    primary: "#DA0D57", // primary-600
                     "primary-content": "#FFEBEE", // primary-100
 
                     // Tooltip background

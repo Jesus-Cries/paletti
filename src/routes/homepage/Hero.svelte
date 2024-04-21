@@ -15,7 +15,7 @@
 
     <OnLoadTransition>
         <div
-            class="flex flex-col items-center gap-4 text-2xl font-medium tracking-wide md:text-4xl md:tracking-wider"
+            class="flex flex-col items-center gap-4 text-2xl font-medium tracking-wide text-base-content md:text-4xl md:tracking-wider"
         >
             <p in:fly={{ x: -250, delay: 400, duration: 900 }}>Your new favorite</p>
             <p in:fly={{ x: 250, delay: 550, duration: 900 }}>color palette generator</p>

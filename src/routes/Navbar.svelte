@@ -38,8 +38,8 @@
         <div class="items-center gap-3 xs:flex md:gap-6">
             {#each pages as page}
                 <a
-                    class="btn btn-ghost no-animation btn-xs relative uppercase md:btn-md hover:bg-transparent hover:text-primary
-                {isVisited(pathname, page.link) && 'text-primary'}"
+                    class="btn btn-ghost no-animation btn-xs relative uppercase md:btn-md hover:bg-transparent hover:text-primary dark:hover:text-primary-600
+                {isVisited(pathname, page.link) && 'text-primary dark:text-primary-600'}"
                     href={/** Remove link if palettes page is already visited.
                      * This is needed to avoid breaking history when clicking on the link to palettes while on palettes.
                      */
@@ -48,7 +48,7 @@
                     {page.name}
 
                     <span
-                        class="absolute -bottom-[17px] h-0.5 rounded-full bg-primary transition-[width] duration-500 md:-bottom-[9px]
+                        class="absolute -bottom-[17px] h-0.5 rounded-full bg-primary transition-[width] duration-500 md:-bottom-[9px] dark:bg-primary-600
                     {isVisited(pathname, page.link) ? 'w-full' : 'w-0'}"
                     />
                 </a>
