@@ -19,3 +19,9 @@
         [&::-webkit-scrollbar]:w-2;
     }
 }
+
+@-moz-document url-prefix() {
+    .scrollbar {
+        scrollbar-width: thin;
+    }
+}
