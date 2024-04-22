@@ -141,12 +141,12 @@
     </button>
 </div>
 
-<dialog bind:this={modal} class="modal">
+<dialog bind:this={modal} class="modal dark:!bg-gray-900/65">
     <form method="dialog" class="modal-backdrop">
         <button></button>
     </form>
     <div
-        class="modal-box fixed top-[10%] w-full max-w-5xl overflow-hidden border-2 border-base-200"
+        class="modal-box fixed top-[10%] w-full max-w-5xl overflow-hidden border-2 border-base-200 dark:border-neutral"
     >
         <form method="dialog">
             <button class="btn btn-circle btn-ghost btn-sm absolute right-2 top-2">✕</button>
