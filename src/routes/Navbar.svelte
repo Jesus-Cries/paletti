@@ -93,7 +93,7 @@
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
         <ul
             tabindex="0"
-            class="menu dropdown-content z-[1] mr-2 w-52 rounded-box border border-base-300 bg-base-100 p-2 shadow"
+            class="menu dropdown-content z-[1] mr-1.5 w-52 rounded-box border border-base-300 bg-base-100 p-2 shadow"
         >
             {#each pages as page}
                 <li>
