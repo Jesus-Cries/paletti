@@ -9,7 +9,7 @@
 
 <input
     type="range"
-    class="slider h-3 w-full rounded-full border border-base-300 text-gray-400 shadow-inner dark:text-gray-300"
+    class="slider h-3 w-full rounded-full border border-base-300 text-gray-300 shadow-inner"
     {style}
     {min}
     {max}
@@ -24,20 +24,18 @@
     Credit: https://www.w3schools.com/howto/howto_js_rangeslider.asp 
     */
 
-    /* The slider itself */
     .slider {
         -webkit-appearance: none; /* Override default CSS styles */
         appearance: none;
     }
 
-    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
     .slider::-webkit-slider-thumb {
-        -webkit-appearance: none; /* Override default look */
+        -webkit-appearance: none; /* Override default look for Chrome, Opera, Safari and Edge */
         appearance: none;
-        width: 25px; /* Set a specific slider handle width */
-        height: 25px; /* Slider handle height */
-        background: #fff; /* Green background */
-        cursor: pointer; /* Cursor on hover */
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        cursor: pointer;
         border-radius: 100%;
         border: 2px solid currentColor;
         transition: transform 0.2s ease-in-out;
@@ -50,12 +48,12 @@
     .slider::-moz-range-thumb {
         -moz-appearance: none; /* Override default look for Firefox */
         appearance: none;
-        width: 25px; /* Set a specific slider handle width */
-        height: 25px; /* Slider handle height */
-        background: #fff; /* Green background */
-        cursor: pointer; /* Cursor on hover */
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        cursor: pointer;
         border-radius: 100%;
-        border: 2px solid #9094a2;
+        border: 2px solid currentColor;
         transition: transform 0.2s ease-in-out;
     }
 

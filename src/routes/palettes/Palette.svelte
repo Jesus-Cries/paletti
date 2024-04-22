@@ -41,12 +41,14 @@
                     id={`${index}-palette-name`}
                     type="text"
                     placeholder="Enter a name"
-                    class="input input-sm max-w-[200px] text-xl font-bold focus:border-none focus:pl-[12.8px] focus:outline-0"
+                    class="peer input input-sm max-w-[175px] text-xl font-bold focus:border-none focus:pl-[12.8px] focus:outline-0"
                     maxlength={nameLimit}
                     value={$page.data.names[index] || " "}
                     on:change={setNewName}
                 />
-                <div class="absolute bottom-[-0.5px] h-0.5 w-full rounded-xl bg-base-300" />
+                <div
+                    class="absolute bottom-[-0.5px] ml-2.5 h-[3px] w-[85%] rounded-xl bg-base-200 transition-colors peer-focus:bg-base-300 dark:bg-base-300 dark:peer-focus:bg-neutral"
+                />
             {/if}
         </div>
 

@@ -9,8 +9,8 @@
     })
 </script>
 
-<dialog bind:this={modal} class="modal bg-gray-900/50 md:hidden">
-    <div class="modal-box max-w-xl border-2 border-base-200">
+<dialog bind:this={modal} class="modal bg-gray-900/75 md:hidden">
+    <div class="modal-box max-w-xl border-2 border-base-200 dark:border-neutral">
         <h3 class="text-lg font-bold">Disclaimer</h3>
         <div class="flex flex-col gap-3 pb-6 pt-4">
             <p>The mobile version of the color palette generator is <b>only a demo</b>.</p>
