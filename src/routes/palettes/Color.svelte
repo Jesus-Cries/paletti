@@ -80,9 +80,9 @@
             {/if}
         </p>
         <label
-            class={`swap swap-rotate hidden h-full w-full translate-y-2 transition-opacity duration-150 hover:opacity-100 md:inline-grid ${
-                isClicked ? "opacity-100" : "opacity-0"
-            }`}
+            class={`swap swap-rotate hidden h-full w-full translate-y-2 transition-opacity duration-150 hover:opacity-100 
+            ${isClicked ? "opacity-100" : "opacity-0"}
+            ${isFocused ? "md:inline-grid" : ""}`}
             style:color={textColor}
         >
             <input
