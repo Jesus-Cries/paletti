@@ -4,7 +4,7 @@
     import { page } from "$app/stores"
     import { colorSettings } from "./store"
     import Color from "./Color.svelte"
-    import { Pencil, Trash } from "lucide-svelte"
+    import { Trash } from "lucide-svelte"
 
     const focusPalette: (index: number) => void = getContext("focusPalette")
     const deletePalette: (index: number) => void = getContext("deletePalette")
@@ -53,21 +53,6 @@
         </div>
 
         <div>
-            {#if $page.data.mainColors?.length >= 2}
-                <div
-                    class="inline sm:tooltip sm:tooltip-left"
-                    data-tip="Edit palette [{index + 1}]"
-                >
-                    <button
-                        class="btn btn-circle btn-sm"
-                        on:click={() => {
-                            focusPalette(index)
-                        }}
-                    >
-                        <Pencil size={13} />
-                    </button>
-                </div>
-            {/if}
             {#if $page.data.mainColors?.length >= 2}
                 <div class="inline sm:tooltip sm:tooltip-left" data-tip="Delete palette [d]">
                     <button
