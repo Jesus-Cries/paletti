@@ -18,14 +18,17 @@
 
         <p>
             But then I came across a book from the creators of
-            <a href="https://tailwindcss.com/">Tailwind CSS</a>. If you haven't heard of Tailwind
-            yet, you should definitely check it out! It makes writing CSS so much faster and more
-            enjoyable.
+            <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer"
+                >Tailwind CSS</a
+            >. If you haven't heard of Tailwind yet, you should definitely check it out! It makes
+            writing CSS so much faster and more enjoyable.
         </p>
 
         <p>
             Back to the book: It's called
-            <a href="https://www.refactoringui.com/">Refactoring UI</a>
+            <a href="https://www.refactoringui.com/" target="_blank" rel="noopener noreferrer"
+                >Refactoring UI</a
+            >
             and it has been a real game changer for me. It's full of practical advice on how to make
             your website designs look better and it has a whole chapter on color.
         </p>
@@ -44,6 +47,8 @@
                 And that's how you turn a five-hour task into a one and a half month task. Because
                 I'm a programmer. And that's what we do. ~<a
                     href="https://www.youtube.com/clip/Ugkxni6Ep6DCRKnrb4pMpkFiV9mF3Ed1Op3a"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     Michael Reeves
                 </a>

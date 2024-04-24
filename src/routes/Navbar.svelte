@@ -33,13 +33,14 @@
 >
     <Domain />
 
-    <!-- Desktop view -->
+    <!-------------------- Desktop view -------------------->
     <div class="hidden pr-6 sm:flex">
         <div class="items-center gap-3 xs:flex md:gap-6">
             {#each pages as page}
                 <a
-                    class="btn btn-ghost no-animation btn-xs relative uppercase md:btn-md hover:bg-transparent hover:text-primary dark:hover:text-primary-600
-                {isVisited(pathname, page.link) && 'text-primary dark:text-primary-600'}"
+                    class="dark:hover:font-bold-shadow btn btn-ghost no-animation btn-xs relative uppercase md:btn-md hover:bg-transparent hover:text-primary dark:hover:text-primary-600
+                {isVisited(pathname, page.link) &&
+                        'dark:font-bold-shadow text-primary dark:text-primary-600'}"
                     href={/** Remove link if palettes page is already visited.
                      * This is needed to avoid breaking history when clicking on the link to palettes while on palettes.
                      */
@@ -87,7 +88,7 @@
         </div>
     </div>
 
-    <!-- Mobile view -->
+    <!-------------------- Mobile view -------------------->
     <div class="dropdown dropdown-end dropdown-bottom flex sm:hidden">
         <div tabindex="0" role="button" class="btn btn-ghost hover:bg-transparent"><Menu /></div>
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
