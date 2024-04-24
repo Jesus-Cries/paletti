@@ -20,6 +20,26 @@
     }
 }
 
+@layer utilities {
+    /* Is used for making text bold without changing its width. */
+    .font-bold-shadow {
+        text-shadow:
+            -0.06ex 0 0 currentColor,
+            0.06ex 0 0 currentColor;
+    }
+
+    /* Is used for making text bold without changing its width. */
+    @supports (-webkit-text-stroke-width: 0.04ex) {
+        /* 2017+, mobile 2022+ */
+        .font-bold-shadow {
+            text-shadow:
+                -0.03ex 0 0 currentColor,
+                0.03ex 0 0 currentColor;
+            -webkit-text-stroke-width: 0.04ex;
+        }
+    }
+}
+
 @-moz-document url-prefix() {
     .scrollbar {
         scrollbar-width: thin;
