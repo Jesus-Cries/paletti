@@ -11,8 +11,8 @@
     ) {
         colors = [
             $palettes[$page.data.focusedPalette].colors[1],
-            $palettes[$page.data.focusedPalette].colors[4],
-            $palettes[$page.data.focusedPalette].colors[7],
+            $palettes[$page.data.focusedPalette].colors[5],
+            $palettes[$page.data.focusedPalette].colors[9],
         ]
     } else {
         colors = ["6F0021", "EF347C", "FFB9CE"]

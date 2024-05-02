@@ -86,7 +86,7 @@
         {#each palette as color, colorIndex}
             <Color
                 {isFocused}
-                color={colorIndex === 4
+                color={colorIndex === 5
                     ? $page.data.mainColors !== undefined && $page.data.mainColors[index]
                     : color}
                 index={colorIndex}
