@@ -9,7 +9,7 @@
     const addPalette: (mainColor: string, hueRotation: number) => void = getContext("addPalette")
 
     function addBasePalette() {
-        const mainColor: string = primary[500]
+        const mainColor: string = primary[500].replace("#", "")
         const hueRotation: number = 50
 
         addPalette(mainColor, hueRotation)
