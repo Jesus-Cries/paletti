@@ -2,8 +2,12 @@
     // Inspired by Hyperplexed: https://www.youtube.com/watch?v=5a8NyGLlorI
 
     import { onMount } from "svelte"
+    import { colors as tailwindColors } from "../lib/colors"
+    import type { TailwindPalette } from "../lib/interfaces"
 
-    export let colors: string[] = ["60001D", "EF347C", "FFB9CE"]
+    const primary: TailwindPalette = tailwindColors.primary
+
+    export let colors: string[] = [primary[900], primary[500], primary[100]]
     export let useMouseAnimation: boolean = false
     export let classOverride: string = ""
 
@@ -86,16 +90,16 @@
     class="flex cursor-default {classOverride} relative [&>div]:transition-transform [&>div]:duration-75 [&>div]:ease-linear {isMouseGone &&
         '[&>div]:!duration-500 [&>div]:!ease-out'}"
 >
-    <div class="museomoderno text-6xl font-black" style="color: #{colors[0]}">p</div>
+    <div class="museomoderno text-6xl font-black" style="color: {colors[0]}">p</div>
     <div
         class="museomoderno absolute text-6xl font-black"
-        style="color: #{colors[1]}; transform: translate({translateX}px, {translateY}px)"
+        style="color: {colors[1]}; transform: translate({translateX}px, {translateY}px)"
     >
         p
     </div>
     <div
         class="museomoderno absolute text-6xl font-black"
-        style="color: #{colors[2]}; transform: translate({translateX * 2}px, {translateY * 2}px)"
+        style="color: {colors[2]}; transform: translate({translateX * 2}px, {translateY * 2}px)"
     >
         p
     </div>

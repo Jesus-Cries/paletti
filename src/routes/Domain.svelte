@@ -2,7 +2,10 @@
     import { page } from "$app/stores"
     import { palettes } from "./palettes/store"
     import Logo from "./Logo.svelte"
+    import { colors as tailwindColors } from "../lib/colors"
+    import type { TailwindPalette } from "../lib/interfaces"
 
+    const primary: TailwindPalette = tailwindColors.primary
     let colors: string[] = []
 
     $: if (
@@ -15,7 +18,7 @@
             $palettes[$page.data.focusedPalette].colors[9],
         ]
     } else {
-        colors = ["6F0021", "EF347C", "FFB9CE"]
+        colors = [primary[900], primary[500], primary[100]]
     }
 </script>
 

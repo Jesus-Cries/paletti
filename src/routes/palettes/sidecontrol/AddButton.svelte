@@ -1,11 +1,15 @@
 <script lang="ts">
     import { Plus } from "lucide-svelte"
     import { onMount, getContext } from "svelte"
+    import { colors as tailwindColors } from "../../../lib/colors"
+    import type { TailwindPalette } from "../../../lib/interfaces"
+
+    const primary: TailwindPalette = tailwindColors.primary
 
     const addPalette: (mainColor: string, hueRotation: number) => void = getContext("addPalette")
 
     function addBasePalette() {
-        const mainColor: string = "EF347C"
+        const mainColor: string = primary[500]
         const hueRotation: number = 50
 
         addPalette(mainColor, hueRotation)
