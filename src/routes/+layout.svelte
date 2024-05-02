@@ -34,7 +34,9 @@
     <title>Paletti</title>
 </svelte:head>
 
-<div class="relative flex flex-col">
+<div
+    class="relative flex flex-col selection:bg-primary-500 selection:text-white dark:selection:bg-primary-600"
+>
     <Navbar {theme} />
     <UnsavedPalettesDisclaimer />
     <ScrollUpButton />

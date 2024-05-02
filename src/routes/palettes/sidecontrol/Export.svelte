@@ -193,9 +193,7 @@
                 <div class="swap-on text-sm">Copied!</div>
             </label>
 
-            <div
-                class="scrollbar -mb-5 max-h-[50vh] overflow-x-auto overflow-y-auto pb-5 text-sm selection:bg-primary-600"
-            >
+            <div class="scrollbar -mb-5 max-h-[50vh] overflow-x-auto overflow-y-auto pb-5 text-sm">
                 {#if exportOptions[currentOption].fileName !== undefined}
                     <pre><code class="text-xs text-gray-400"
                             >{exportOptions[currentOption].fileName}</code
