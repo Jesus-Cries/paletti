@@ -46,7 +46,7 @@
             window.scrollTo(0, 0)
         }}
         disabled={!showButton}
-        class="btn btn-circle btn-primary border-none bg-primary-700 shadow-md sm:hover:bg-primary-600"
+        class="btn btn-circle btn-primary border-none bg-primary-600 shadow-md hover:bg-primary-600 sm:hover:bg-primary-700 dark:bg-primary-700 dark:hover:bg-primary-800"
     >
         <ChevronUp color="#fff" size="26" />
     </button>
