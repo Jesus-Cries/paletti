@@ -13,9 +13,9 @@
         $palettes[$page.data.focusedPalette]
     ) {
         colors = [
-            $palettes[$page.data.focusedPalette].colors[1],
-            $palettes[$page.data.focusedPalette].colors[5],
-            $palettes[$page.data.focusedPalette].colors[9],
+            "#" + $palettes[$page.data.focusedPalette].colors[1],
+            "#" + $palettes[$page.data.focusedPalette].colors[5],
+            "#" + $palettes[$page.data.focusedPalette].colors[9],
         ]
     } else {
         colors = [primary[900], primary[500], primary[100]]
