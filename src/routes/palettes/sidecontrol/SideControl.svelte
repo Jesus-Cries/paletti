@@ -6,7 +6,7 @@
 </script>
 
 <div
-    class="m-3 ml-1.5 hidden w-1/6 min-w-[300px] flex-col justify-between rounded-xl border-2 border-base-300 bg-base-200 p-4 shadow-md md:flex"
+    class="m-3 ml-1.5 hidden w-1/6 min-w-[300px] flex-col justify-between rounded-xl bg-base-200 p-4 shadow-md md:flex dark:border-2 dark:border-base-300"
 >
     <div class="flex w-full flex-col items-start gap-8">
         <p class="-mb-4 text-lg font-bold">Settings</p>

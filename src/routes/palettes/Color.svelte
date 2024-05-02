@@ -58,15 +58,11 @@
     let timeout: NodeJS.Timeout
 </script>
 
-<div
-    class={`relative flex h-full flex-col items-center gap-2 ${
-        index !== 4 ? "w-[10.5%]" : "w-[16%]"
-    }`}
->
+<div class="relative flex h-full flex-1 flex-col items-center gap-2">
     <div
         class={`flex h-16 w-full flex-col items-center justify-center md:h-full ${
             index === 0 && "rounded-l-xl"
-        } ${index === 8 && "rounded-r-xl"}`}
+        } ${index === 10 && "rounded-r-xl"}`}
         style="background-color: #{color};"
     >
         <p
@@ -116,7 +112,7 @@
         }}
         class={`absolute -bottom-10 hidden transition-opacity hover:cursor-default md:flex 
         ${isFocused ? "opacity-100" : "opacity-0"} 
-        ${index !== 4 ? "text-gray-500" : "font-bold"}
+        ${index !== 5 ? "text-gray-500" : "font-bold"}
         `}
     >
         {color}

@@ -7,6 +7,20 @@
     /** Ref to modal element */
     let modal: any
     let currentOption: number = 0
+    const amountColors: number = 11
+    const colorNames: string[] = [
+        "50",
+        "100",
+        "200",
+        "300",
+        "400",
+        "500",
+        "600",
+        "700",
+        "800",
+        "900",
+        "950",
+    ]
 
     function nameToCamelCase(name: string) {
         return name
@@ -36,14 +50,16 @@
 
         // Add CSS variables for each color
         $page.data.names?.forEach((name: string, index: number) => {
-            let count: number = 9
+            let count: number = amountColors
+
             $palettes[index].colors.forEach((color: string) => {
                 cssVariables = [
                     ...cssVariables,
-                    `    --${nameToCamelCase(name)}-${count}00: #${color};`,
+                    `    --${nameToCamelCase(name)}-${colorNames[count - 1]}: #${color};`,
                 ]
                 count--
             })
+
             cssVariables = [...cssVariables, ""]
         })
 
@@ -60,17 +76,22 @@
         let tailwindTheme: string[] = ["theme: {", "    extend: {", "        colors: {"]
 
         $page.data.names?.forEach((name: string, index: number) => {
-            let count: number = 9
+            let count: number = amountColors
+
             // Add palette name
             tailwindTheme = [...tailwindTheme, `            ${nameToCamelCase(name)}: {`]
 
             // Add color
             $palettes[index].colors.forEach((color: string, index: number) => {
-                tailwindTheme = [...tailwindTheme, `                ${count}00: "#${color}",`]
-                if (index === 4)
+                tailwindTheme = [
+                    ...tailwindTheme,
+                    `                ${colorNames[count - 1]}: "#${color}",`,
+                ]
+                if (index === 5)
                     tailwindTheme = [...tailwindTheme, `                DEFAULT: "#${color}",`]
                 count--
             })
+
             tailwindTheme = [...tailwindTheme, "            },"]
         })
 
