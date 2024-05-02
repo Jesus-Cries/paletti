@@ -40,6 +40,7 @@
 
         <PaletteSample
             colors={[
+                "bg-gray-950",
                 "bg-gray-900",
                 "bg-gray-800",
                 "bg-gray-700",
@@ -49,11 +50,12 @@
                 "bg-gray-300",
                 "bg-gray-200",
                 "bg-gray-100",
+                "bg-gray-50",
             ]}
         />
 
         <p>
-            As you can see, I like my palettes with 9 colors. That way you have a good amount of
+            As you can see, I like my palettes with 11 colors. That way you have a good amount of
             choice. If I didn't mess it up, you should see these colors on most of the elements on
             this website like text and background.
         </p>
@@ -70,6 +72,7 @@
 
         <PaletteSample
             colors={[
+                "bg-primary-950",
                 "bg-primary-900",
                 "bg-primary-800",
                 "bg-primary-700",
@@ -79,6 +82,7 @@
                 "bg-primary-300",
                 "bg-primary-200",
                 "bg-primary-100",
+                "bg-primary-50",
             ]}
         />
 
