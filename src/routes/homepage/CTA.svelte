@@ -20,9 +20,6 @@
             <span
                 class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500 dark:bg-primary-600"
             />
-            <span
-                class="fader absolute left-0 h-full w-full rounded-lg bg-primary-500 dark:bg-primary-600"
-            />
         </div>
         <span class="z-20">Try it out</span>
         <span class="z-20 rotate-90"><Sparkles size={20} /></span>
@@ -31,19 +28,15 @@
 
 <style>
     .fader {
-        animation: fade-out 4s linear infinite;
+        animation: fade-out 3.6s linear infinite;
     }
 
     .fader:is(:nth-child(2)) {
-        animation-delay: 1000ms;
+        animation-delay: 1200ms;
     }
 
     .fader:is(:nth-child(3)) {
-        animation-delay: 2000ms;
-    }
-
-    .fader:is(:nth-child(4)) {
-        animation-delay: 3000ms;
+        animation-delay: 2400ms;
     }
 
     @keyframes fade-out {
