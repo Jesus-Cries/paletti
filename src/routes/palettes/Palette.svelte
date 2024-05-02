@@ -75,7 +75,7 @@
         on:keydown={() => {
             focusPalette(index)
         }}
-        class={`flex w-full items-start gap-0 rounded-xl ring-gray-300 ring-offset-2 ring-offset-base-100 transition-all hover:cursor-pointer md:h-32 md:ring-offset-[3px] dark:ring-gray-400 ${
+        class={`flex w-full items-start gap-0 rounded-xl ring-gray-100 ring-offset-2 ring-offset-base-100 transition-all hover:cursor-pointer md:h-32 md:ring-offset-[3px] dark:ring-gray-700 ${
             isFocused && " ring-[3px]"
         } ${$colorSettings.showGap && "!gap-1.5"}`}
     >
