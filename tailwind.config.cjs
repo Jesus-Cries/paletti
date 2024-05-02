@@ -24,40 +24,40 @@ module.exports = {
 
                     // Primary
                     primary: primary[500],
-                    "primary-content": primary[100],
+                    "primary-content": primary[50],
 
                     // Tooltip background
-                    neutral: gray[700],
+                    neutral: gray[800],
                     // Tooltip text
-                    "neutral-content": gray[100],
+                    "neutral-content": gray[50],
 
                     // Blank backgrounds
                     "base-100": "#FFFFFF",
-                    "base-200": gray[100],
-                    "base-300": gray[200],
+                    "base-200": gray[50],
+                    "base-300": gray[100],
 
                     // Button text
-                    "base-content": gray[800],
+                    "base-content": gray[900],
                 },
                 dark: {
                     ...require("daisyui/src/theming/themes")["light"],
 
                     // Primary
                     primary: primary[600],
-                    "primary-content": primary[100],
+                    "primary-content": primary[50],
 
                     // Tooltip, mockup-code background
-                    neutral: gray[700],
+                    neutral: gray[800],
                     // Tooltip text
-                    "neutral-content": gray[100],
+                    "neutral-content": gray[50],
 
                     // Used for blank backgrounds
                     "base-100": "#000000",
-                    "base-200": gray[900],
-                    "base-300": gray[800],
+                    "base-200": gray[950],
+                    "base-300": gray[900],
 
                     // Button text
-                    "base-content": gray[200],
+                    "base-content": gray[100],
                 },
             },
         ],
