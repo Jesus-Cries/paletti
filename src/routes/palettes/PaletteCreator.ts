@@ -7,7 +7,7 @@ export class PaletteCreator {
      */
     modifyHues(mainHue: number, hueRotation: number): number[] {
         // Hue modifiers to choose from that are added to main hue
-        const maxHueModifiers: number[] = [20, 10, 5, 2, 0, 2, 5, 10, 20]
+        const maxHueModifiers: number[] = [20, 14, 9, 5, 2, 0, 2, 5, 9, 14, 20]
 
         // Creates hues based on hue rotation and rotation direction
         const hues: number[] = maxHueModifiers.map(
@@ -26,13 +26,15 @@ export class PaletteCreator {
         // Divides remaining saturation space evenly between main saturation and max saturation
         const saturations: number[] = [
             Math.min(100, mainSaturation + maxSaturation),
-            Math.min(100, mainSaturation + maxSaturation * 0.75),
-            Math.min(100, mainSaturation + maxSaturation * 0.5),
-            Math.min(100, mainSaturation + maxSaturation * 0.25),
+            Math.min(100, mainSaturation + maxSaturation * 0.8),
+            Math.min(100, mainSaturation + maxSaturation * 0.6),
+            Math.min(100, mainSaturation + maxSaturation * 0.4),
+            Math.min(100, mainSaturation + maxSaturation * 0.2),
             Math.min(100, mainSaturation),
-            Math.min(100, mainSaturation + maxSaturation * 0.25),
-            Math.min(100, mainSaturation + maxSaturation * 0.5),
-            Math.min(100, mainSaturation + maxSaturation * 0.75),
+            Math.min(100, mainSaturation + maxSaturation * 0.2),
+            Math.min(100, mainSaturation + maxSaturation * 0.4),
+            Math.min(100, mainSaturation + maxSaturation * 0.6),
+            Math.min(100, mainSaturation + maxSaturation * 0.8),
             Math.min(100, mainSaturation + maxSaturation),
         ]
 
@@ -43,8 +45,8 @@ export class PaletteCreator {
      * Divides remaining lightnesses evenly between main lightness and min / max lightness
      */
     modifyLightnesses(mainLightness: number): number[] {
-        const minLightness = 6
-        const maxLightness = 96
+        const minLightness = 5
+        const maxLightness = 97
 
         // Distances to min and max lightness
         const mainToMin = mainLightness - minLightness
@@ -53,13 +55,15 @@ export class PaletteCreator {
         // Divides remaining lightnesses evenly between main lightness and min / max lightness
         const lightnesses: number[] = [
             minLightness,
-            mainLightness - mainToMin * 0.75,
-            mainLightness - mainToMin * 0.5,
-            mainLightness - mainToMin * 0.25,
+            mainLightness - mainToMin * 0.8,
+            mainLightness - mainToMin * 0.6,
+            mainLightness - mainToMin * 0.4,
+            mainLightness - mainToMin * 0.2,
             mainLightness,
-            mainLightness + mainToMax * 0.25,
-            mainLightness + mainToMax * 0.5,
-            mainLightness + mainToMax * 0.75,
+            mainLightness + mainToMax * 0.2,
+            mainLightness + mainToMax * 0.4,
+            mainLightness + mainToMax * 0.6,
+            mainLightness + mainToMax * 0.8,
             maxLightness,
         ]
 
@@ -80,7 +84,7 @@ export class PaletteCreator {
         const colors: string[] = []
 
         // Creates color palette based on modified hues, saturations and lightnesses
-        const amountofColors = 9
+        const amountofColors = 11
         for (let i = 0; i < amountofColors; i++) {
             const color: string = convert.hsl.hex([hues[i], saturations[i], lightnesses[i]])
             colors.push(color)
