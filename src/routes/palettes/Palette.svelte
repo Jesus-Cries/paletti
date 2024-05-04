@@ -5,13 +5,17 @@
     import { colorSettings } from "./store"
     import Color from "./Color.svelte"
     import { Trash } from "lucide-svelte"
+    import type { IPalette } from "$lib/interfaces"
 
     const focusPalette: (index: number) => void = getContext("focusPalette")
     const deletePalette: (index: number) => void = getContext("deletePalette")
     const updateName: (index: number, name: string) => void = getContext("updateName")
 
-    export let palette: string[]
+    export let palette: IPalette
     export let index: number
+
+    let colors: string[]
+    $: colors = palette.colors
 
     $: isFocused = index === $page.data.focusedPalette
 
@@ -79,18 +83,21 @@
             isFocused && " ring-[3px]"
         } ${$colorSettings.showGap && "!gap-1.5"}`}
     >
-        {#if palette.length === 0}
+        {#if colors.length === 0}
             <p>Loading</p>
         {/if}
 
-        {#each palette as color, colorIndex}
+        {#each colors as color, colorIndex}
             <Color
                 {isFocused}
-                color={colorIndex === 5
+                color={colorIndex === palette.mainColorIndex
                     ? $page.data.mainColors !== undefined && $page.data.mainColors[index]
                     : color}
                 index={colorIndex}
+                mainColorIndex={palette.mainColorIndex}
             />
         {/each}
     </div>
 </div>
+
+<!-- color={colorIndex === palette.mainColorIndex ? "FF0000" : color} -->

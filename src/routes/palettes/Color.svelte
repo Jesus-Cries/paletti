@@ -6,6 +6,7 @@
     export let isFocused: boolean
     export let color: string
     export let index: number
+    export let mainColorIndex: number
 
     /** Calculates contrast ratio between two colors
      * Credit: https://stackoverflow.com/a/9733420
@@ -112,7 +113,7 @@
         }}
         class={`absolute -bottom-10 hidden transition-opacity hover:cursor-default md:flex 
         ${isFocused ? "opacity-100" : "opacity-0"} 
-        ${index !== 5 ? "text-gray-500" : "font-bold"}
+        ${index === mainColorIndex ? "font-black" : "text-gray-500"}
         `}
     >
         {color}

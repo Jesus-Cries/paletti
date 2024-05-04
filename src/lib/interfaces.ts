@@ -6,6 +6,7 @@ export interface ColorSettings {
 export interface IPalette {
     name: string
     mainColor: string
+    mainColorIndex: number
     hueRotation: number
     colors: string[]
 }

@@ -269,6 +269,7 @@
         const newPalettes: IPalette[] = data.mainColors.map((color: string, index: number) => ({
             name: data.names[index],
             mainColor: data.mainColors[index],
+            mainColorIndex: paletteCreator.getColorIndex(data.mainColors[index]),
             hueRotation: data.hueRotations[index],
             colors: paletteCreator.createPalette(color, data.hueRotations[index]),
         }))
