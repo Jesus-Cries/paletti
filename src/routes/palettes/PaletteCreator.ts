@@ -20,23 +20,51 @@ export class PaletteCreator {
     /** Creates saturation palette based on saturation of base color
      * Divides remaining saturation space evenly between base saturation and max saturation
      */
-    modifySaturations(baseSaturation: number): number[] {
-        const maxSaturation = Math.min(30, baseSaturation * 2)
+    modifySaturations(baseSaturation: number, colorIndex: number): number[] {
+        /** Maps colorIndex to index of left side of palette to make calculation easier as both sides are identical */
+        const indexMap: number[] = [0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0]
+        const mappedColorIndex: number = indexMap[colorIndex]
 
-        // Divides remaining saturation space evenly between base saturation and max saturation
-        const saturations: number[] = [
-            Math.min(100, baseSaturation + maxSaturation),
-            Math.min(100, baseSaturation + maxSaturation * 0.8),
-            Math.min(100, baseSaturation + maxSaturation * 0.6),
-            Math.min(100, baseSaturation + maxSaturation * 0.4),
-            Math.min(100, baseSaturation + maxSaturation * 0.2),
-            Math.min(100, baseSaturation),
-            Math.min(100, baseSaturation + maxSaturation * 0.2),
-            Math.min(100, baseSaturation + maxSaturation * 0.4),
-            Math.min(100, baseSaturation + maxSaturation * 0.6),
-            Math.min(100, baseSaturation + maxSaturation * 0.8),
-            Math.min(100, baseSaturation + maxSaturation),
-        ]
+        // Amount of colors below and above base color
+        const amountColorsBelow: number = mappedColorIndex
+        const amountColorsAbove: number = 5 - mappedColorIndex
+
+        /** Magic step size
+         * Is at least 2 and increases with base saturation
+         */
+        const stepSize: number = 2 * Math.max(baseSaturation / 30, 1)
+
+        const leftSide: number[] = []
+
+        // Adds saturations below base saturation until left end of palette
+        for (let i = amountColorsBelow; i > 0; i--) {
+            const newSaturation: number = baseSaturation + stepSize * i
+
+            leftSide.push(newSaturation)
+        }
+
+        // Adds base saturation
+        leftSide.push(baseSaturation)
+
+        // Adds saturations above base saturation until middle of palette
+        for (let i = 0; i < amountColorsAbove; i++) {
+            const newSaturation: number = baseSaturation - stepSize * (i + 1)
+
+            leftSide.push(newSaturation)
+        }
+
+        // Remomes middle saturation from left side
+        const middleSaturation: number = leftSide.pop() as number
+
+        // Creates right side of palette by reversing left side
+        const rightSide: number[] = leftSide.toReversed()
+
+        // Combines left side, middle saturation and right side to create full palette
+        let saturations: number[] = [...leftSide, middleSaturation, ...rightSide]
+
+        // Ensures that saturations are between 0 and 100
+        saturations = saturations.map((saturation: number) => Math.min(100, saturation))
+        saturations = saturations.map((saturation: number) => Math.max(0, saturation))
 
         return saturations
     }
@@ -49,8 +77,8 @@ export class PaletteCreator {
         const maxLightness = 97
 
         // Distances to min and max lightness
-        const baseToMin = baseLightness - minLightness
-        const baseToMax = maxLightness - baseLightness
+        const baseToMin: number = baseLightness - minLightness
+        const baseToMax: number = maxLightness - baseLightness
 
         // Amount of colors below and above base color
         const amountColorsBelow: number = colorIndex
@@ -75,6 +103,7 @@ export class PaletteCreator {
         // Adds lightnesses above base lightness
         for (let i = 0; i < amountColorsAbove; i++) {
             const newLightness: number = baseLightness + stepAbove * (i + 1)
+
             lightnesses.push(newLightness)
         }
 
@@ -91,7 +120,6 @@ export class PaletteCreator {
         const lightnessSteps: number = 100 / 11
 
         const colorIndex = Math.floor(baseLightness / lightnessSteps)
-        console.log(colorIndex)
 
         return colorIndex
     }
@@ -102,14 +130,13 @@ export class PaletteCreator {
      */
     createPalette(baseColor: string, hueRotation: number): string[] {
         // TODO: Adapt hue calculation to new lightness calculation
-        // TODO: Adapt saturation calculation to new lightness calculation
 
         const baseHsl: number[] = convert.hex.hsl(baseColor)
 
         const colorIndex = this.getColorIndex(baseColor)
 
         const hues: number[] = this.modifyHues(baseHsl[0], hueRotation)
-        const saturations: number[] = this.modifySaturations(baseHsl[1])
+        const saturations: number[] = this.modifySaturations(baseHsl[1], colorIndex)
         const lightnesses: number[] = this.modifyLightnesses(baseHsl[2], colorIndex)
 
         const colors: string[] = []
