@@ -10,7 +10,7 @@
 
     function addBasePalette() {
         const mainColor: string = primary[500].replace("#", "")
-        const hueRotation: number = 50
+        const hueRotation: number = 0
 
         addPalette(mainColor, hueRotation)
     }
