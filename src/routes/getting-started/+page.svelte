@@ -124,71 +124,26 @@
             create them.
         </p>
 
-        <QuickNavLink id="hsl" />
-        <h3>HSL</h3>
+        <QuickNavLink id="creating-a-color-palette" />
+        <h3>Creating a color palette</h3>
 
         <p>
-            But first you need to know a little bit about the color model
+            Paletti creates your color palettes based on a base color. All the other colors will be
+            calculated based on it.
+        </p>
+
+        <p>So <b>just pick a color you like</b> and use it as a base color. It's that simple.</p>
+
+        <p>
+            If you want a little finer control you can use the
             <a
                 href="https://www.w3schools.com/colors/colors_hsl.asp"
                 target="_blank"
                 rel="noopener noreferrer"
                 >HSL
-            </a>. The letters stand for <i>Hue</i>, <i>Saturation</i> and
-            <i>lightness</i>. Each of these values describes an aspect of color:
+            </a>
+            settings to adjust the hue, saturation and lightness of your base color.
         </p>
-
-        <ol>
-            <li>
-                <b>Hue</b> is a value from 0 to 360 that describes the position on a color wheel. For
-                example 0 or 360 is red, 120 is green and 240 is blue.
-            </li>
-            <li>
-                <b>Saturation</b> describes the intensity of a color. It ranges from 0 to 100. The lower
-                the value, the grayer a color looks.
-            </li>
-            <li>
-                <b>Lightness</b> is the amount of light a color has. It also ranges from 0 to 100. A
-                lightness of 0 means that there is no light at all. This makes the color fully black
-                while a value of 100 makes it fully white.
-            </li>
-        </ol>
-
-        <QuickNavLink id="choosing-a-base-color" />
-        <h3>Choosing a base color</h3>
-
-        <p>
-            Paletti creates your color palettes based on a base color. This color will be in the
-            "center" of your palette and the other colors will be calculated based on it.
-        </p>
-
-        <p>For the best results, stick to the following guidelines:</p>
-
-        <ul>
-            <li>
-                <p>
-                    <b>Hue: </b>Choose whatever you like.
-                </p>
-            </li>
-            <li>
-                <b>Saturation:</b>
-                <ul>
-                    <li>
-                        <p><b>Grayish colors: </b>Choose a value between 4 and 10.</p>
-                    </li>
-                    <li>
-                        <p><b>Saturated colors: </b>Choose a value between 10 and 90.</p>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <p>
-                    <b>Lightness: </b>I found that I got the best results with values from 40 to 60.
-                </p>
-            </li>
-        </ul>
-
-        <p>These guidelines are based on my experience. Of course, you're free to experiment!</p>
 
         <QuickNavLink id="individualizing" />
         <h3>Individualizing</h3>
@@ -197,8 +152,8 @@
             If you want to give your palettes a personal touch, you can adjust the <b
                 >Hue Rotation</b
             >. This will change the hue of all colors in your palette by a certain amount. The
-            further away from the base color, the more the colors will change. This can be useful if
-            you want to give your palettes a different tint.
+            further away from the color in the middle of your palette, the more the colors will
+            change. This can be useful if you want to give your palettes a different tint.
         </p>
 
         <p>
@@ -253,6 +208,6 @@
             </li>
         </ul>
 
-        <p>By the way: Your palette names are automatically adopted where appropriate.</p>
+        <p>By the way: Your palette names are automatically adopted in most export options.</p>
     </article>
 </div>
