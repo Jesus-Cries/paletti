@@ -21,8 +21,8 @@
     })
 </script>
 
-<SettingWrapper label="Main color">
-    <div class="tabs tabs-boxed">
+<SettingWrapper label="Base color">
+    <div class="tabs-boxed tabs">
         {#each colorModeOptions as colorModeOption}
             <button
                 class={`tab flex-1 ${colorModeOption === colorMode && "tab-active"}`}

@@ -20,7 +20,7 @@
         hueRotations: number[],
         focusedPalette: number
     ) {
-        return `?names=${names.join(",")}&mainColors=${mainColors.join(
+        return `?names=${names.join(",")}&baseColors=${mainColors.join(
             ","
         )}&hueRotations=${hueRotations.join(",")}&focusedPalette=${focusedPalette}`
     }
@@ -219,9 +219,6 @@
 
     // Polishing
     // TODO: Improve performance by only updating hues when hue rotation changes
-
-    // Testing
-    // TODO: Check if saturation logic is still working correctly
 
     function handleKeyDown(e: KeyboardEvent) {
         // Prevents keyboard shortcuts from firing when user is typing into input
