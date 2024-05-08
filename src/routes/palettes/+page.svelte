@@ -50,7 +50,11 @@
         const newMainColors: string[] = [...data.mainColors]
         const newHueRotations: number[] = [...data.hueRotations]
 
-        if (mainColor !== undefined) newMainColors[index] = mainColor
+        if (mainColor !== undefined) {
+            newMainColors[index] = mainColor
+            // Resets hue rotation if main color changes
+            newHueRotations[index] = 0
+        }
         if (hueRotation !== undefined) newHueRotations[index] = hueRotation
 
         // If change is only in hueRotation, remove last item from historyBack
