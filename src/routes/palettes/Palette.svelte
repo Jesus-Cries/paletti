@@ -90,7 +90,7 @@
         {#each colors as color, colorIndex}
             <Color
                 {isFocused}
-                color={colorIndex === palette.mainColorIndex
+                color={colorIndex === palette.mainColorIndex && palette.hueRotation !== 0
                     ? $page.data.mainColors !== undefined && $page.data.mainColors[index]
                     : color}
                 index={colorIndex}

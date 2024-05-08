@@ -7,8 +7,6 @@ export class PaletteCreator {
      */
     modifyHues(baseHue: number, hueRotation: number): number[] {
         // TODO: Adapt hue calculation to new lightness calculation
-        // TODO: Add disclaimer to hue rotation that it changes the main color
-        // TODO: Show correct color for main color in palette if hue rotation is not 0
 
         // Hue modifiers to choose from that are added to base hue
         const maxHueModifiers: number[] = [20, 14, 9, 5, 2, 0, 2, 5, 9, 14, 20]
