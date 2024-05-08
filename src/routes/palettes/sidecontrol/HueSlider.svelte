@@ -61,7 +61,10 @@
 </script>
 
 {#if $page.data.hueRotations !== undefined}
-    <SettingWrapper label="Hue Rotation">
+    <SettingWrapper
+        label="Hue Rotation"
+        infoText="Changing the hue rotation has an effect on all colors in your palette. This means that the base color you chose will also be affected."
+    >
         <Slider
             style="background: linear-gradient(90deg, hsl({mainHue -
                 30}, 100%, 65%) 0%, hsl({mainHue + 30}, 100%, 65%) 100%);"
