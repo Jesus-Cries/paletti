@@ -26,10 +26,7 @@
         <a href="#how-to-use-paletti" class="font-semibold">How to use Paletti</a>
         <ul>
             <li>
-                <a href="#hsl">HSL</a>
-            </li>
-            <li>
-                <a href="#choosing-a-base-color">Choosing a base color</a>
+                <a href="#creating-a-color-palette">Creating a color palette</a>
             </li>
             <li>
                 <a href="#individualizing">Individualizing</a>

@@ -40,7 +40,10 @@
     })
 </script>
 
-<SettingWrapper label="Spacing">
+<SettingWrapper
+    label="Spacing"
+    infoText="Colors lined up next to each other can look like a color gradient. Using gaps can prevent this."
+>
     <div class="flex w-full gap-2">
         {#each buttons as button}
             <button

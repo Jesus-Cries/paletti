@@ -20,7 +20,7 @@
         hueRotations: number[],
         focusedPalette: number
     ) {
-        return `?names=${names.join(",")}&mainColors=${mainColors.join(
+        return `?names=${names.join(",")}&baseColors=${mainColors.join(
             ","
         )}&hueRotations=${hueRotations.join(",")}&focusedPalette=${focusedPalette}`
     }
@@ -50,7 +50,11 @@
         const newMainColors: string[] = [...data.mainColors]
         const newHueRotations: number[] = [...data.hueRotations]
 
-        if (mainColor !== undefined) newMainColors[index] = mainColor
+        if (mainColor !== undefined) {
+            newMainColors[index] = mainColor
+            // Resets hue rotation if main color changes
+            newHueRotations[index] = 0
+        }
         if (hueRotation !== undefined) newHueRotations[index] = hueRotation
 
         // If change is only in hueRotation, remove last item from historyBack
@@ -220,9 +224,6 @@
     // Polishing
     // TODO: Improve performance by only updating hues when hue rotation changes
 
-    // Testing
-    // TODO: Check if saturation logic is still working correctly
-
     function handleKeyDown(e: KeyboardEvent) {
         // Prevents keyboard shortcuts from firing when user is typing into input
         const activeElement: Element | null = document.activeElement
@@ -269,6 +270,7 @@
         const newPalettes: IPalette[] = data.mainColors.map((color: string, index: number) => ({
             name: data.names[index],
             mainColor: data.mainColors[index],
+            mainColorIndex: paletteCreator.getColorIndex(data.mainColors[index]),
             hueRotation: data.hueRotations[index],
             colors: paletteCreator.createPalette(color, data.hueRotations[index]),
         }))
