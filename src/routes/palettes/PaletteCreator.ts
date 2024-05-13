@@ -6,13 +6,11 @@ export class PaletteCreator {
      * Rotates hue to nearest bright hue
      */
     modifyHues(baseHue: number, hueRotation: number): number[] {
-        // TODO: Adapt hue calculation to new lightness calculation
-
         // Hue modifiers to choose from that are added to base hue
-        const maxHueModifiers: number[] = [20, 14, 9, 5, 2, 0, 2, 5, 9, 14, 20]
+        const hueModifiers: number[] = [20, 14, 9, 5, 2, 0, 2, 5, 9, 14, 20]
 
         // Creates hues based on hue rotation and rotation direction
-        const hues: number[] = maxHueModifiers.map(
+        const hues: number[] = hueModifiers.map(
             (hueModifier: number) => baseHue + (hueModifier / 100) * hueRotation
         )
 
