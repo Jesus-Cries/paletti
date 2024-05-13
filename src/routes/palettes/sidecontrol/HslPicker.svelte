@@ -83,7 +83,12 @@
     on:mouseup={addToHistory}
     on:touchend={addToHistory}
 >
-    <SettingWrapper label="Hue" labelSize="small" value={hue}>
+    <SettingWrapper
+        label="Hue"
+        labelSize="small"
+        infoText="Hue is a value from 0 to 360 that describes the position on a color wheel."
+        value={hue}
+    >
         <Slider
             style="background: linear-gradient(to right, hsl(0, 100%, 50%), hsl(60, 100%, 50%), hsl(120, 100%, 50%), hsl(180, 100%, 50%), hsl(240, 100%, 50%), hsl(300, 100%, 50%), hsl(360, 100%, 50%));"
             min={0}
@@ -96,7 +101,13 @@
         />
     </SettingWrapper>
 
-    <SettingWrapper label="Saturation" labelSize="small" value={saturation}>
+    <SettingWrapper
+        label="Saturation"
+        labelSize="small"
+        infoText="Saturation describes the intensity of a color. The lower
+        the value, the grayer a color looks."
+        value={saturation}
+    >
         <Slider
             style="background: linear-gradient(to right, hsl({hue}, 0%, {lightness}%), hsl({hue}, 100%, {lightness}%));"
             min={0}
@@ -109,7 +120,12 @@
         />
     </SettingWrapper>
 
-    <SettingWrapper label="Lightness" labelSize="small" value={lightness}>
+    <SettingWrapper
+        label="Lightness"
+        labelSize="small"
+        infoText="Lightness is the amount of light a color has. No lightness results in black, while full lightness results in white."
+        value={lightness}
+    >
         <Slider
             style="background: linear-gradient(to right, hsl({hue}, {saturation}%, 0%), hsl({hue}, {saturation}%, 50%), hsl({hue}, {saturation}%, 100%));"
             min={0}

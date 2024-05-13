@@ -14,8 +14,8 @@
                 {label}
             </label>
             {#if infoText !== undefined}
-                <div class="tooltip text-base-content" data-tip={infoText}>
-                    <Info size="16" />
+                <div class="tooltip z-50 -translate-y-px text-base-content" data-tip={infoText}>
+                    <Info size={labelSize === "medium" ? "16" : "14"} />
                 </div>
             {/if}
         </div>
