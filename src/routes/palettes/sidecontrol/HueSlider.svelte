@@ -1,7 +1,7 @@
 <script lang="ts">
     import convert from "color-convert"
     import { page } from "$app/stores"
-    import { getContext, onMount } from "svelte"
+    import { getContext } from "svelte"
     import Slider from "./Slider.svelte"
     import SettingWrapper from "./SettingWrapper.svelte"
 
@@ -13,7 +13,9 @@
         index: number,
         mainColor?: string,
         hueRotation?: number,
-        addToHistory?: boolean
+        addToHistory?: boolean,
+        minLightness?: number,
+        maxLightness?: number
     ) => void = getContext("updatePalette")
 
     function setHueRotationAmount(e: Event) {
