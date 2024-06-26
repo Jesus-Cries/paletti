@@ -30,34 +30,6 @@
         if ($page.data.mainColors !== undefined)
             mainHue = convert.hex.hsl($page.data.mainColors[$page.data.focusedPalette])[0]
     }
-
-    // Update hue rotation when receiving corresponding event
-    onMount(() => {
-        function handleKeyDown(multiplier: number) {
-            let hueRotation: number = parseInt($page.data.hueRotations[$page.data.focusedPalette])
-            hueRotation += step * multiplier
-
-            hueRotation = Math.min(max, Math.max(min, hueRotation))
-
-            updatePalette($page.data.focusedPalette, undefined, hueRotation)
-        }
-
-        document.addEventListener("ArrowLeft", () => {
-            handleKeyDown(-1)
-        })
-        document.addEventListener("ArrowRight", () => {
-            handleKeyDown(1)
-        })
-
-        return () => {
-            document.removeEventListener("ArrowLeft", () => {
-                handleKeyDown(-1)
-            })
-            document.removeEventListener("ArrowRight", () => {
-                handleKeyDown(1)
-            })
-        }
-    })
 </script>
 
 {#if $page.data.hueRotations !== undefined}
