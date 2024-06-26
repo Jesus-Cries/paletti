@@ -21,10 +21,7 @@
     })
 </script>
 
-<SettingWrapper
-    label="Base color"
-    infoText="This is the color used to calculate the rest of the color palette."
->
+<SettingWrapper label="Base color" infoText="The color used to calculate the color palette">
     <div class="tabs-boxed tabs">
         {#each colorModeOptions as colorModeOption}
             <button

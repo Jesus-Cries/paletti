@@ -87,6 +87,7 @@
         label="Hue"
         labelSize="small"
         infoText="Hue is a value from 0 to 360 that describes the position on a color wheel."
+        tooltipPosition="right"
         value={hue}
     >
         <Slider
@@ -106,6 +107,7 @@
         labelSize="small"
         infoText="Saturation describes the intensity of a color. The lower
         the value, the grayer a color looks."
+        tooltipPosition="right"
         value={saturation}
     >
         <Slider
@@ -124,6 +126,7 @@
         label="Lightness"
         labelSize="small"
         infoText="Lightness is the amount of light a color has. No lightness results in black, while full lightness results in white."
+        tooltipPosition="right"
         value={lightness}
     >
         <Slider

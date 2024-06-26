@@ -43,6 +43,7 @@
 <SettingWrapper
     label="Spacing"
     infoText="Colors lined up next to each other can look like a color gradient. Using gaps can prevent this."
+    tooltipPosition="right"
 >
     <div class="flex w-full gap-2">
         {#each buttons as button}

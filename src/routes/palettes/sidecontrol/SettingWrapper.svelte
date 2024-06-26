@@ -5,6 +5,14 @@
     export let labelSize: "small" | "medium" = "medium"
     export let infoText: string | undefined = undefined
     export let value: number | undefined = undefined
+    export let tooltipPosition: "top" | "bottom" | "left" | "right" = "top"
+
+    const tooltipPositionClass: string = {
+        top: "tooltip-top",
+        bottom: "tooltip-bottom",
+        left: "tooltip-left",
+        right: "tooltip-right",
+    }[tooltipPosition]
 </script>
 
 <div class={`flex w-full max-w-md flex-col ${labelSize === "small" ? "gap-3" : "gap-2"}`}>
@@ -14,7 +22,10 @@
                 {label}
             </label>
             {#if infoText !== undefined}
-                <div class="tooltip z-50 -translate-y-px text-base-content" data-tip={infoText}>
+                <div
+                    class="tooltip z-50 -translate-y-px text-base-content before:max-w-[180px] {tooltipPositionClass}"
+                    data-tip={infoText}
+                >
                     <Info size={labelSize === "medium" ? "16" : "14"} />
                 </div>
             {/if}

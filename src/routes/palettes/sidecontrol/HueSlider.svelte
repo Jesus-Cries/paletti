@@ -35,10 +35,7 @@
 </script>
 
 {#if $page.data.hueRotations !== undefined}
-    <SettingWrapper
-        label="Hue Rotation"
-        infoText="The hue rotation changes the hue of all colors by a certain amount. The further away from the color in the middle of the palette, the more the hue changes. This also affects your base color."
-    >
+    <SettingWrapper label="Hue Rotation" infoText="Adds tint to colors towards edges">
         <Slider
             style="background: linear-gradient(90deg, hsl({mainHue -
                 30}, 100%, 65%) 0%, hsl({mainHue + 30}, 100%, 65%) 100%);"
