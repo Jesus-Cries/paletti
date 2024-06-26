@@ -72,10 +72,12 @@ export class PaletteCreator {
     /** Creates lightness palette based on lightness of base color
      * Divides remaining lightnesses evenly between base lightness and min / max lightness
      */
-    modifyLightnesses(baseLightness: number, colorIndex: number): number[] {
-        const minLightness = 5
-        const maxLightness = 97
-
+    modifyLightnesses(
+        baseLightness: number,
+        colorIndex: number,
+        minLightness: number,
+        maxLightness: number
+    ): number[] {
         // Distances to min and max lightness
         const baseToMin: number = baseLightness - minLightness
         const baseToMax: number = maxLightness - baseLightness
@@ -128,14 +130,24 @@ export class PaletteCreator {
      * @param baseColor Base / middle color of color palette in hex (without #)
      * @param hueRotation Range: -100 - 100
      */
-    createPalette(baseColor: string, hueRotation: number): string[] {
+    createPalette(
+        baseColor: string,
+        minLightness: number,
+        maxLightness: number,
+        hueRotation: number
+    ): string[] {
         const baseHsl: number[] = convert.hex.hsl(baseColor)
 
         const colorIndex = this.getColorIndex(baseColor)
 
         const hues: number[] = this.modifyHues(baseHsl[0], hueRotation)
         const saturations: number[] = this.modifySaturations(baseHsl[1], colorIndex)
-        const lightnesses: number[] = this.modifyLightnesses(baseHsl[2], colorIndex)
+        const lightnesses: number[] = this.modifyLightnesses(
+            baseHsl[2],
+            colorIndex,
+            minLightness,
+            maxLightness
+        )
 
         const colors: string[] = []
 

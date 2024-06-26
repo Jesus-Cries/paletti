@@ -352,7 +352,12 @@
             mainColor: data.mainColors[index],
             mainColorIndex: paletteCreator.getColorIndex(data.mainColors[index]),
             hueRotation: data.hueRotations[index],
-            colors: paletteCreator.createPalette(color, data.hueRotations[index]),
+            colors: paletteCreator.createPalette(
+                color,
+                data.minLightnesses[index],
+                data.maxLightnesses[index],
+                data.hueRotations[index]
+            ),
         }))
 
         palettes.set(newPalettes)

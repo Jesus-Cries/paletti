@@ -51,7 +51,7 @@
 {#if $page.data.minLightnesses !== undefined && $page.data.maxLightnesses !== undefined}
     <SettingWrapper
         label="Minimum Lightness"
-        infoText="This determines how dark the darkest color will be."
+        infoText="This determines how dark the darkest color will be. Use with caution as this might break your palette."
         value={$page.data.minLightnesses[$page.data.focusedPalette]}
     >
         <Slider
@@ -66,7 +66,7 @@
 
     <SettingWrapper
         label="Maximum Lightness"
-        infoText="This determines how light the lightest color will be."
+        infoText="This determines how light the lightest color will be. Use with caution as this might break your palette."
         value={$page.data.maxLightnesses[$page.data.focusedPalette]}
     >
         <Slider
