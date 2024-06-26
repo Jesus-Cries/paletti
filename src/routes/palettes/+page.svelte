@@ -71,11 +71,6 @@
         if (minLightness !== undefined) newMinLightnesses[index] = minLightness
         if (maxLightness !== undefined) newMaxLightnesses[index] = maxLightness
 
-        // If change is only in hueRotation, remove last item from historyBack
-        // This way, the history is not cluttered with every change in hue rotation
-        if ($historyBack.length > 0 && mainColor === undefined)
-            historyBack.update((prev) => prev.slice(0, prev.length - 1))
-
         if (addToHistory === undefined || addToHistory === true) addToHistory = true
         else addToHistory = false
 
