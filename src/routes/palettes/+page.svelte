@@ -17,12 +17,18 @@
     function createUrl(
         names: string[],
         mainColors: string[],
+        minLightnesses: number[],
+        maxLightnesses: number[],
         hueRotations: number[],
         focusedPalette: number
     ) {
-        return `?names=${names.join(",")}&baseColors=${mainColors.join(
-            ","
-        )}&hueRotations=${hueRotations.join(",")}&focusedPalette=${focusedPalette}`
+        return `
+?names=${names.join(",")}
+&baseColors=${mainColors.join(",")}
+&minLightnesses=${minLightnesses.join(",")}
+&maxLightnesses=${maxLightnesses.join(",")}
+&hueRotations=${hueRotations.join(",")}
+&focusedPalette=${focusedPalette}`
     }
 
     /** Updates name of palette based on its index */
@@ -34,6 +40,8 @@
         const newUrl: string = createUrl(
             newNames,
             data.mainColors,
+            data.minLightnesses,
+            data.maxLightnesses,
             data.hueRotations,
             data.focusedPalette
         )
@@ -45,10 +53,14 @@
         index: number,
         mainColor?: string,
         hueRotation?: number,
-        addToHistory?: boolean
+        addToHistory?: boolean,
+        minLightness?: number,
+        maxLightness?: number
     ) {
         const newMainColors: string[] = [...data.mainColors]
         const newHueRotations: number[] = [...data.hueRotations]
+        const newMinLightnesses: number[] = [...data.minLightnesses]
+        const newMaxLightnesses: number[] = [...data.maxLightnesses]
 
         if (mainColor !== undefined) {
             newMainColors[index] = mainColor
@@ -56,22 +68,31 @@
             newHueRotations[index] = 0
         }
         if (hueRotation !== undefined) newHueRotations[index] = hueRotation
-
-        // If change is only in hueRotation, remove last item from historyBack
-        // This way, the history is not cluttered with every change in hue rotation
-        if ($historyBack.length > 0 && mainColor === undefined)
-            historyBack.update((prev) => prev.slice(0, prev.length - 1))
+        if (minLightness !== undefined) newMinLightnesses[index] = minLightness
+        if (maxLightness !== undefined) newMaxLightnesses[index] = maxLightness
 
         if (addToHistory === undefined || addToHistory === true) addToHistory = true
         else addToHistory = false
 
-        const newUrl: string = createUrl(data.names, newMainColors, newHueRotations, index)
+        const newUrl: string = createUrl(
+            data.names,
+            newMainColors,
+            newMinLightnesses,
+            newMaxLightnesses,
+            newHueRotations,
+            index
+        )
 
         navigate(newUrl, addToHistory)
     }
 
     /** Adds a new palette */
-    function addPalette(mainColor: string, hueRotation: number) {
+    function addPalette(
+        mainColor: string,
+        hueRotation: number,
+        minLightness: number,
+        maxLightness: number
+    ) {
         /** Pre chosen names */
         const nameTemplate: string[] = ["Primary", "Secondary", "Accent", "Gray"]
 
@@ -90,15 +111,26 @@
 
         const newNames: string[] = [...data.names, newName]
         const newMainColors: string[] = [...data.mainColors, mainColor]
+        const newMinLightnesses: number[] = [...data.minLightnesses, minLightness]
+        const newMaxLightnesses: number[] = [...data.maxLightnesses, maxLightness]
         const newHueRotation: number[] = [...data.hueRotations, hueRotation]
         const newIndex: number = data.mainColors.length
 
         data.names = newNames
         data.mainColors = newMainColors
+        data.minLightnesses = newMinLightnesses
+        data.maxLightnesses = newMaxLightnesses
         data.hueRotations = newHueRotation
         data.focusedPalette = newIndex
 
-        const newUrl: string = createUrl(newNames, newMainColors, newHueRotation, newIndex)
+        const newUrl: string = createUrl(
+            newNames,
+            newMainColors,
+            newMinLightnesses,
+            newMaxLightnesses,
+            newHueRotation,
+            newIndex
+        )
         navigate(newUrl)
         document.dispatchEvent(new Event("updateHslPicker"))
     }
@@ -109,20 +141,33 @@
 
         let newNames: string[] = [...data.names]
         let newMainColors: string[] = [...data.mainColors]
+        let newMinLightnesses: number[] = [...data.minLightnesses]
+        let newMaxLightnesses: number[] = [...data.maxLightnesses]
         let newHueRotations: number[] = [...data.hueRotations]
 
         newNames.splice(index, 1)
         newMainColors.splice(index, 1)
+        newMinLightnesses.splice(index, 1)
+        newMaxLightnesses.splice(index, 1)
         newHueRotations.splice(index, 1)
 
         const newIndex: number = data.focusedPalette > 0 ? data.focusedPalette - 1 : 0
 
         data.names = newNames
         data.mainColors = newMainColors
+        data.minLightnesses = newMinLightnesses
+        data.maxLightnesses = newMaxLightnesses
         data.hueRotations = newHueRotations
         data.focusedPalette = newIndex
 
-        const newUrl: string = createUrl(newNames, newMainColors, newHueRotations, newIndex)
+        const newUrl: string = createUrl(
+            newNames,
+            newMainColors,
+            newMinLightnesses,
+            newMaxLightnesses,
+            newHueRotations,
+            newIndex
+        )
         navigate(newUrl)
         document.dispatchEvent(new Event("updateHslPicker"))
     }
@@ -132,7 +177,14 @@
         if (index < 0) return
         if (index >= data.mainColors.length) return
 
-        const newUrl: string = createUrl(data.names, data.mainColors, data.hueRotations, index)
+        const newUrl: string = createUrl(
+            data.names,
+            data.mainColors,
+            data.minLightnesses,
+            data.maxLightnesses,
+            data.hueRotations,
+            index
+        )
 
         navigate(newUrl)
         document.dispatchEvent(new Event("updateHslPicker"))
@@ -182,17 +234,33 @@
 
         const newMainColors: string[] = nextUrl.split("?")[1].split("&")[1].split("=")[1].split(",")
 
-        const newHueRotations: number[] = nextUrl
+        const newMinLightnesses: number[] = nextUrl
             .split("?")[1]
             .split("&")[2]
             .split("=")[1]
             .split(",")
             .map((n) => parseInt(n))
 
-        const newIndex: number = parseInt(nextUrl.split("?")[1].split("&")[3].split("=")[1])
+        const newMaxLightnesses: number[] = nextUrl
+            .split("?")[1]
+            .split("&")[3]
+            .split("=")[1]
+            .split(",")
+            .map((n) => parseInt(n))
+
+        const newHueRotations: number[] = nextUrl
+            .split("?")[1]
+            .split("&")[4]
+            .split("=")[1]
+            .split(",")
+            .map((n) => parseInt(n))
+
+        const newIndex: number = parseInt(nextUrl.split("?")[1].split("&")[5].split("=")[1])
 
         data.names = newNames
         data.mainColors = newMainColors
+        data.minLightnesses = newMinLightnesses
+        data.maxLightnesses = newMaxLightnesses
         data.hueRotations = newHueRotations
         data.focusedPalette = newIndex
 
@@ -258,7 +326,14 @@
         if ($historyBack.length > 0) navigate($historyBack[$historyBack.length - 1], false)
         // Makes sure the url is updated when the page is loaded without url parameters
         else if (data.mainColors.length === 1) {
-            const newUrl: string = createUrl(data.names, data.mainColors, data.hueRotations, 0)
+            const newUrl: string = createUrl(
+                data.names,
+                data.mainColors,
+                data.minLightnesses,
+                data.maxLightnesses,
+                data.hueRotations,
+                0
+            )
             navigate(newUrl)
         }
     })
@@ -272,7 +347,12 @@
             mainColor: data.mainColors[index],
             mainColorIndex: paletteCreator.getColorIndex(data.mainColors[index]),
             hueRotation: data.hueRotations[index],
-            colors: paletteCreator.createPalette(color, data.hueRotations[index]),
+            colors: paletteCreator.createPalette(
+                color,
+                data.minLightnesses[index],
+                data.maxLightnesses[index],
+                data.hueRotations[index]
+            ),
         }))
 
         palettes.set(newPalettes)

@@ -1,7 +1,7 @@
 <script lang="ts">
     import convert from "color-convert"
     import { page } from "$app/stores"
-    import { getContext, onMount } from "svelte"
+    import { getContext } from "svelte"
     import Slider from "./Slider.svelte"
     import SettingWrapper from "./SettingWrapper.svelte"
 
@@ -13,7 +13,9 @@
         index: number,
         mainColor?: string,
         hueRotation?: number,
-        addToHistory?: boolean
+        addToHistory?: boolean,
+        minLightness?: number,
+        maxLightness?: number
     ) => void = getContext("updatePalette")
 
     function setHueRotationAmount(e: Event) {
@@ -30,34 +32,6 @@
         if ($page.data.mainColors !== undefined)
             mainHue = convert.hex.hsl($page.data.mainColors[$page.data.focusedPalette])[0]
     }
-
-    // Update hue rotation when receiving corresponding event
-    onMount(() => {
-        function handleKeyDown(multiplier: number) {
-            let hueRotation: number = parseInt($page.data.hueRotations[$page.data.focusedPalette])
-            hueRotation += step * multiplier
-
-            hueRotation = Math.min(max, Math.max(min, hueRotation))
-
-            updatePalette($page.data.focusedPalette, undefined, hueRotation)
-        }
-
-        document.addEventListener("ArrowLeft", () => {
-            handleKeyDown(-1)
-        })
-        document.addEventListener("ArrowRight", () => {
-            handleKeyDown(1)
-        })
-
-        return () => {
-            document.removeEventListener("ArrowLeft", () => {
-                handleKeyDown(-1)
-            })
-            document.removeEventListener("ArrowRight", () => {
-                handleKeyDown(1)
-            })
-        }
-    })
 </script>
 
 {#if $page.data.hueRotations !== undefined}

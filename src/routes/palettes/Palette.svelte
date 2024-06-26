@@ -33,11 +33,7 @@
     }
 </script>
 
-<div
-    in:fly={{ x: -250 }}
-    out:fly={{ x: 250 }}
-    class="flex w-full flex-col items-start gap-4 md:mb-6"
->
+<div class="flex w-full flex-col items-start gap-4 md:mb-6">
     <div class="flex w-full items-baseline justify-between">
         <div class="relative flex gap-2 pl-1.5">
             {#if $page.data.names !== undefined}
