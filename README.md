@@ -2,7 +2,7 @@
 
 Choosing the perfect colors for web designs is hard. And even if you know how to do it right, it still takes a lot of time. That's why I created Paletti.
 
-Paletti is a user-friendly tool for quickly generating indivdual color palettes for web design and development.
+Paletti is a user-friendly tool for quickly generating individual color palettes for web design and development.
 
 The color palettes are based on principles from the book [Refactoring UI](https://www.refactoringui.com/), which was written by the creators of [Tailwind CSS](https://tailwindcss.com/).
 
