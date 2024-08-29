@@ -366,7 +366,7 @@
     class="absolute flex h-[calc(100vh-56px)] w-full md:h-[calc(100vh-64px)]"
 >
     <DemoDisclaimer />
-    <div class="relative h-full w-full md:h-auto md:w-5/6">
+    <div class="relative h-full w-full flex-1 md:h-auto md:w-5/6">
         <Palettes />
         <BottomControl />
     </div>
