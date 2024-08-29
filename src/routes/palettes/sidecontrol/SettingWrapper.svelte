@@ -15,7 +15,7 @@
     }[tooltipPosition]
 </script>
 
-<div class={`flex w-full max-w-md flex-col ${labelSize === "small" ? "gap-3" : "gap-2"}`}>
+<div class={`flex w-full flex-col ${labelSize === "small" ? "gap-3" : "gap-2"}`}>
     <div class={`flex w-full items-baseline justify-between ${labelSize === "small" && "text-sm"}`}>
         <div class="flex items-center gap-1.5">
             <label for={label} class="font-semibold">
